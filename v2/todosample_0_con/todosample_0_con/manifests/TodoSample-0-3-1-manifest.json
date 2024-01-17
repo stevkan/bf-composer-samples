@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/skills/skill-manifest-2.1.preview-1.json",
+  "$id": "TodoSample-0-8ed9bfd8-6a4b-4f99-bd24-5eece99e07a3",
+  "endpoints": [
+    {
+      "protocol": "BotFrameworkV3",
+      "name": "ToDoSample-endpoint",
+      "endpointUrl": "https://fdbbba20fbf6.ngrok.io/api/messages",
+      "msAppId": "cd76d309-5c3d-4c58-9b58-abfa7798eba8"
+    }
+  ],
+  "name": "TodoSample-0-manifest",
+  "version": "1.0",
+  "publisherName": "SLK",
+  "activities": {
+    "TodoSample-0": {
+      "type": "event",
+      "name": "TodoSample-0"
+    },
+    "addtodo": {
+      "type": "event",
+      "name": "addtodo"
+    },
+    "cleartodos": {
+      "type": "event",
+      "name": "cleartodos"
+    },
+    "deletetodo": {
+      "type": "event",
+      "name": "deletetodo"
+    },
+    "showtodos": {
+      "type": "event",
+      "name": "showtodos"
+    },
+    "conversationUpdate": {
+      "type": "conversationUpdate"
+    },
+    "message": {
+      "type": "message"
+    }
+  },
+  "dispatchModels": {
+    "intents": [
+      "AddIntent",
+      "CancelIntent",
+      "ClearIntent",
+      "DeleteIntent",
+      "HelpIntent",
+      "ShowIntent"
+    ]
+  }
+}

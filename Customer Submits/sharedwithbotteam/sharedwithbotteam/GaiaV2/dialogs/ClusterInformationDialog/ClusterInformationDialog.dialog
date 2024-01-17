@@ -1,0 +1,110 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "3dzuUZ",
+    "name": "ClusterInformationDialog",
+    "description": "Shows cluster information"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "ytiDhH"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "ClusterInformation"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "prompt": "${TextInput_Prompt_ClusterInformation()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.clusterName"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "93VFuP"
+          },
+          "activityProcessed": true,
+          "dialog": "ClusterCheck",
+          "resultProperty": "dialog.Result",
+          "options": {
+            "clusterName": "${dialog.clusterName}"
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "g5tLsN"
+          },
+          "condition": "=dialog.Result !=null",
+          "actions": [
+            {
+              "$kind": "ClusterInformation",
+              "$designer": {
+                "id": "unxixQ"
+              },
+              "arg1": "${user.clusterName}",
+              "resultProperty": "dialog.Result",
+              "clusterName": "${dialog.clusterName}"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "mYaeub"
+              },
+              "condition": "dialog.Result != null",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "ClusterInformationSuccess"
+                  },
+                  "activity": "${SendActivity_ClusterInformation_Success()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "ClusterInformationFail"
+                  },
+                  "activity": "${SendActivity_ClusterInformation_Fail()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "Farewell"
+                  },
+                  "activity": "${SendActivity_Farewell()}"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "FVF2if"
+              },
+              "activityProcessed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "ClusterInformationDialog.lg",
+  "recognizer": "ClusterInformationDialog.lu.qna",
+  "id": "ClusterInformationDialog"
+}

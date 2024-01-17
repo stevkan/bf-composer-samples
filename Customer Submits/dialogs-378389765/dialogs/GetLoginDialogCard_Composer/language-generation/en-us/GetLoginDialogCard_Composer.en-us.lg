@@ -1,0 +1,52 @@
+[import](common.lg)
+
+# TextInput_Prompt_7mKjdk()
+[Activity
+    Attachments = ${json(TextInput_Prompt_7mKjdk_attachment_5x5bZ0())}
+]
+
+# TextInput_Prompt_7mKjdk_attachment_5x5bZ0()
+- ```
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+   {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Login"
+        },
+        {
+            "type": "TextBlock",
+            "size": "Small",
+            "text": "In order to view account information, we must confirm your account. Would you like to continue?",
+            "wrap": true
+        }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Yes",
+      "data": 
+      {"btn"  : "1"}
+     
+    },
+    {
+      "type": "Action.Submit",
+      "title": "No",
+      "data" :
+      { "btn" : "2"}
+    }
+  ]
+}
+
+```
+# SendActivity_sUVZH9()
+[Activity
+    Text = ${SendActivity_sUVZH9_text()}
+]
+
+# SendActivity_sUVZH9_text()
+- Please select from one of the provided options.

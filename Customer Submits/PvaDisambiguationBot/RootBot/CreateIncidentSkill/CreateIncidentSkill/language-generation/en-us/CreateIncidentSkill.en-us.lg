@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to the **CreateIncidentSkill**. I will repeat what you enter.
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- **CreateIncidentSkill here**: You said ${turn.activity.text}
+# SendActivity_R2C804()
+[Activity
+    Text = ${SendActivity_R2C804_text()}
+]
+
+# SendActivity_R2C804_text()
+- **CreateIncidentSkill here**: I will repeat what you enter, until you enter **stop**.
+# SendActivity_zekQ7C()
+[Activity
+    Text = ${SendActivity_zekQ7C_text()}
+]
+
+# SendActivity_zekQ7C_text()
+- Thanks for using the **CreateIncidentSkill**

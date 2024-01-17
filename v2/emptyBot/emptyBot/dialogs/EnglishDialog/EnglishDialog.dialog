@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "KJr0N8",
+    "name": "EnglishDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "FNtEPi"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "r6wf2s"
+          },
+          "activity": "${SendActivity_r6wf2s()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "xocFuK"
+          },
+          "activity": "${SendActivity_xocFuK()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "xjQ6kY"
+          },
+          "activity": "${SendActivity_xjQ6kY()}"
+        }
+      ]
+    }
+  ],
+  "generator": "EnglishDialog.lg",
+  "recognizer": "EnglishDialog.lu.qna",
+  "id": "EnglishDialog"
+}

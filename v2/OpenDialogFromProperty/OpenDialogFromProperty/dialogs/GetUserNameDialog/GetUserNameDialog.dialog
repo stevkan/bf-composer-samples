@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "hOG1fy",
+    "name": "GetUserNameDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "tncoQ4"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "YDjNcU"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_YDjNcU()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "user.userName"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "QM8npt"
+          },
+          "activity": "${SendActivity_QM8npt()}"
+        }
+      ]
+    }
+  ],
+  "generator": "GetUserNameDialog.lg",
+  "recognizer": "GetUserNameDialog.lu.qna",
+  "id": "GetUserNameDialog"
+}

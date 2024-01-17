@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# SendActivity_MWx3dV_text()
+- Done waiting
+# SendActivity_MWx3dV()
+[Activity
+    Text = ${SendActivity_MWx3dV_text()}
+]
+
+# SendActivity_rXZu7N()
+[Activity
+    Text = ${SendActivity_rXZu7N_text()}
+]
+
+# SendActivity_rXZu7N_text()
+- Wait2 reached: ${conversation.customerdecision}
+# SendActivity_2Lkupu()
+[Activity
+    Text = ${SendActivity_2Lkupu_text()}
+]
+
+# SendActivity_2Lkupu_text()
+- Gone to action

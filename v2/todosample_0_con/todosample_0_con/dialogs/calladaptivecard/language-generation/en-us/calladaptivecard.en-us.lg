@@ -1,0 +1,33 @@
+# CardForItem()
+- ```
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "What is your name?"
+    },
+    {
+      "type": "Input.Text",
+      "id": "question",
+      "placeholder": "Enter your age here"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Enter to submit age"
+    }
+  ]
+}
+```
+# TextInput_Prompt_N1u27N()
+[Activity
+    Attachments = ${json(CardForItem())}
+    InputHint = acceptingInput
+]
+# SendActivity_RarX1K()
+- RESPONSE ${user.thedata}

@@ -1,0 +1,10 @@
+{
+  "pdfAttachmentValidation.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "Trigger_UploadPDF": [
+        "Dialog_UploadPDF.en-us"
+      ]
+    }
+  }
+}

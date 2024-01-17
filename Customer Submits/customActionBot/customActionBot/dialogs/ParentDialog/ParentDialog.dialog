@@ -1,0 +1,102 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "8SaaiJ",
+    "name": "ParentDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "AFVcqs"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TelemetryTrackEventAction",
+          "$designer": {
+            "id": "t4iMO7"
+          },
+          "properties": {
+            "ParentStart": "True"
+          },
+          "eventName": "ParentDialogBegin"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "aUaRyg"
+          },
+          "activityProcessed": true,
+          "dialog": "ChildDialog",
+          "resultProperty": "dialog.userDetails"
+        },
+        {
+          "$kind": "Microsoft.TelemetryTrackEventAction",
+          "$designer": {
+            "id": "1kqz0M"
+          },
+          "eventName": "ParentDialogAfterChild",
+          "properties": {
+            "ParentAfterChild": "True"
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rgWeEY"
+          },
+          "activity": "${SendActivity_rgWeEY()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "Yv6Cck"
+          },
+          "property": "dialog.multiplyResult",
+          "value": 0
+        },
+        {
+          "$kind": "MultiplyDialog",
+          "$designer": {
+            "id": "x0QqRK"
+          },
+          "arg1": "=dialog.userDetails.number",
+          "arg2": 3,
+          "resultProperty": "dialog.multiplyResult"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "r3vnyF"
+          },
+          "activity": "${SendActivity_r3vnyF()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "MtYRuu"
+          },
+          "activity": "${SendActivity_MtYRuu()}"
+        },
+        {
+          "$kind": "Microsoft.TelemetryTrackEventAction",
+          "$designer": {
+            "id": "PWp3Rt"
+          },
+          "eventName": "ParentDialogEnd",
+          "properties": {
+            "ParentEnd": "True"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "ParentDialog.lg",
+  "recognizer": "ParentDialog.lu.qna",
+  "id": "ParentDialog"
+}

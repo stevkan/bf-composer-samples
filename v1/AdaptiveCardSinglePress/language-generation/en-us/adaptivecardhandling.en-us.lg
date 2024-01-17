@@ -1,0 +1,34 @@
+[import](common.lg)
+
+# SendActivity_Welcome()
+- ${WelcomeUser()}
+> - ${add(conversation.clickCount, 1)}
+
+# TextInput_Prompt_PTq2UH()
+- ${GetUserName()}
+# SendActivity_ZFNf9R()
+- Sure. I have ${user.name}
+# SendActivity_Ao79mh()
+[Activity
+    Text = False: ${conversation.clickCount}
+]
+
+# SendActivity_Dywvx2()
+[Activity
+    Text = True: ${conversation.clickCount}
+]
+
+# SendActivity_7sAUAy()
+[Activity
+    Text = ending
+]
+
+# SendActivity_11lcM8()
+[Activity
+    Text = continuing: ${conversation.clickCount}
+]
+
+# SendActivity_fVphYp()
+[Activity
+    Text = ${conversation.clickCount} isInt: ${isInteger(conversation.clickCount)}
+]

@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "ORCHESTRATOR_OrchestratorDispatch",
+  "recognizers": {
+    "en-us": "OrchestratorDispatch.en-us.lu",
+    "": "OrchestratorDispatch.en-us.lu"
+  }
+}

@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_tzlMNI()
+[Activity
+    Text = ${SendActivity_tzlMNI_text()}
+]
+
+# SendActivity_tzlMNI_text()
+- dialog24

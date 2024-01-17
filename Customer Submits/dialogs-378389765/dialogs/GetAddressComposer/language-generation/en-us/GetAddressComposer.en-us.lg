@@ -1,0 +1,16 @@
+> To learn more about the LG file format, read the documentation at
+> https://aka.ms/lg-file-format
+# SendActivity_S10CRV()
+[Activity
+    Text = ${SendActivity_S10CRV_text()}
+]
+
+# SendActivity_S10CRV_text()
+- This is a Composer test.
+# SendActivity_9n1j1w()
+[Activity
+    Text = ${SendActivity_9n1j1w_text()}
+]
+
+# SendActivity_9n1j1w_text()
+- ${turn.results}

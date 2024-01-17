@@ -1,0 +1,13 @@
+[import](common.lg)
+
+# SendActivity_cI24bY()
+[Activity
+    Text = Going to the skill!
+]
+
+# BeginSkill_Activity_ld8lis()
+[Activity
+type = event
+name = AddTodo
+value = ${{ "itemTitle": "my todo", "listType": "todo" }}
+]

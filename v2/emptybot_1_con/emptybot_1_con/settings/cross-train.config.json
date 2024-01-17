@@ -1,0 +1,10 @@
+{
+  "emptybot_1_con.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "": [
+        "EchoDialog.en-us"
+      ]
+    }
+  }
+}

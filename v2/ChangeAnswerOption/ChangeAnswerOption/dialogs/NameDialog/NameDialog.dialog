@@ -1,0 +1,105 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "mYTntf",
+    "name": "NameDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.name",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "AorPW4"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "otIJjw"
+          },
+          "disabled": false,
+          "maxTurnCount": 0,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_otIJjw()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.name",
+          "defaultValue": "=null",
+          "validations": [
+            "=isMatch(this.value, '^([a-zA-Z])+$')"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "3OTYsN"
+          },
+          "condition": "=not(equals(dialog.name,null))",
+          "actions": [
+            {
+              "$kind": "Microsoft.ConfirmInput",
+              "$designer": {
+                "id": "iaUzga"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 0,
+              "alwaysPrompt": true,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "prompt": "${ConfirmInput_Prompt_iaUzga()}",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or "
+              },
+              "property": "dialog.response",
+              "style": "heroCard",
+              "confirmChoices": [
+                "Yes",
+                "No"
+              ],
+              "defaultValue": false
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "0SjTyo"
+              },
+              "condition": "=dialog.response == true",
+              "actions": [],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "21m3Wp"
+                  },
+                  "activityProcessed": true,
+                  "allowLoop": true
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "BidNCo"
+              },
+              "activityProcessed": true,
+              "allowLoop": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "NameDialog.lg",
+  "recognizer": "NameDialog.lu.qna",
+  "id": "NameDialog"
+}

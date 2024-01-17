@@ -1,0 +1,10 @@
+{
+  "$kind": "Microsoft.VirtualAgents.Topic",
+  "$designer": {
+    "name": "Meal delivery options",
+    "description": "",
+    "link": "https://web.powerva.microsoft.com/environments/Default-8af59001-d23c-4c4f-9e49-eca878ce569f/bots/1df6295b-bca9-4c92-afc8-1cfa7e1cef83/dialog/new_topic_d2ffd8c8e8de4761b20e1da351d3fcda"
+  },
+  "id": "new_topic_d2ffd8c8e8de4761b20e1da351d3fcda",
+  "isSystemTopic": false
+}

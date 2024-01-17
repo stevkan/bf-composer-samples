@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skill_Skill_Bot", "Skill_Skill_Bot\Skill_Skill_Bot.csproj", "{62EE4F22-5168-4810-90AB-118AFCE18569}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62EE4F22-5168-4810-90AB-118AFCE18569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62EE4F22-5168-4810-90AB-118AFCE18569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62EE4F22-5168-4810-90AB-118AFCE18569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62EE4F22-5168-4810-90AB-118AFCE18569}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84E45C19-36EC-47CA-A2A8-52F7ED5CA6A4}
+	EndGlobalSection
+EndGlobal

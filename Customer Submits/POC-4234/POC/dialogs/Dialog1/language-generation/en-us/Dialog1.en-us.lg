@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_GqnQlg()
+[Activity
+    Text = ${SendActivity_GqnQlg_text()}
+]
+
+# SendActivity_GqnQlg_text()
+- Starting ${dialog.dialogToBeStarted}
+# SendActivity_7HIECu()
+[Activity
+    Text = ${SendActivity_7HIECu_text()}
+]
+
+# SendActivity_7HIECu_text()
+- Dialog 1

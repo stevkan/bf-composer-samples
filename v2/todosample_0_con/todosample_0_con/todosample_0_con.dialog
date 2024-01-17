@@ -1,0 +1,506 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "288769",
+    "description": "",
+    "name": "todosample_0_con"
+  },
+  "autoEndDialog": false,
+  "defaultResultProperty": "dialog.result",
+  "recognizer": "todosample_0_con.lu.qna",
+  "generator": "todosample_0_con.lg",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "157674",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_157674()}"
+                }
+              ],
+              "elseActions": []
+            }
+          ]
+        }
+      ],
+      "priority": 1,
+      "condition": true
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "064505"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "dialog": "addtodo",
+          "activityProcessed": true,
+          "options": {}
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kt4mAC"
+          },
+          "activity": "${SendActivity_kt4mAC()}"
+        }
+      ],
+      "intent": "AddIntent"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "114961"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "dialog": "deletetodo",
+          "$designer": {
+            "id": "978613"
+          }
+        }
+      ],
+      "intent": "DeleteIntent"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "088050"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "dialog": "cleartodos"
+        }
+      ],
+      "intent": "ClearIntent"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "633942"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "696707"
+          },
+          "activity": "${SendActivity_696707()}"
+        }
+      ],
+      "intent": "HelpIntent"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "794124"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "dialog": "showtodos"
+        }
+      ],
+      "intent": "ShowIntent"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "179728"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "677440"
+          },
+          "activity": "ok."
+        },
+        {
+          "$kind": "Microsoft.EndDialog"
+        }
+      ],
+      "intent": "CancelIntent"
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "677447"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "677448"
+          },
+          "activity": "${SendActivity_677448()}"
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "m20RiA"
+          },
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${DateTimeInput_Prompt_m20RiA()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.suppliedDate"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "RCWprQ"
+          },
+          "property": "dialog.formattedDate",
+          "value": "=formatDateTime(dialog.suppliedDate[0].Value, 'MMM')"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "QlyyMT"
+          },
+          "activity": "${SendActivity_QlyyMT()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "wytUek"
+          },
+          "property": "dialog.suppliedDate[0].Value",
+          "value": "=formatDateTime(dialog.suppliedDate[0].Value, 'MM-dd-yyyy', 'en-UK')",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "VwPAaQ"
+          },
+          "activity": "${SendActivity_VwPAaQ()}",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "8jtIXa"
+          },
+          "activity": "${SendActivity_8jtIXa()}",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Tar05B"
+          },
+          "activityProcessed": true,
+          "dialog": "ChoicePromptDialog",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.QnAMakerDialog",
+          "$designer": {
+            "id": "QgdfRe"
+          },
+          "knowledgeBaseId": "=settings.qna.knowledgebaseid",
+          "endpointKey": "=settings.qna.endpointkey",
+          "hostname": "=settings.qna.hostname",
+          "noAnswer": "Sorry, I did not find an answer.",
+          "threshold": 0.3,
+          "activeLearningCardTitle": "Did you mean:",
+          "cardNoMatchText": "None of the above.",
+          "cardNoMatchResponse": "Thanks for the feedback.",
+          "top": 3,
+          "isTest": false,
+          "disabled": true
+        }
+      ],
+      "priority": 3
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "XqPvHM",
+        "name": "CallSkill"
+      },
+      "intent": "CallSkill",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "WeuRgk"
+          },
+          "activityProcessed": true,
+          "dialog": "CallSkill"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "CR1IjO",
+        "name": "CallAdaptiveCard"
+      },
+      "intent": "CallAdaptiveCard",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "D4LOWL"
+          },
+          "activityProcessed": true,
+          "dialog": "calladaptivecard"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "pTxOWF",
+        "name": "CallUploadFileField"
+      },
+      "intent": "CallUploadFileField",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "1sa2dm"
+          },
+          "activityProcessed": true,
+          "dialog": "UploadFileField"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "6JGws5",
+        "name": "ReplaceCancelIntent"
+      },
+      "intent": "ReplaceCancelIntent",
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "jZKKgy"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_jZKKgy()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.choice",
+          "outputFormat": "value",
+          "style": "heroCard",
+          "choices": [
+            "Replace dialog",
+            "Cancel dialog"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "jtiSlC"
+          },
+          "condition": "user.choice",
+          "cases": [
+            {
+              "value": "Replace dialog",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ReplaceDialog",
+                  "$designer": {
+                    "id": "eQspv3"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ReplaceDialog"
+                }
+              ]
+            },
+            {
+              "value": "Cancel dialog",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "3GICNP"
+                  },
+                  "activity": "${SendActivity_3GICNP()}"
+                },
+                {
+                  "$kind": "Microsoft.CancelAllDialogs",
+                  "$designer": {
+                    "id": "X7goLd"
+                  },
+                  "activityProcessed": true,
+                  "eventName": "Cancelled Dialog Event",
+                  "eventValue": "cancelledDialogEvent"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "L5blVy"
+              },
+              "activity": "${SendActivity_L5blVy()}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnEventActivity",
+      "$designer": {
+        "id": "iixSjF"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "jekusv"
+          },
+          "activity": "${SendActivity_jekusv()}"
+        }
+      ],
+      "priority": 0,
+      "condition": "=turn.activity.name == 'getUserID'",
+      "runOnce": true
+    },
+    {
+      "$kind": "Microsoft.OnQnAMatch",
+      "$designer": {
+        "id": "H8Kp0A"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "nIbEm4"
+          },
+          "condition": "count(turn.recognized.answers[0].context.prompts) > 0",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "ZKgvqW"
+              },
+              "property": "dialog.qnaContext",
+              "value": "=turn.recognized.answers[0].context.prompts"
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "DTyD8B"
+              },
+              "maxTurnCount": 3,
+              "alwaysPrompt": true,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_s8CfsE()}",
+              "property": "turn.qnaMultiTurnResponse"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "xN0lac"
+              },
+              "property": "turn.qnaMatchFromContext",
+              "value": "=where(dialog.qnaContext, item, item.displayText == turn.qnaMultiTurnResponse)"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "DolzoA"
+              },
+              "property": "dialog.qnaContext"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "q8IB0Y"
+              },
+              "condition": "turn.qnaMatchFromContext && count(turn.qnaMatchFromContext) > 0",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "JJBTPb"
+                  },
+                  "property": "turn.qnaIdFromPrompt",
+                  "value": "=turn.qnaMatchFromContext[0].qnaId"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.EmitEvent",
+              "$designer": {
+                "id": "yuMsZH"
+              },
+              "eventName": "activityReceived",
+              "eventValue": "=turn.activity"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Ncux5p"
+              },
+              "activity": "${SendActivity_xzEdfV()}"
+            }
+          ]
+        }
+      ],
+      "priority": 2
+    },
+    {
+      "$kind": "Microsoft.OnEventActivity",
+      "$designer": {
+        "id": "sAM9OT"
+      }
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "id": "todosample_0_con"
+}

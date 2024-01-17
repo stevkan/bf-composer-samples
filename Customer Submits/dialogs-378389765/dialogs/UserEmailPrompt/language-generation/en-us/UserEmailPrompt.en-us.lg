@@ -1,0 +1,11 @@
+[import](common.lg)
+
+# TextInput_Prompt_mzXE9B()
+[Activity
+    Text = ${TextInput_Prompt_mzXE9B_text()}
+]
+
+# TextInput_Prompt_mzXE9B_text()
+- ```Please enter an email associated with your account, and I will send you a code to confirm your account.
+
+(Example: name@email.com)Please enter your email```

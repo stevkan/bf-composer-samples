@@ -1,0 +1,33 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "NG0V0i",
+    "name": "ClusterCheck",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "k6xcfP"
+      },
+      "actions": [
+        {
+          "$kind": "CheckClusterExistance",
+          "$designer": {
+            "id": "M86iVE"
+          },
+          "clusterName": "${dialog.clusterName}",
+          "resultProperty": "dialog.Result"
+        }
+      ]
+    }
+  ],
+  "generator": "ClusterCheck.lg",
+  "recognizer": "ClusterCheck.lu.qna",
+  "id": "ClusterCheck"
+}

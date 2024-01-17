@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_fnDZo1()
+[Activity
+    Text = ${SendActivity_fnDZo1_text()}
+]
+
+# SendActivity_fnDZo1_text()
+- dialog9

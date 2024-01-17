@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# TextInput_Prompt_ae6bVq()
+[Activity
+    Text = ${TextInput_Prompt_ae6bVq_text()}
+]
+
+# TextInput_Prompt_ae6bVq_text()
+- What is your name?

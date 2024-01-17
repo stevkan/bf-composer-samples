@@ -1,0 +1,57 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Uq1ZN6",
+    "name": "MissionAPI_Composer",
+    "comment": "Pulls Mission Data"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "OFCug3"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "jLpqPh"
+          },
+          "method": "POST",
+          "url": "https://azpapi1dcbt.azure-api.net/chatbot/GetAddressByEmail",
+          "body": "&AUTTKN=${user.AuthToken}&PAEEAD=${user.Email}",
+          "headers": {
+            "Ocp-Apim-Subscription-Key": "d2b2c2eba7f04260bf4a2b46466bcbb6"
+          },
+          "resultProperty": "turn.results",
+          "contentType": "text/json",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "4HmVsW"
+          },
+          "property": "user.ApiCustomerNumber",
+          "value": "=turn.results.content.ADDRLIST[0].CUSNUM"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Z37Gji"
+          },
+          "activity": "${SendActivity_Z37Gji()}"
+        }
+      ]
+    }
+  ],
+  "generator": "MissionAPI_Composer.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "MissionAPI_Composer"
+}

@@ -1,0 +1,71 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- ```Welcome to your bot.
+
+Type 'color' to start. You can also type 'login' and 'logout' to force those actions.```
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# SendActivity_UjNRlQ()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_wxHgvH()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+
+# SendActivity_60dVjf()
+[Activity
+    Text = ${SendActivity_60dVjf_text()}
+]
+
+# SendActivity_60dVjf_text()
+- An invalid token was received. Reauthenticate to continue the conversation.
+# SendActivity_Pg49Hh_text()
+- Signing ${user.displayName} out...
+# SendActivity_Pg49Hh()
+[Activity
+    Text = ${SendActivity_Pg49Hh_text()}
+]
+
+# SendActivity_K2M0o4_text()
+- User signed out!
+# SendActivity_K2M0o4()
+[Activity
+    Text = ${SendActivity_K2M0o4_text()}
+]
+
+# TextInput_Prompt_g9d0HG()
+[Activity
+    Attachments = ${json(TextInput_Prompt_g9d0HG_attachment_rZ9bLM())}
+]
+
+# TextInput_Prompt_g9d0HG_attachment_rZ9bLM()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "default text",
+      "weight": "bolder",
+      "isSubtle": false
+    }
+  ]
+}```

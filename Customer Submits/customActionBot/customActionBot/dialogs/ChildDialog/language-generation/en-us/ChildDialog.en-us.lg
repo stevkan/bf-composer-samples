@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# TextInput_Prompt_8xAUOn()
+[Activity
+    Text = ${TextInput_Prompt_8xAUOn_text()}
+]
+
+# TextInput_Prompt_8xAUOn_text()
+- What is your name?
+# NumberInput_Prompt_Wjmawd()
+[Activity
+    Text = ${NumberInput_Prompt_Wjmawd_text()}
+]
+
+# NumberInput_Prompt_Wjmawd_text()
+- Enter a number to have it multiplied by "3".
+# TextInput_DefaultValueResponse_8xAUOn()
+[Activity
+    Text = ${TextInput_DefaultValueResponse_8xAUOn_text()}
+]
+
+# TextInput_DefaultValueResponse_8xAUOn_text()
+- Using default value.

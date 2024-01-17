@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/skills/v2.1/skill-manifest.json",
+  "$id": "TestEchoSkill-323c0ff3-5d74-4be9-b4bb-c513ba438499",
+  "endpoints": [
+    {
+      "protocol": "BotFrameworkV3",
+      "name": "botberg",
+      "endpointUrl": "https://skanberg.ngrok.io/api/messages",
+      "msAppId": "613ed145-a6da-4412-9435-30ac5325c84e"
+    }
+  ],
+  "name": "botberg",
+  "version": "1.0",
+  "publisherName": "SLK",
+  "activities": {
+    "botberg": {
+      "type": "event",
+      "name": "botberg"
+    },
+    "addtodo": {
+      "type": "event",
+      "name": "addtodo"
+    },
+    "cleartodos": {
+      "type": "event",
+      "name": "cleartodos"
+    },
+    "deletetodo": {
+      "type": "event",
+      "name": "deletetodo"
+    },
+    "showtodos": {
+      "type": "event",
+      "name": "showtodos"
+    },
+    "conversationUpdate": {
+      "type": "conversationUpdate"
+    },
+    "message": {
+      "type": "message"
+    }
+  },
+  "dispatchModels": {
+    "intents": [
+      "AddIntent",
+      "CancelIntent",
+      "ClearIntent",
+      "DeleteIntent",
+      "HelpIntent",
+      "ShowIntent"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_SwitchDialog",
+  "recognizers": {
+    "en-us": "SwitchDialog.en-us.lu",
+    "": "SwitchDialog.en-us.lu"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "9qN0JG",
+    "name": "DialogA",
+    "comment": ""
+  },
+  "autoEndDialog": false,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "uCH23U"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "uyk9kv"
+          },
+          "activity": "${SendActivity_uyk9kv()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "c4vGc7"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "prompt": "${TextInput_Prompt_c4vGc7()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": ""
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "c2tBFe",
+        "name": "SecondaryHelpTrigger"
+      },
+      "intent": "SecondaryHelpTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "cSFqw9"
+          },
+          "activity": "${SendActivity_cSFqw9()}"
+        },
+        {
+          "$kind": "Microsoft.TraceActivity",
+          "$designer": {
+            "id": "I5Crnh"
+          },
+          "name": "Before Begin Trigger"
+        },
+        {
+          "$kind": "Microsoft.ReplaceDialog",
+          "$designer": {
+            "id": "SBLZPY"
+          },
+          "activityProcessed": true,
+          "dialog": "DialogB",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.EmitEvent",
+          "$designer": {
+            "id": "kO3oci"
+          },
+          "handledProperty": "turn.eventHandled",
+          "eventName": "InterruptionEvent",
+          "eventValue": "InterruptionEvent"
+        }
+      ],
+      "entities": []
+    }
+  ],
+  "generator": "DialogA.lg",
+  "recognizer": "DialogA.lu.qna",
+  "id": "DialogA"
+}

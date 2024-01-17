@@ -1,0 +1,272 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "Empty_Bot_0",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Greeting()}"
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "jzIuRy"
+          },
+          "activity": "${SendActivity_jzIuRy()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "6PItzT",
+        "name": "AskForAttachment"
+      },
+      "intent": "AskForAttachment",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ALU4OH"
+          },
+          "activityProcessed": true,
+          "dialog": "AttachmentDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnTypingActivity",
+      "$designer": {
+        "id": "enB8KN",
+        "name": "User is typing (Typing activity)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Bj995M"
+          },
+          "activity": "${SendActivity_Bj995M()}"
+        }
+      ],
+      "condition": true
+    },
+    {
+      "$kind": "Microsoft.OnEventActivity",
+      "$designer": {
+        "id": "LR4B50",
+        "name": "Event received (Event activity)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "adlkiK"
+          },
+          "activity": "${SendActivity_adlkiK()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "4vT31R",
+        "name": "Switch_trigger"
+      },
+      "intent": "Switch_trigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "TaZNMT"
+          },
+          "defaultLocale": "en-us",
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_TaZNMT()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "value",
+          "property": "dialog.choiceOption",
+          "style": "heroCard",
+          "choices": [
+            "Zulassung beantragen",
+            "KFZ abmelden",
+            "Kurzzeitkennzeichen beantragen",
+            "Wunchkennzeichen reservieren"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "xpHyIb"
+          },
+          "activity": "${SendActivity_xpHyIb()}"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "cdINYo"
+          },
+          "condition": "dialog.choiceOption",
+          "cases": [
+            {
+              "value": "Zulassung beantragen",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "ibPc7S",
+                    "comment": ""
+                  },
+                  "activity": "${SendActivity_ibPc7S()}"
+                }
+              ]
+            },
+            {
+              "value": "KFZ abmelden",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "FQqmI6"
+                  },
+                  "activity": "${SendActivity_FQqmI6()}"
+                }
+              ]
+            },
+            {
+              "value": "Kurzzeitkennzeichen beantragen",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "jwsy5J"
+                  },
+                  "activity": "${SendActivity_jwsy5J()}"
+                }
+              ]
+            },
+            {
+              "value": "Wunchkennzeichen reservieren",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "VWiG4N"
+                  },
+                  "activity": "${SendActivity_VWiG4N()}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "inWq4y"
+          },
+          "activity": "${SendActivity_inWq4y()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "CN16mr",
+        "name": "AdaptiveCardErrorTrigger"
+      },
+      "intent": "AdaptiveCardErrorTrigger",
+      "condition": "=#AdaptiveCardErrorTrigger.Score >= 0.80",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ACXFho"
+          },
+          "activityProcessed": true,
+          "dialog": "AdaptiveCardErrorDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnDialogEvent",
+      "$designer": {
+        "id": "Qbl4ac",
+        "name": "customEvent"
+      },
+      "event": "customEvent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "viR7ca"
+          },
+          "activity": "${SendActivity_viR7ca()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Empty_Bot_0.lg",
+  "id": "Empty_Bot_0",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  }
+}

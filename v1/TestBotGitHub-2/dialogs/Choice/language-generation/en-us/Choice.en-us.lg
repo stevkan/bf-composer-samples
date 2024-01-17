@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# ChoicePrompt()
+- Choose one of the following
+# ChoiceInput_Prompt_ZtOU5T()
+- ${ChoicePrompt()}

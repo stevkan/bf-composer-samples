@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_HelpDialog",
+  "applicationId": "=settings.luis.HelpDialog_es_es_lu.appId",
+  "version": "=settings.luis.HelpDialog_es_es_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

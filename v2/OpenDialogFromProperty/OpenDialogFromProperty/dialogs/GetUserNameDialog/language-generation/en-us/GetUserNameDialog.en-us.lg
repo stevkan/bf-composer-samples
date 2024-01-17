@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# TextInput_Prompt_YDjNcU()
+[Activity
+    Text = ${TextInput_Prompt_YDjNcU_text()}
+]
+
+# TextInput_Prompt_YDjNcU_text()
+- What is your name?
+# SendActivity_QM8npt()
+[Activity
+    Text = ${SendActivity_QM8npt_text()}
+]
+
+# SendActivity_QM8npt_text()
+- Thank you, ${user.userName}!

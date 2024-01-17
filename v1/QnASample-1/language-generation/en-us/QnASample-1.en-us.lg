@@ -1,0 +1,14 @@
+[import](common.lg)
+# TextInput_Prompt_FrKsxT()
+[Activity
+    Text = ${expandText(@answer)}
+    SuggestedActions = ${foreach(turn.recognized.answers[0].context.prompts, x, x.displayText)}
+]
+
+# SendActivity_43kbEG()
+- ${expandText(@answer)}
+
+# SendActivity_urPJho()
+[Activity
+    Text = Unknown intent reached.
+]

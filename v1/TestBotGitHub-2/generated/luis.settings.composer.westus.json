@@ -1,0 +1,13 @@
+{
+    "luis": {
+        "Banana_en_us_lu": {
+            "appId": "422c585b-8f77-4a94-b320-d3d362efa446"
+        },
+        "Apple_en_us_lu": {
+            "appId": "67ed4fbb-758f-4a8b-b06e-b602f9b17bea"
+        },
+        "TestBotGitHub_en_us_lu": {
+            "appId": "c791de38-77b7-493d-a336-515343b4bb27"
+        }
+    }
+}

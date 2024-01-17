@@ -1,0 +1,135 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "KffEVF",
+    "name": "WaitDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "lYVAd2"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "Kb61Sk"
+          },
+          "assignments": [
+            {
+              "property": "conversation.utcTime",
+              "value": "=convertFromUTC(turn.activity.timestamp, 'Pacific Standard Time', 'yyyy-MM-dd:hh:mm:ss')"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "BzW3HQ"
+          },
+          "activity": "${SendActivity_BzW3HQ()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "nCuNRK",
+            "name": "Set a property"
+          },
+          "property": "conversation.waitPeriod",
+          "value": "=addSeconds(turn.activity.timestamp, 10, 'yyyy-MM-dd:hh:mm:ss')"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "emObB2"
+          },
+          "activity": "${SendActivity_emObB2()}"
+        },
+        {
+          "id": "wait",
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "qIN6dy"
+          },
+          "cases": [
+            {
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "sANcrH"
+                  },
+                  "activity": "${SendActivity_sANcrH()}"
+                },
+                {
+                  "$kind": "Microsoft.BreakLoop",
+                  "$designer": {
+                    "id": "9ssWp6"
+                  }
+                }
+              ],
+              "value": "true"
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "cNEs6S"
+              },
+              "property": "conversation.utcTime",
+              "value": "=addSeconds(conversation.utcTime, 1, 'yyyy-MM-dd:hh:mm:ss')"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "7IknkO"
+              },
+              "condition": "=if(equals(conversation.waitPeriod, addSeconds(turn.activity.timestamp, 1)), true, false)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "aIq1pA"
+                  },
+                  "activity": "${SendActivity_aIq1pA()}"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "9S9lb5"
+              },
+              "activity": "${SendActivity_9S9lb5()}",
+              "disabled": true
+            },
+            {
+              "$kind": "Microsoft.GotoAction",
+              "$designer": {
+                "id": "4INlwN"
+              },
+              "actionId": "wait"
+            }
+          ],
+          "condition": "=if(equals(conversation.utcTime, conversation.waitPeriod), true, false)"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "rr2Yjs"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "WaitDialog.lg",
+  "recognizer": "WaitDialog.lu.qna",
+  "id": "WaitDialog"
+}

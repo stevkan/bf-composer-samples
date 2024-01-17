@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_MxaVt3()
+[Activity
+    Text = ${SendActivity_MxaVt3_text()}
+]
+
+# SendActivity_MxaVt3_text()
+- In Dialog C
+# TextInput_Prompt_f8o5YW()
+[Activity
+    Text = ${TextInput_Prompt_f8o5YW_text()}
+]
+
+# TextInput_Prompt_f8o5YW_text()
+- What is your favorite season?

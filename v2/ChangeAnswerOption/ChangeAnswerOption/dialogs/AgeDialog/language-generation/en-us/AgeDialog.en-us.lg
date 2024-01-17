@@ -1,0 +1,36 @@
+[import](common.lg)
+
+# TextInput_Prompt_JX1BMm_text()
+- What is your age?
+# TextInput_Prompt_JX1BMm()
+[Activity
+    Text = ${TextInput_Prompt_JX1BMm_text()}
+]
+
+# ConfirmInput_Prompt_PlSmEi_text()
+- Your name is ${dialog.name}, correct?
+# ConfirmInput_Prompt_PlSmEi()
+[Activity
+    Text = ${ConfirmInput_Prompt_PlSmEi_text()}
+]
+
+# SendActivity_6PoMzm_text()
+- Your name is: ${dialog.name}
+# SendActivity_6PoMzm()
+[Activity
+    Text = ${SendActivity_6PoMzm_text()}
+]
+
+# TextInput_Prompt_MPHVdp_text()
+- What is your age?
+# TextInput_Prompt_MPHVdp()
+[Activity
+    Text = ${TextInput_Prompt_MPHVdp_text()}
+]
+
+# ConfirmInput_Prompt_UqdQbp_text()
+- Your age is ${dialog.age}, correct?
+# ConfirmInput_Prompt_UqdQbp()
+[Activity
+    Text = ${ConfirmInput_Prompt_UqdQbp_text()}
+]

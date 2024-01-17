@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_iGHsE6()
+[Activity
+    Text = ${SendActivity_iGHsE6_text()}
+]
+
+# SendActivity_iGHsE6_text()
+- dialog19

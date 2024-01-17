@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_o3kimt_text()
+- Hi ${user.response.name}, according to your responses you are ${user.response.age} and have ${user.response.hairColor} hair.
+# SendActivity_o3kimt()
+[Activity
+    Text = ${SendActivity_o3kimt_text()}
+]

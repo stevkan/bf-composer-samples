@@ -1,0 +1,87 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ZwzbVe",
+    "name": "Dialog1",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "dialogs": [
+    "Dialog2"
+  ],
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "4KM9a3"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "7HIECu"
+          },
+          "activity": "${SendActivity_7HIECu()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "GqnQlg"
+          },
+          "activity": "${SendActivity_GqnQlg()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Nnux4p"
+          },
+          "condition": "=dialog.dynamic",
+          "actions": [
+            {
+              "$kind": "Microsoft.TraceActivity",
+              "$designer": {
+                "id": "s5zWKU"
+              },
+              "name": "DialogToBeStartedTrace1",
+              "label": "DialogToBeStartedTrace1",
+              "value": "=dialog.dialogToBeStarted"
+            },
+            {
+              "$kind": "DynamicDialogLoading",
+              "$designer": {
+                "id": "JAycom"
+              },
+              "dialog": "=dialog.dialogToBeStarted"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.TraceActivity",
+              "$designer": {
+                "id": "IpZOXK"
+              },
+              "name": "DialogToBeStartedTrace2",
+              "label": "DialogToBeStartedTrace2",
+              "value": "=dialog.dialogToBeStarted"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "qxx5bL"
+          },
+          "activityProcessed": true,
+          "options": {},
+          "dialog": "=dialog.dialogToBeStarted"
+        }
+      ]
+    }
+  ],
+  "generator": "Dialog1.lg",
+  "recognizer": "Dialog1.lu.qna",
+  "id": "Dialog1"
+}

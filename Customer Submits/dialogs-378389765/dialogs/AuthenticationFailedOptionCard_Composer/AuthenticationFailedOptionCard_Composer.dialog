@@ -1,0 +1,106 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "eFELMv",
+    "name": "PhoneAuthFailedOptionCard_Composer",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "C9bImo"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "fD5Lwj"
+          },
+          "disabled": false,
+          "maxTurnCount": 4,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_fD5Lwj()}",
+          "property": "user.AlternateOption",
+          "value": "=turn.activity.value.btn"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "5R1HGT"
+          },
+          "condition": "user.AlternateOption",
+          "default": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "2g615H"
+              }
+            }
+          ],
+          "cases": [
+            {
+              "value": "Try Another Phone",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "7DkiEz"
+                  },
+                  "assignments": [
+                    {
+                      "property": "dialog.result.IsCustPhoneAuth",
+                      "value": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "Visit Website",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "o40qGC"
+                  },
+                  "activity": "${SendActivity_o40qGC()}"
+                },
+                {
+                  "$kind": "Microsoft.EndTurn",
+                  "$designer": {
+                    "id": "qdcyjx"
+                  }
+                }
+              ]
+            },
+            {
+              "value": "Chat with a Representative",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "3BA9oJ"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "new_topic_8dae3ba327fc480e8bc097ce6e53525b_954135cafcd647eaae5999ad91fc08cf_talktoagent"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "AuthenticationFailedOptionCard_Composer.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "AuthenticationFailedOptionCard_Composer"
+}

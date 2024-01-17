@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_dv4mGE()
+[Activity
+    Text = ${SendActivity_dv4mGE_text()}
+]
+
+# SendActivity_dv4mGE_text()
+- Replacing dialog...
+# TextInput_Prompt_YjIsr3()
+[Activity
+    Text = ${TextInput_Prompt_YjIsr3_text()}
+]
+
+# TextInput_Prompt_YjIsr3_text()
+- Enter a word.

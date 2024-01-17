@@ -1,0 +1,22 @@
+[import](common.lg)
+
+# SendActivity_wYuVAt_text()
+- User not signed in. Authenticate to continue the conversation.
+# SendActivity_wYuVAt()
+[Activity
+    Text = ${SendActivity_wYuVAt_text()}
+]
+
+# TextInput_Prompt_oj9yMz_text()
+- What is your favorite color?
+# TextInput_Prompt_oj9yMz()
+[Activity
+    Text = ${TextInput_Prompt_oj9yMz_text()}
+]
+
+# SendActivity_Z10OpN_text()
+- I love ${dialog.choice}, too!
+# SendActivity_Z10OpN()
+[Activity
+    Text = ${SendActivity_Z10OpN_text()}
+]

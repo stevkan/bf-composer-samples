@@ -1,0 +1,136 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "KbeZaY",
+    "name": "Dialog_B",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "IiXzVj"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "MFSGZF"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_MFSGZF()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "choices": [
+            {
+              "value": "Yes",
+              "synonyms": [
+                "Yes",
+                "yeah",
+                "definitely",
+                "Yep"
+              ]
+            },
+            {
+              "value": "No",
+              "synonyms": [
+                "no",
+                "nope",
+                "never",
+                "dont"
+              ]
+            }
+          ],
+          "property": "turn.Input"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "kU3VW0"
+          },
+          "condition": "turn.Input",
+          "cases": [
+            {
+              "value": "Yes",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "7kMNb8"
+                  },
+                  "activity": "${SendActivity_7kMNb8()}"
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "Y5TkMu"
+                  },
+                  "property": "conversation.turnEnded",
+                  "value": true
+                },
+                {
+                  "$kind": "Microsoft.EndTurn",
+                  "$designer": {
+                    "id": "vIbeLO"
+                  }
+                },
+                {
+                  "$kind": "Microsoft.EmitEvent",
+                  "$designer": {
+                    "id": "z1UjyJ"
+                  },
+                  "eventName": "EmitTraceEvent",
+                  "bubbleEvent": true,
+                  "eventValue": "TESTVALUE"
+                }
+              ]
+            },
+            {
+              "value": "No",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "OhMRO7"
+                  },
+                  "activity": "${SendActivity_OhMRO7()}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "6vbaxS"
+          },
+          "property": "conversation.turnEnded",
+          "value": false
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SVavoG"
+          },
+          "activity": "${SendActivity_SVavoG()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Dialog_B.lg",
+  "recognizer": "Dialog_B.lu.qna",
+  "id": "Dialog_B"
+}

@@ -1,0 +1,25 @@
+[import](common.lg)
+
+# SendActivity_Welcome
+- ${WelcomeUser()}
+
+
+# TextInput_Prompt_PTq2UH()
+- ${GetUserName()}
+# SendActivity_ZFNf9R()
+- Sure. I have ${user.name}
+# SendActivity_gom6EB()
+[Activity
+    Text = You've already got a random word
+]
+
+# SendActivity_KCp8S2()
+[Activity
+    Text = Your word that does not exist is '${dialog.randomword.content.word.word}' which means ${dialog.randomword.content.word.definition}
+]
+
+
+# SendActivity_tMBl8e()
+[Activity
+    Text = Getting random word, please wait 5 seconds...
+]

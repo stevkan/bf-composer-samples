@@ -1,0 +1,167 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "gBIrlL",
+    "name": "WamTokenLANSA",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "FoVFJ7"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "YjRbFN"
+          },
+          "method": "POST",
+          "url": "https://web.trugreen.com/CGI-BIN/lansaweb?wam=Mission&webrtn=Request&ml=LANSA:XHTML&part=PRD&lang=ENG#",
+          "body": "X_HTTPREQ = {    \"httpMethod\": \"GET\",    \"apiPath\": \"/mission/customer/7006210826/payments\",    \"authToken\": \"${virtualagent.WAM_Output}\"  } ",
+          "headers": {
+            "Authorization": "Bearer Basic neLkpWncp8nDqIsow73zHB=="
+          },
+          "resultProperty": "turn.results",
+          "contentType": "text/json",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "I3pKeO"
+          },
+          "assignments": [
+            {
+              "property": "user.AuthToken",
+              "value": "=virtualagent.WAM_Output"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Gm8N6c"
+          },
+          "condition": "=or(empty(virtualagent.WAM_Output), (turn.results.content.details.CustomerNumber == null))",
+          "actions": [
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "cwpw4P"
+              },
+              "method": "POST",
+              "url": "https://web.trugreen.com/CGI-BIN/lansaweb?wam=Mission&webrtn=Request&ml=LANSA:XHTML&part=PRD&lang=ENG#/mission/login",
+              "body": "X_HTTPREQ = {\"apiPath\":\"/mission/login\",\"grantType\":\"CREDENTIALS\",\"user\":\"SVCPVAMSFT\",\"name\":\"SVCPVAMSFT\",\"password\" : \"CHAT58SKYJ\"}",
+              "headers": {
+                "Authorization": "Bearer Basic neLkpWncp8nDqIsow73zHB=="
+              },
+              "resultProperty": "turn.results",
+              "contentType": "text/json",
+              "responseType": "json"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "906IMP"
+              },
+              "property": "dialog.result.TokenOutput",
+              "value": "=turn.results.content.details.authToken"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "EroiVS"
+              },
+              "assignments": [
+                {
+                  "value": "=turn.results.content.details.authToken",
+                  "property": "dialog.result.TokenOutput"
+                },
+                {
+                  "property": "virtualagent.WAM_Output",
+                  "value": "=turn.results.content.details.authToken"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "DqM2DR"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.result.TokenOutput",
+                  "value": "=virtualagent.WAM_Output"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "cwpw4P"
+          },
+          "method": "POST",
+          "url": "https://web.trugreen.com/CGI-BIN/lansaweb?wam=Mission&webrtn=Request&ml=LANSA:XHTML&part=PRD&lang=ENG#/mission/login",
+          "body": "X_HTTPREQ = {\"apiPath\":\"/mission/login\",\"grantType\":\"CREDENTIALS\",\"user\":\"SVCPVAMSFT\",\"name\":\"SVCPVAMSFT\",\"password\" : \"CHAT58SKYJ\"}",
+          "headers": {
+            "Authorization": "Bearer Basic neLkpWncp8nDqIsow73zHB=="
+          },
+          "resultProperty": "turn.results",
+          "contentType": "text/json",
+          "responseType": "json",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "25Idj4"
+          },
+          "assignments": [
+            {
+              "property": "dialog.result.WAMToken",
+              "value": "=turn.results.content.details.authToken"
+            },
+            {
+              "property": "dialog.Today",
+              "value": "=date(turn.activity.timestamp)"
+            },
+            {
+              "property": "dialog.Tomorrow",
+              "value": "=addDays('${dialog.Today}', 1)"
+            }
+          ],
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "71EFIw"
+          },
+          "assignments": [
+            {
+              "property": "dialog.result.Token",
+              "value": "=turn.results.content.details.authToken"
+            }
+          ],
+          "disabled": true
+        }
+      ],
+      "runOnce": false
+    }
+  ],
+  "generator": "WamTokenLANSA.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "WamTokenLANSA"
+}

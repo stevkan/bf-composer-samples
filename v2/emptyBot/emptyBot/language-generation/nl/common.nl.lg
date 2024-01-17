@@ -1,0 +1,8 @@
+# WelcomeUser
+- Welcome to the EmptyBot sample
+
+# ShowImageSteve(contentUrl, contentType)
+[HeroCard
+    title = Here is the attachment
+    image = ${contentUrl}
+]

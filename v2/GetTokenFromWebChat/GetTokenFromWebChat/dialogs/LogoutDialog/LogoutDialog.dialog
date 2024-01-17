@@ -1,0 +1,63 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "fUTnJe",
+    "name": "LogoutDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "hFsTdT"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "wFT0x6"
+          },
+          "activity": "${SendActivity_wFT0x6()}"
+        },
+        {
+          "$kind": "Microsoft.SignOutUser",
+          "$designer": {
+            "id": "fOFTdp"
+          },
+          "userId": "=user.id"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "ylnrf7"
+          },
+          "assignments": [
+            {
+              "property": "user.id"
+            },
+            {
+              "property": "user.displayName"
+            },
+            {
+              "property": "user.token"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "IdpGAK"
+          },
+          "activity": "${SendActivity_IdpGAK()}"
+        }
+      ]
+    }
+  ],
+  "generator": "LogoutDialog.lg",
+  "recognizer": "LogoutDialog.lu.qna",
+  "id": "LogoutDialog"
+}

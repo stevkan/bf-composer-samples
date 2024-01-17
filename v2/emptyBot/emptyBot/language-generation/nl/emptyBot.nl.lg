@@ -1,0 +1,25 @@
+[import](common.nl.lg)
+
+# SendActivity_Welcome
+- ${WelcomeUser()}
+
+# SendActivity_FP1H2x()
+[Activity
+    Text = Text response here.
+]
+
+# ChoiceInput_Prompt_TCdcZG()
+[Activity
+    Text = ${ChoiceInput_Prompt_TCdcZG_text()}
+]
+
+# ChoiceInput_Prompt_TCdcZG_text()
+- - Open child dialog?
+# ChoiceInput_Prompt_Uybl9R()
+-
+# ChoiceInput_UnrecognizedPrompt_Uybl9R()
+-
+# SendActivity_HhGQNc()
+-
+# SendActivity_WLsx8n()
+-

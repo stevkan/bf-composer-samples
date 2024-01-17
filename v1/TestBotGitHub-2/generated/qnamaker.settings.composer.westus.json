@@ -1,0 +1,8 @@
+{
+    "qna": {
+        "Apple_en_us_qna": "e2023e8c-6caa-46d7-897e-f407da504dca",
+        "hostname": "https://common-qna-svc.azurewebsites.net/qnamaker",
+        "Banana_en_us_qna": "e2023e8c-6caa-46d7-897e-f407da504dca",
+        "TestBotGitHub_en_us_qna": "e2023e8c-6caa-46d7-897e-f407da504dca"
+    }
+}

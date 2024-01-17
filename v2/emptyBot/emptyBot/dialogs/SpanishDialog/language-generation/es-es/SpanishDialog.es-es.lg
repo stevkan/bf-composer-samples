@@ -1,0 +1,22 @@
+[import](common.lg)
+
+# TextInput_Prompt_Ng7drw_text()
+- Como se llama?
+# TextInput_Prompt_Ng7drw()
+[Activity
+    Text = ${TextInput_Prompt_Ng7drw_text()}
+]
+
+# SendActivity_wrSBPU_text()
+- Hola, ${dialog.spanishUserName}!
+# SendActivity_wrSBPU()
+[Activity
+    Text = ${SendActivity_wrSBPU_text()}
+]
+
+# SendActivity_VYEsTZ_text()
+- Thank you for your feedback, senor.
+# SendActivity_VYEsTZ()
+[Activity
+    Text = ${SendActivity_VYEsTZ_text()}
+]

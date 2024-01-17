@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "AuthenticatePhoneNumber_Composer",
+  "type": "object",
+  "properties": {},
+  "$result": {
+    "type": "object",
+    "properties": {
+      "CustomerNumberOutput": {
+        "type": "string",
+        "title": "Customer Number Output"
+      },
+      "IsCustPhoneAuth": {
+        "type": "boolean",
+        "title": "Is Cust Phone Auth"
+      },
+      "Composer_Phone_AddressName": {
+        "type": "string",
+        "title": "Composer Phone Address Name"
+      },
+      "PhoneCustomerId_Composer": {
+        "type": "string",
+        "title": "Phone Customer Id Composer"
+      },
+      "Composer_Phone_AddressFound": {
+        "type": "boolean",
+        "title": "Composer Phone Address Found"
+      }
+    }
+  }
+}

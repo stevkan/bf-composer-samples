@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# SendActivity_e7jgCa()
+[Activity
+Text = ${ArrayResponse()}
+]
+# ChoiceInput_Prompt_k2axkB()
+- What do you want to eat?

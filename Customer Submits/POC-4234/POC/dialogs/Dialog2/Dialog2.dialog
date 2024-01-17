@@ -1,0 +1,59 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "NzVB8r",
+    "name": "Dialog2",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "yRGQCG"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "lyV90W"
+          },
+          "activity": "${SendActivity_lyV90W()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "D2ceVi"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_D2ceVi()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "turn.feeling"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "TXcdsI"
+          },
+          "activityProcessed": true,
+          "dialog": "Dialog6",
+          "options": {
+            "feeling": "=turn.feeling"
+          },
+          "disabled": true
+        }
+      ]
+    }
+  ],
+  "generator": "Dialog2.lg",
+  "recognizer": "Dialog2.lu.qna",
+  "id": "Dialog2"
+}

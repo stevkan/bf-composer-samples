@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_g7X0On()
+[Activity
+    Text = ${SendActivity_g7X0On_text()}
+]
+
+# SendActivity_g7X0On_text()
+- Login successful
+# SendActivity_L0tfeG()
+[Activity
+    Text = ${SendActivity_L0tfeG_text()}
+]
+
+# SendActivity_L0tfeG_text()
+- Unknown!

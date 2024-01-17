@@ -1,0 +1,169 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "adaptivecardsinglepress_0_con_noCount",
+      "description": "",
+      "id": "Ib3ZVh"
+    }
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "s78SyM"
+                  },
+                  "assignments": [
+                    {
+                      "property": "conversation.selectionMade",
+                      "value": false
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "Kbh2UV"
+                  },
+                  "activity": "${SendActivity_Kbh2UV()}"
+                }
+              ],
+              "elseActions": []
+            }
+          ],
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "aF8NMx",
+        "name": "GetRandomWord card"
+      },
+      "condition": "turn.activity.value.triggerIntent == \"GetRandomWord\"",
+      "actions": [
+        {
+          "$kind": "Microsoft.TraceActivity",
+          "$designer": {
+            "id": "0u5xkL"
+          },
+          "name": "In Messaged Received Activity"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "CryDyJ"
+          },
+          "condition": "conversation.selectionMade",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "OdVloc"
+              },
+              "activity": "${SendActivity_OdVloc()}"
+            },
+            {
+              "$kind": "Microsoft.EndTurn",
+              "$designer": {
+                "id": "ldRW3b"
+              }
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "KXBHFm"
+              },
+              "property": "conversation.selectionMade",
+              "value": "true"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "6K8QXv"
+              },
+              "activity": "${SendActivity_6K8QXv()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "K7bO68"
+              },
+              "activity": "${SendActivity_K7bO68()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "EoyrVQ"
+          },
+          "activityProcessed": true,
+          "dialog": "HttpRequest"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "ATljg9",
+        "name": "InputDemo"
+      },
+      "condition": "turn.activity.value.triggerIntent == \"InputDemo\"",
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "PTq2UH"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_PTq2UH()}",
+          "property": "user.name",
+          "value": "=turn.activity.value.userName"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ZFNf9R"
+          },
+          "activity": "${SendActivity_ZFNf9R()}"
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "adaptivecardsinglepress_0_con_nocount.lg",
+  "id": "adaptivecardsinglepress_0_con_nocount",
+  "recognizer": "adaptivecardsinglepress_0_con_nocount.lu.qna"
+}

@@ -1,0 +1,62 @@
+
+> LUIS application information
+> !# @app.versionId = 0.1
+> !# @app.culture = en-us
+> !# @app.luis_schema_version = 3.2.0
+
+
+> # Intent definitions
+
+# HelpTrigger
+- help
+
+
+# ChildTrigger
+- start child
+
+
+# SendImageTrigger
+- send image
+- send pic
+
+
+# EnglishDialog
+- english
+
+
+# TestCancelTrigger
+- test cancel
+
+
+# Base64Trigger
+- base64
+
+
+# ChoiceInput_Response_Uybl9R
+- blue
+- green
+- red
+
+
+# TriggerTest1
+- test trigger
+
+
+# GoToLabelTrigger
+- label
+
+
+> # Entity definitions
+
+
+> # PREBUILT Entity definitions
+
+
+> # Phrase list definitions
+
+
+> # List entities
+
+> # RegEx entities
+
+

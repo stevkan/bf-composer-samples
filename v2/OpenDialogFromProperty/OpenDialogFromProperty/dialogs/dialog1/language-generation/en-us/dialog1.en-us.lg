@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_Q7VSUB()
+[Activity
+    Text = ${SendActivity_Q7VSUB_text()}
+]
+
+# SendActivity_Q7VSUB_text()
+- dialog1

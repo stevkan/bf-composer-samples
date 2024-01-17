@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_CQA_Test_Bot",
+  "applicationId": "=settings.luis.CQA_Test_Bot_en_us_lu.appId",
+  "version": "=settings.luis.CQA_Test_Bot_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

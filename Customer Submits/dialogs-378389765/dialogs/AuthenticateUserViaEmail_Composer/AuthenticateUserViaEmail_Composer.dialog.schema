@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "AuthenticateUserViaEmail_Composer",
+  "type": "object",
+  "properties": {},
+  "$result": {
+    "type": "object",
+    "properties": {
+      "CustomerNumFromEmail": {
+        "type": "string",
+        "title": "Customer Num From Email"
+      },
+      "IsCustEmailAuth": {
+        "type": "boolean",
+        "title": "Is Cust Email Auth"
+      },
+      "UserEmail": {
+        "type": "string",
+        "title": "User Email"
+      },
+      "UserRNGCode": {
+        "type": "string",
+        "title": "User RNG Code"
+      },
+      "Composer_Email_AddressFound": {
+        "type": "boolean",
+        "title": "Composer Email Address Found"
+      },
+      "Composer_Email_Address": {
+        "type": "string",
+        "title": "Composer Email Address"
+      },
+      "Composer_Email_City": {
+        "type": "string",
+        "title": "Composer Email City"
+      },
+      "Composer_Email_State": {
+        "type": "string",
+        "title": "Composer Email State"
+      },
+      "Composer_Email_Zip": {
+        "type": "string",
+        "title": "Composer Email Zip"
+      }
+    }
+  }
+}

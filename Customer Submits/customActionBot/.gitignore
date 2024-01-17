@@ -1,0 +1,7 @@
+# files generated during the lubuild process
+masterbot/generated/
+masterbot/bin/
+masterbot/settings/appsettings.json
+masterbot/obj/
+customAction1/bin/
+customAction1/obj/

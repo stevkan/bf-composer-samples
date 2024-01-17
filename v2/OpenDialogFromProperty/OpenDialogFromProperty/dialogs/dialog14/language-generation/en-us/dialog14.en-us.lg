@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_rZaCyG()
+[Activity
+    Text = ${SendActivity_rZaCyG_text()}
+]
+
+# SendActivity_rZaCyG_text()
+- dialog14

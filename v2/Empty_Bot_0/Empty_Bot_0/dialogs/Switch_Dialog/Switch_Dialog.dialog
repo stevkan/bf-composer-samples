@@ -1,0 +1,122 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "3k4t7j",
+    "name": "SwitchDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "vaTc3R"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "tY6BB1"
+          },
+          "defaultLocale": "en-us",
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_tY6BB1()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "outputFormat": "value",
+          "property": "dialog.choiceOption",
+          "style": "heroCard",
+          "choices": [
+            "Zulassung beantragen",
+            "KFZ abmelden",
+            "Kurzzeitkennzeichen beantragen",
+            "Wunchkennzeichen reservieren"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "gqrLmZ"
+          },
+          "condition": "dialog.choiceOption",
+          "cases": [
+            {
+              "value": "Zulassung beantragen",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "l4dCoB",
+                    "comment": ""
+                  },
+                  "activity": "${SendActivity_l4dCoB()}"
+                }
+              ]
+            },
+            {
+              "value": "KFZ abmelden",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "TOPNLm"
+                  },
+                  "activity": "${SendActivity_TOPNLm()}"
+                }
+              ]
+            },
+            {
+              "value": "Kurzzeitkennzeichen beantragen",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "H6LM2N"
+                  },
+                  "activity": "${SendActivity_H6LM2N()}"
+                }
+              ]
+            },
+            {
+              "value": "Wunchkennzeichen reservieren",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "yodKad"
+                  },
+                  "activity": "${SendActivity_yodKad()}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "fEa6RI"
+          },
+          "activity": "${SendActivity_fEa6RI()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Switch_Dialog.lg",
+  "recognizer": "Switch_Dialog.lu.qna",
+  "id": "Switch_Dialog"
+}

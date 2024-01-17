@@ -1,0 +1,24 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "fNKq3u",
+    "name": "AdaptiveExpressionsDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "VpCNnj"
+      },
+      "actions": []
+    }
+  ],
+  "generator": "AdaptiveExpressionsDialog.lg",
+  "recognizer": "AdaptiveExpressionsDialog.lu.qna",
+  "id": "AdaptiveExpressionsDialog"
+}

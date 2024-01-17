@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_3Cx7vm()
+[Activity
+    Text = ${SendActivity_3Cx7vm_text()}
+]
+
+# SendActivity_3Cx7vm_text()
+- dialog16

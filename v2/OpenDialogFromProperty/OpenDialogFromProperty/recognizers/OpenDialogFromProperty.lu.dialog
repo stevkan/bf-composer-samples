@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_OpenDialogFromProperty",
+  "recognizers": {
+    "en-us": "OpenDialogFromProperty.en-us.lu",
+    "": "OpenDialogFromProperty.en-us.lu"
+  }
+}

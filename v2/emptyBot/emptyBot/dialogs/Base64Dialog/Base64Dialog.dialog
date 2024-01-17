@@ -1,0 +1,43 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "k2lPDi",
+    "name": "Base64Dialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Gk4DEg"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "1lJpBy"
+          },
+          "value": "=base64ToBinary(\"StringToConvert\")",
+          "property": "dialog.myBinaryData"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rPLtRu"
+          },
+          "activity": "${SendActivity_rPLtRu()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Base64Dialog.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "Base64Dialog"
+}

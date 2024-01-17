@@ -1,0 +1,24 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "AXhFlH",
+    "name": "HindiGreetingDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "dRVrjJ"
+      },
+      "actions": []
+    }
+  ],
+  "generator": "HindiGreetingDialog.lg",
+  "recognizer": "HindiGreetingDialog.lu.qna",
+  "id": "HindiGreetingDialog"
+}

@@ -1,0 +1,161 @@
+[import](common.lg)
+
+# TextInput_Prompt_XSIuSt()
+[Activity
+    Text = ${TextInput_Prompt_XSIuSt_text()}
+]
+
+# TextInput_Prompt_XSIuSt_text()
+- Thank you. I’ve sent a text message with a short code to ${virtualagent.UserPhoneNumber}. Please type this code in to continue. Your verification code will expire in 30 minutes. After 30 minutes of inactivity, please close and reopen a new chat to try again.
+# SendActivity_XBA9ux()
+[Activity
+    Attachments = ${json(SendActivity_XBA9ux_attachment_DOinyy())}
+]
+
+# SendActivity_XBA9ux_attachment_DOinyy()
+- ${GenerateListAdaptiveCard("Please select your address", "We will reference this address throughout the entire conversation. If you have questions or need help with a different address, please close and restart the chat conversation.", user.AddressArray)}
+
+# GenerateListAdaptiveCard(title, subtitle, items)
+- ```{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",                    
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${title}",
+                            "size": "Medium",
+                            "horizontalAlignment": "Left",
+                            "weight": "bolder"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${subtitle}",
+                            "wrap": true,
+                            "size": "Small"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Medium",            
+            "horizontalAlignment": "Center",
+            
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",  
+                                       
+                    "items": [
+                        
+                        {
+                        "type": "Container",  
+                                                                     
+                        "items": 
+                        [
+                        
+                      
+                       ${join(foreach(where(items, nonemptyitem, and(nonemptyitem.address != "", nonemptyitem.serviceInd == "SVC", nonemptyitem.customerNumber != "", nonemptyitem.address != null, nonemptyitem.customerStatus == "ACT")), item, SeparateContainer(item.address , item.customerNumber)), ',')}
+                       
+                        ]
+                        }
+
+                    ]
+                }
+            ]
+        }
+    ]
+}```
+
+
+
+# SeparateContainer(a,c)
+- ```{    
+    "type": "Container",
+            "items": 
+            [
+                {
+                    "type": "ActionSet",
+                    "actions": 
+                    [
+                        {
+                            "type": "Action.Submit",
+                            "title": "${a}",
+                            "data": 
+                            {
+                                "customerNumber" : "${c}"
+                            }
+                        }
+                    ]
+                }
+            ]
+}```
+
+
+# SendActivity_hu36Vy()
+[Activity
+    Text = ${SendActivity_hu36Vy_text()}
+]
+
+# SendActivity_hu36Vy_text()
+- Sorry, that did not match. I was unable to authenticate your account. Please try again.
+# TextInput_Prompt_h8ZcxH()
+[Activity
+    Text = ${TextInput_Prompt_h8ZcxH_text()}
+]
+
+# TextInput_Prompt_h8ZcxH_text()
+- placeholder
+
+# SendActivity_I7oPO0()
+[Activity
+    Text = ${SendActivity_I7oPO0_text()}
+]
+
+# SendActivity_I7oPO0_text()
+- Sorry, that did not match. I was unable to authenticate your account. Please try again.
+# SendActivity_CigYpb()
+[Activity
+    Text = ${SendActivity_CigYpb_text()}
+]
+
+# SendActivity_CigYpb_text()
+- Test
+
+# TextInput_Prompt_qzpJzZ()
+[Activity
+    Attachments = ${json(TextInput_Prompt_qzpJzZ_attachment_NWlYwG())}
+]
+
+# TextInput_Prompt_qzpJzZ_attachment_NWlYwG()
+> To learn more about the LG file format, read the documentation at
+> https://aka.ms/lg-file-format
+- ${SendActivity_XBA9ux_attachment_DOinyy()}
+
+# SendActivity_h4Bj1V()
+[Activity
+    Text = ${SendActivity_h4Bj1V_text()}
+]
+
+# SendActivity_h4Bj1V_text()
+- ```CustomerID: ${dialog.result.Composer_Phone_CustomerID} :  ${turn.activity.value.item.customerNumber} :
+${user.Composer_Phone_CustID} 
+AddressName: ${dialog.result.Composer_Phone_AddressName}```
+# SendActivity_IlOoNF()
+[Activity
+    Text = ${SendActivity_IlOoNF_text()}
+]
+
+# SendActivity_IlOoNF_text()
+- ```CustomerID: ${dialog.result.Composer_Phone_CustomerID} :  ${turn.activity.value.item.customerNumber} :
+${user.Composer_Phone_CustID} 
+AddressName: ${dialog.result.Composer_Phone_AddressName}```

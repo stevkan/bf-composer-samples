@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_SwitchDefaultNotExecuting",
+  "recognizers": {
+    "en-us": "SwitchDefaultNotExecuting.en-us.lu",
+    "": "SwitchDefaultNotExecuting.en-us.lu"
+  }
+}

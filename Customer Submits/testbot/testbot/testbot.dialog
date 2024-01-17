@@ -1,0 +1,111 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "testbot",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "He4sP6",
+        "name": "Greeting (ConversationUpdate activity)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "name": "Loop: For each item",
+            "description": "",
+            "id": "NcCNch"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "name": "Branch: If/else",
+                "description": "",
+                "id": "bSZ41T"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "name": "Send a response",
+                    "description": "",
+                    "id": "qqo3gE"
+                  },
+                  "activity": "${SendActivity_qqo3gE()}"
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "hygMHZ",
+        "name": "Unknown intent"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "hEHCxo"
+          },
+          "activity": "${SendActivity_hEHCxo()}"
+        }
+      ],
+      "condition": "=#None.Score >= 0.30"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "EEJH69",
+        "name": "AddToArrayTrigger"
+      },
+      "intent": "AddToArrayTrigger",
+      "condition": "=#AddToArrayTrigger.Score >= 0.80",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "A1HE9U"
+          },
+          "activityProcessed": true,
+          "dialog": "AddToArrayDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "wyAC5a",
+        "name": "exceptionTrigger"
+      },
+      "intent": "exceptionTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "3HsKMB"
+          },
+          "activityProcessed": true,
+          "dialog": "ExceptionDialog"
+        }
+      ],
+      "condition": "=#exceptionTrigger.Score >= 0.80"
+    }
+  ],
+  "generator": "testbot.lg",
+  "id": "testbot",
+  "recognizer": "testbot.lu.qna"
+}

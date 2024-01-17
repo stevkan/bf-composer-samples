@@ -1,0 +1,20 @@
+[import](common.lg)
+
+# SendActivity_m0JKb4()
+- ${StopBananaDialog()}
+# UnknownBanana()
+[Activity
+    Text = Unknown banana
+]
+
+# SendActivity_ouPxNo()
+- ${UnknownBanana()}
+# StopBananaDialog()
+[Activity
+    Text = Stopping this dialog (banana)
+]
+
+# BananaPrompt()
+- ${QuestionPrompt()}
+# TextInput_Prompt_TPSRIm()
+- ${BananaPrompt()}

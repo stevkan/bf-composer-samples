@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_GFj6Gv()
+[Activity
+    Text = ${SendActivity_GFj6Gv_text()}
+]
+
+# SendActivity_GFj6Gv_text()
+- dialog10

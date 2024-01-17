@@ -1,0 +1,25 @@
+[import](common.lg)
+
+# SendActivity_eogj6E_text()
+- Received Channel Data: ${turn.activity.channelData.oauthAccessToken}
+# SendActivity_eogj6E()
+[Activity
+    Text = ${SendActivity_eogj6E_text()}
+]
+
+# SendActivity_j7VX19_text()
+- GetToken Conversation.Ref: ${conversation.ref}
+# SendActivity_j7VX19()
+[Activity
+    Text = ${SendActivity_j7VX19_text()}
+]
+
+# SendActivity_6v2dg6_text()
+- OauthAccessToken does not exist
+# SendActivity_6v2dg6()
+[Activity
+    Text = ${SendActivity_6v2dg6_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to your bot.

@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# TextInput_Prompt_OgPnDD()
+[Activity
+    Text = ${expandText(@answer)}
+    SuggestedActions = ${foreach(turn.recognized.answers[0].context.prompts, x, x.displayText)}
+]
+
+# SendActivity_zx4UCb()
+- ${expandText(@answer)}
+
+# UnknownApple()
+[Activity
+    Text = Unknown apple
+]
+# SendActivity_UAXNpu()
+- ${UnknownApple()}
+# ApplePrompt()
+- ${QuestionPrompt()}
+# StopAppleDialog()
+[Activity
+    Text = Stopping this dialog (apple)
+]
+
+# SendActivity_9uSQ0P()
+- ${StopAppleDialog()}
+# SendActivity_ZaxUDk()
+- ${ApplePrompt()}
+# SendActivity_VCsDLt()
+-

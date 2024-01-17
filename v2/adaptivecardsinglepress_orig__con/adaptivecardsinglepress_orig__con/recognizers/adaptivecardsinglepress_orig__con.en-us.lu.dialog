@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_adaptivecardsinglepress_orig__con",
+  "applicationId": "=settings.luis.adaptivecardsinglepress_orig__con_en_us_lu.appId",
+  "version": "=settings.luis.adaptivecardsinglepress_orig__con_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

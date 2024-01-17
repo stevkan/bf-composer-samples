@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# TextInput_Prompt_otIJjw()
+[Activity
+    Text = ${TextInput_Prompt_otIJjw_text()}
+]
+
+# TextInput_Prompt_otIJjw_text()
+- What is your name?
+# ConfirmInput_Prompt_iaUzga_text()
+- Your name is ${dialog.name}, correct?
+# ConfirmInput_Prompt_iaUzga()
+[Activity
+    Text = ${ConfirmInput_Prompt_iaUzga_text()}
+]

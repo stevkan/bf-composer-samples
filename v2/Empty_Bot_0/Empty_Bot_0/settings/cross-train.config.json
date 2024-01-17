@@ -1,0 +1,14 @@
+{
+  "Empty_Bot_0.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "AskForAttachment": [
+        "AttachmentDialog.en-us"
+      ],
+      "Switch_trigger": "",
+      "AdaptiveCardErrorTrigger": [
+        "AdaptiveCardErrorDialog.en-us"
+      ]
+    }
+  }
+}

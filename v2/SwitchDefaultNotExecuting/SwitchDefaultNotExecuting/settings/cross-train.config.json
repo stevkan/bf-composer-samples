@@ -1,0 +1,18 @@
+{
+  "SwitchDefaultNotExecuting.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "SwitchTrigger": [
+        "SwitchDialog.en-us"
+      ]
+    }
+  },
+  "SwitchDialog.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "TestTrigger": [
+        "WaitDialog.en-us"
+      ]
+    }
+  }
+}

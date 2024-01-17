@@ -1,0 +1,134 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "CQA_Test_Bot",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "comment": "This trigger runs when a conversation update activity is sent to the bot. This indicates a user or bot being added or removed from a conversation."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item",
+            "comment": "For each member added to the conversation."
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else",
+                "comment": "Checks that that member added ID does not match the bot ID. This prevents the greeting message from being sent when the bot is added to a conversation."
+              },
+              "condition": "=string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Greeting()}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u",
+        "comment": "This trigger fires when an incoming activity is not handled by any other trigger."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kMjqz1",
+            "comment": "It is recommended to show a message to the user when the bot does not know how to handle an incoming activity and provide follow up options or a help message."
+          },
+          "activity": "${SendActivity_DidNotUnderstand()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "b6hpCX",
+        "name": "IsCoffeeTrigger"
+      },
+      "intent": "CoffeeRequest",
+      "condition": "=turn.recognized.score >= 0.9",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "pPa6eV"
+          },
+          "activityProcessed": true,
+          "dialog": "CoffeeDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "oqMPhe",
+        "name": "IsMenuTrigger"
+      },
+      "intent": "MenuRequest",
+      "condition": "=turn.recognized.score >= 0.9",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "52O7Tr"
+          },
+          "activityProcessed": true,
+          "dialog": "MenuDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "sTVIfB",
+        "name": "IsJuiceRequest"
+      },
+      "intent": "JuiceRequest",
+      "condition": "=turn.recognized.score >= 0.9",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "8SUNDC"
+          },
+          "activityProcessed": true,
+          "dialog": "JuiceDialog"
+        }
+      ]
+    }
+  ],
+  "generator": "CQA_Test_Bot.lg",
+  "id": "CQA_Test_Bot",
+  "recognizer": {
+    "$kind": "Microsoft.CluRecognizer",
+    "projectName": "common-clu",
+    "endpoint": "https://common-language-service.cognitiveservices.azure.com/",
+    "endpointKey": "801828c935504cb6aff4a59ea06043d1",
+    "deploymentName": "MenuDeployment"
+  }
+}

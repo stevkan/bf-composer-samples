@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_GetTokenFromWebChat",
+  "recognizers": {
+    "en-us": "GetTokenFromWebChat.en-us.lu",
+    "": "GetTokenFromWebChat.en-us.lu"
+  }
+}

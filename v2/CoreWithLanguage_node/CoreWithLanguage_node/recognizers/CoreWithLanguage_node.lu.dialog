@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_CoreWithLanguage_node",
+  "recognizers": {
+    "en-us": "CoreWithLanguage_node.en-us.lu",
+    "": "CoreWithLanguage_node.en-us.lu"
+  }
+}

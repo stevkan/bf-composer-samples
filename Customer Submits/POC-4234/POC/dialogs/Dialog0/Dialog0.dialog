@@ -1,0 +1,40 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "9c3bAr",
+    "name": "Dialog0",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "puIlVw"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "r1EFOR"
+          },
+          "activity": "${SendActivity_r1EFOR()}"
+        },
+        {
+          "$kind": "Microsoft.ReplaceDialog",
+          "$designer": {
+            "id": "MqQpA3"
+          },
+          "activityProcessed": true,
+          "dialog": "POC"
+        }
+      ]
+    }
+  ],
+  "generator": "Dialog0.lg",
+  "recognizer": "Dialog0.lu.qna",
+  "id": "Dialog0"
+}

@@ -1,0 +1,117 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "YXp0aC",
+    "name": "OauthDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "qALnVz"
+      },
+      "actions": [
+        {
+          "id": "VerifyToken",
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "1Yed2W",
+            "comment": "Tests if user.token is populated or not. If true, then continue with testing if the token is valid. If false, ask the user to sign in."
+          },
+          "condition": "=not(empty(user.token))",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "7NhPpY",
+                "comment": "Used for debugging only."
+              },
+              "activity": "${SendActivity_7NhPpY()}",
+              "disabled": true
+            },
+            {
+              "$kind": "Microsoft.Graph.User.GetProfile",
+              "$designer": {
+                "id": "Z0hVxn",
+                "comment": "This is used to verify the token is valid. An invalid token will cause the Graph request to fail and break the conversation returning the flow back to the parent dialog.\n\nTo capture this type of error, the Dialog events => Error occurred (Error event) trigger could be used to logically redirect the conversation flow to an appropriate next step. For instance, clearing the user properties and restarting the OauthDialog to force login."
+              },
+              "token": "=user.token",
+              "resultProperty": "turn.result"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "196G3b",
+                "comment": "Assigns the user's profile id and displayName to the user state bucket."
+              },
+              "assignments": [
+                {
+                  "property": "user.id",
+                  "value": "=turn.result.id"
+                },
+                {
+                  "property": "user.displayName",
+                  "value": "=turn.result.displayName"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "id": "redirect",
+              "$kind": "Microsoft.OAuthInput",
+              "$designer": {
+                "id": "FK9Cjj"
+              },
+              "timeout": 900000,
+              "maxTurnCount": 3,
+              "allowInterruptions": true,
+              "connectionName": "KanOAuth",
+              "text": "Please sign in",
+              "title": "Sign In",
+              "property": "user.token",
+              "alwaysPrompt": false,
+              "defaultValue": "="
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "tMTYH7",
+                "comment": "The token is stored in the 'token property' specified in the OAuth login prompt and takes the form of [stateBucket].token.token. For example, if the token property is 'user.token', the actual token value will be stored in 'user.token.token'. (Other token properties will also be stored in 'user.token' alongside the token).\n\nThis reassigns the token value to just the user.token property."
+              },
+              "assignments": [
+                {
+                  "property": "user.token",
+                  "value": "=user.token.token"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.GotoAction",
+              "$designer": {
+                "id": "mhGF8t",
+                "comment": "This sends the process back to the top of the if/else conditional. If sign in was successful, then user.token shouldn't be empty and the verification should continue."
+              },
+              "actionId": "VerifyToken"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "TB7mwb"
+          },
+          "activity": "${SendActivity_TB7mwb()}"
+        }
+      ]
+    }
+  ],
+  "generator": "OauthDialog.lg",
+  "recognizer": "OauthDialog.lu.qna",
+  "id": "OauthDialog"
+}

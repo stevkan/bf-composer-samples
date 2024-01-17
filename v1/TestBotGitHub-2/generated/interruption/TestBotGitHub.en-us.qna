@@ -1,0 +1,20 @@
+# ? How deep is the sea?
+
+**Filters:**
+- dialogName=TestBotGitHub
+
+```
+So deep!
+```
+
+> Source: cross training. Please do not edit these directly!
+> !# @qna.pair.source = crosstrained
+
+# ? \#Finish
+
+**Filters:**
+- dialogName=TestBotGitHub
+
+```
+intent=DeferToRecognizer_LUIS_TestBotGitHub
+```

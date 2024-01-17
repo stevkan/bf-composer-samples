@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_8wKYzz()
+[Activity
+    Text = ${SendActivity_8wKYzz_text()}
+]
+
+# SendActivity_8wKYzz_text()
+- You said: ${turn.activity.text}

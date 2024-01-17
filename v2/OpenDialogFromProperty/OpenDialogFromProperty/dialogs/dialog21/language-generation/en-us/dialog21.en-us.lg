@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_FH6esJ()
+[Activity
+    Text = ${SendActivity_FH6esJ_text()}
+]
+
+# SendActivity_FH6esJ_text()
+- dialog21

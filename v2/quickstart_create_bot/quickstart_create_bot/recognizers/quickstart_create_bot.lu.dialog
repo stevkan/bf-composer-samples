@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_quickstart_create_bot",
+  "recognizers": {
+    "en-us": "quickstart_create_bot.en-us.lu",
+    "": "quickstart_create_bot.en-us.lu"
+  }
+}

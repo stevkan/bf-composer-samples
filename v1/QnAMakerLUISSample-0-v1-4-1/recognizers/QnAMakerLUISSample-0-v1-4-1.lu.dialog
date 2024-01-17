@@ -1,0 +1,5 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_QnAMakerLUISSample-0-v1-4-1",
+  "recognizers": {}
+}

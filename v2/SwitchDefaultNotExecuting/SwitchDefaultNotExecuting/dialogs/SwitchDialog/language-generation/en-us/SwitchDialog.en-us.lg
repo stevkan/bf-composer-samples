@@ -1,0 +1,22 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_GPm6qy()
+[Activity
+    Text = ${ChoiceInput_Prompt_GPm6qy_text()}
+]
+
+# ChoiceInput_Prompt_GPm6qy_text()
+- Please pick an option
+# SendActivity_1ga1Ex()
+[Activity
+    Text = ${SendActivity_1ga1Ex_text()}
+]
+
+# SendActivity_1ga1Ex_text()
+- "1" reached
+# SendActivity_5kVcBs_text()
+- Default reached
+# SendActivity_5kVcBs()
+[Activity
+    Text = ${SendActivity_5kVcBs_text()}
+]

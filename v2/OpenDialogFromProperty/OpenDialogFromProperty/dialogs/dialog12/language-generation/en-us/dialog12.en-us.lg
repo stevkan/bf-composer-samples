@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_n5WsDp()
+[Activity
+    Text = ${SendActivity_n5WsDp_text()}
+]
+
+# SendActivity_n5WsDp_text()
+- dialog12

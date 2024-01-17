@@ -1,0 +1,5 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_Empty_Node_Bot_2",
+  "recognizers": {}
+}

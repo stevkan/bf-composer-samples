@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "kiamw7",
+    "name": "SayHelloDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "gEnOsx"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kXCpu5"
+          },
+          "activity": "${SendActivity_kXCpu5()}"
+        }
+      ]
+    }
+  ],
+  "generator": "SayHelloDialog.lg",
+  "recognizer": "SayHelloDialog.lu.qna",
+  "id": "SayHelloDialog"
+}

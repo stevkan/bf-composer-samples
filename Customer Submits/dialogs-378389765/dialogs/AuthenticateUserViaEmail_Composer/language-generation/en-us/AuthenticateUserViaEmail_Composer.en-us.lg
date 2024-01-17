@@ -1,0 +1,141 @@
+[import](common.lg)
+
+# TextInput_Prompt_eT5VQC()
+[Activity
+    Text = ${TextInput_Prompt_eT5VQC_text()}
+]
+
+# TextInput_Prompt_eT5VQC_text()
+- Thank you. I've sent an email with a short code to ${virtualagent.UserEmailInput}. If you don't see anything in your inbox from TruGreen Virtual Assistant, please check your spam folder. Please type this code in to continue. Your verification code will expire in 30 minutes. After 30 minutes of inactivity, please closes and reopen a new chat to try again.
+# SendActivity_ddApd0()
+[Activity
+    Text = ${SendActivity_ddApd0_text()}
+]
+
+# SendActivity_ddApd0_text()
+- I found **${user.CustomerAddress}** as your address.
+
+# SendActivity_EAD9ux()
+[Activity
+    Attachments = ${json(SendActivity_EAC9ux_attachment_EAinyy())}
+]
+# GenerateListEmailAC(title, subtitle, items)
+- ```{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",                    
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${title}",
+                            "size": "Medium",
+                            "horizontalAlignment": "Left",
+                            "weight": "bolder"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${subtitle}",
+                            "wrap": true,
+                            "size": "Small"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Medium",            
+            "horizontalAlignment": "Center",
+            
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",  
+                                       
+                    "items": [
+                        
+                        {
+                        "type": "Container",  
+                                                                     
+                        "items": 
+                        [
+                        
+                      
+                      ${join(foreach(where(items, nonemptyitem, and(nonemptyitem.X_ADRSTA != "", nonemptyitem.W_SVC != "false")), item, SeparateContainerEmail(item.X_ADRSTA , item.CUSNUM)), ',')}
+                       
+                        ]
+                        }
+
+                    ]
+                }
+            ]
+        }
+    ]
+}```
+
+
+# SeparateContainerEmail(a,c)
+- ```{    
+    "type": "Container",
+            "items": 
+            [
+                {
+                    "type": "ActionSet",
+                    "actions": 
+                    [
+                        {
+                            "type": "Action.Submit",
+                            "title": "${a}",
+                            "data": 
+                            {
+                                "CUSNUM" : "${c}" 
+                            }
+                        }
+                    ]
+                }
+            ]
+}```
+
+# SendActivity_EXWsm4()
+[Activity
+    Text = ${SendActivity_EXWsm4_text()}
+]
+
+# SendActivity_EXWsm4_text()
+- One moment while I look up your information...
+# SendActivity_dtsD3e()
+[Activity
+    Text = ${SendActivity_dtsD3e_text()}
+]
+
+# SendActivity_dtsD3e_text()
+- Sorry, that did not match. I was unable to authenticate your account. Please try again.
+
+# SendActivity_67TFE3()
+[Activity
+    Text = ${SendActivity_67TFE3_text()}
+]
+
+# SendActivity_67TFE3_text()
+- End of Composer Dialog
+
+# TextInput_Prompt_NPDpd4()
+[Activity
+    Attachments = ${json(TextInput_Prompt_NPDpd4_attachment_ahU2qF())}
+]
+
+# TextInput_Prompt_NPDpd4_attachment_ahU2qF()
+> To learn more about the LG file format, read the documentation at
+> https://aka.ms/lg-file-format
+- ${SendActivity_EAC9ux_attachment_EAinyy()}
+
+
+# SendActivity_EAC9ux_attachment_EAinyy()
+- ${GenerateListEmailAC("Please select your address", "We will reference this address throughout the entire conversation. If you have questions or need help with a different address, please close and restart the chat conversation.", user.AddressList)}

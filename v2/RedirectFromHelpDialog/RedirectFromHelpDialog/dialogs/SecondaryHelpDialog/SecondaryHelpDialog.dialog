@@ -1,0 +1,40 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "a2Wf8G",
+    "name": "SecondaryHelpDialog",
+    "comment": ""
+  },
+  "autoEndDialog": false,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "IRdMdF"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "1n9fVJ"
+          },
+          "activity": "${SendActivity_1n9fVJ()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "rowmSH"
+          },
+          "activityProcessed": true,
+          "dialog": "DialogB"
+        }
+      ]
+    }
+  ],
+  "generator": "SecondaryHelpDialog.lg",
+  "recognizer": "SecondaryHelpDialog.lu.qna",
+  "id": "SecondaryHelpDialog"
+}

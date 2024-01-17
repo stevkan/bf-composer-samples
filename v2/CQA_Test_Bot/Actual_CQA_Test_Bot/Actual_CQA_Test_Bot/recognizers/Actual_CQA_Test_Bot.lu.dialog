@@ -1,0 +1,5 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_Actual_CQA_Test_Bot",
+  "recognizers": {}
+}

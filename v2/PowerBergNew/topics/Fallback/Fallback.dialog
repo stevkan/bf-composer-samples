@@ -1,0 +1,10 @@
+{
+  "$kind": "Microsoft.VirtualAgents.Topic",
+  "$designer": {
+    "name": "Fallback",
+    "description": "System topic that includes content and behavior for when the bot can't determine the user's intent. Also includes the variable UnrecognizedTriggerPhrase to capture the unrecognized input.",
+    "link": "https://web.powerva.microsoft.com/environments/Default-8af59001-d23c-4c4f-9e49-eca878ce569f/bots/1df6295b-bca9-4c92-afc8-1cfa7e1cef83/dialog/new_topic_1df6295bbca94c92afc81cfa7e1cef83_7620a288bb3e455984cace1ade5e259c_fallback"
+  },
+  "id": "new_topic_1df6295bbca94c92afc81cfa7e1cef83_7620a288bb3e455984cace1ade5e259c_fallback",
+  "isSystemTopic": true
+}

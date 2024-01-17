@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_DXOG3Y()
+[Activity
+    Text = ${SendActivity_DXOG3Y_text()}
+]
+
+# SendActivity_DXOG3Y_text()
+- dialog17

@@ -1,0 +1,40 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_tY6BB1()
+[Activity
+    Text = Pick an options!
+]
+
+# SendActivity_l4dCoB()
+[Activity
+    Text = ${SendActivity_l4dCoB_text()}
+]
+
+# SendActivity_TOPNLm()
+[Activity
+    Text = ${SendActivity_TOPNLm_text()}
+]
+
+# SendActivity_H6LM2N()
+[Activity
+    Text = ${SendActivity_H6LM2N_text()}
+]
+
+# SendActivity_fEa6RI()
+[Activity
+    Text = You chose ${dialog.choiceOption}...
+]
+
+# SendActivity_l4dCoB_text()
+- Zulassung beantragen
+# SendActivity_TOPNLm_text()
+- KFZ abmelden
+# SendActivity_H6LM2N_text()
+- Kurzzeitkennzeichen beantragen
+# SendActivity_yodKad()
+[Activity
+    Text = ${SendActivity_yodKad_text()}
+]
+
+# SendActivity_yodKad_text()
+- Wunchkennzeichen reservieren

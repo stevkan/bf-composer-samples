@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "ORCHESTRATOR_RootBot",
+  "recognizers": {
+    "en-us": "RootBot.en-us.lu",
+    "": "RootBot.en-us.lu"
+  }
+}

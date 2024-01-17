@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# SendActivity_7NhPpY()
+[Activity
+    Text = ${SendActivity_7NhPpY_text()}
+]
+
+# SendActivity_7NhPpY_text()
+- ${if(not(empty(user.token)), 'Token present', 'Token not present')}
+# SendActivity_TB7mwb_text()
+- User ${user.displayName} is signed in and can access approved resources.
+# SendActivity_TB7mwb()
+[Activity
+    Text = ${SendActivity_TB7mwb_text()}
+]

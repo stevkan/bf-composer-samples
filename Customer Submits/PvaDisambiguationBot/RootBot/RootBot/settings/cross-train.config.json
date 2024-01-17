@@ -1,0 +1,8 @@
+{
+  "RootBot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "Build Test Bot": ""
+    }
+  }
+}

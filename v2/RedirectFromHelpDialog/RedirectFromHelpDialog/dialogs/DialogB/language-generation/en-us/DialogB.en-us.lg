@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# SendActivity_3Maebf()
+[Activity
+    Text = ${SendActivity_3Maebf_text()}
+]
+
+# SendActivity_3Maebf_text()
+- In Dialog B
+# TextInput_Prompt_2G0I9T_text()
+- What is your favorite number?
+# TextInput_Prompt_2G0I9T()
+[Activity
+    Text = ${TextInput_Prompt_2G0I9T_text()}
+]

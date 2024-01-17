@@ -1,0 +1,24 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "bss6oZ",
+    "name": "EventDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "061rck"
+      },
+      "actions": []
+    }
+  ],
+  "generator": "EventDialog.lg",
+  "recognizer": "EventDialog.lu.qna",
+  "id": "EventDialog"
+}

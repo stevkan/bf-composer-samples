@@ -1,0 +1,412 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "xk1SgH",
+    "name": "AuthenticatePhoneNumber_Composer",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "okf5HW"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "LdA236"
+          },
+          "assignments": [
+            {
+              "property": "user.AreaCode",
+              "value": "=substring(virtualagent.UserPhoneNumber, 0, 3)"
+            },
+            {
+              "property": "user.PhoneNoAreaCode",
+              "value": "=substring(virtualagent.UserPhoneNumber, 3, 7)"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "7JMDgl"
+          },
+          "properties": [
+            "dialog.result.IsCustPhoneAuth",
+            "dialog.result.CustomerNumberOutput",
+            "dialog.result.Composer_Phone_AddressName"
+          ]
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "HiV8M8"
+          },
+          "method": "POST",
+          "url": "https://azpapi1dcbt.azure-api.net/search_party",
+          "body": {
+            "search_party": {
+              "logon": {
+                "action": "SearchParty",
+                "name": "SVCPVAMSFT",
+                "id": "SVCPVAMSFT",
+                "password": "chat58skyj"
+              },
+              "search": {
+                "addressId": 0,
+                "addressSid": 0,
+                "id": 1,
+                "phone": "${user.PhoneNoAreaCode}",
+                "phoneArea": "${user.AreaCode}",
+                "phoneSid": 1
+              }
+            }
+          },
+          "headers": {
+            "Ocp-Apim-Subscription-Key": "d2b2c2eba7f04260bf4a2b46466bcbb6"
+          },
+          "contentType": "application/json",
+          "responseType": "json",
+          "resultProperty": "turn.results"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "eCW5fD"
+          },
+          "assignments": [
+            {
+              "property": "user.AddressAPI",
+              "value": "=turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.partyList[0].address"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "srV50V"
+          },
+          "assignments": [
+            {
+              "property": "user.AddressAPI",
+              "value": "=turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.partyList[0].address"
+            },
+            {
+              "property": "user.AddressIDAPI",
+              "value": "=turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.partyList[0].addressId"
+            },
+            {
+              "property": "user.CityAPI",
+              "value": "=turn.results.content.city"
+            },
+            {
+              "property": "user.StateAPI",
+              "value": "=turn.results.content.state"
+            },
+            {
+              "property": "user.AreaCodeAPI",
+              "value": "=turn.results.content.areaCode"
+            },
+            {
+              "property": "dialog.SearchPartyAPI",
+              "value": "=turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.partyList"
+            },
+            {
+              "property": "user.CustomerNumber",
+              "value": "=turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.partyList[0].customerNumber"
+            },
+            {
+              "property": "dialog.Message",
+              "value": "=turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.messages[0].message"
+            }
+          ],
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "R4Yitr"
+          },
+          "assignments": [
+            {
+              "property": "user.AddressCount",
+              "value": "=count(turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.partyList)"
+            },
+            {
+              "property": "user.AddressArray",
+              "value": "=turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.partyList"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "mWNrs8"
+          },
+          "condition": "=(turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.messages[0].message == \"0 Entries found\")",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "04M0Ds"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.result.IsCustPhoneAuth",
+                  "value": false
+                },
+                {
+                  "property": "dialog.result.Composer_Phone_AddressFound",
+                  "value": false
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "BddhOf"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.result.UserAuthenticated_Composer",
+                  "value": false
+                },
+                {
+                  "property": "virtualagent.IsUserAuthenticated",
+                  "value": false
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "keUCZ1"
+              },
+              "activityProcessed": true,
+              "dialog": "AuthenticationFailedOptionCard_Composer"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "JazUaK"
+              },
+              "method": "POST",
+              "url": "https://prod-63.westus.logic.azure.com:443/workflows/c820daf8c80a4147b5432bb2e367f81e/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=uPZoYyp53vs4N-Ah0uWgnw4jtmlRbehbvP3yK1ZcJXA",
+              "body": {
+                "userInputPhoneNumber": "${virtualagent.UserPhoneNumber}"
+              },
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "resultProperty": "turn.results",
+              "contentType": "application/json",
+              "responseType": "json"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "t6PwMA"
+              },
+              "assignments": [
+                {
+                  "property": "user.SMSVerificationCode",
+                  "value": "=turn.results.content.SMScode"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "4rVdWa"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.result.Composer_Phone_AddressFound",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "XSIuSt"
+              },
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_XSIuSt()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "user.SMSRNGInput"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "KRqhEY"
+              },
+              "condition": "=user.SMSVerificationCode == user.SMSRNGInput",
+              "actions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "PA4ZdP"
+                  },
+                  "condition": "=user.AddressCount > 1",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.TextInput",
+                      "$designer": {
+                        "id": "qzpJzZ"
+                      },
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": false,
+                      "allowInterruptions": false,
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "prompt": "${TextInput_Prompt_qzpJzZ()}",
+                      "property": "dialog.result.CustomerNumberOutput",
+                      "value": "=turn.activity.value.customerNumber"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "pyNW9c"
+                      },
+                      "assignments": [
+                        {
+                          "property": "dialog.result.IsCustPhoneAuth",
+                          "value": true
+                        },
+                        {
+                          "property": "virtualagent.IsUserAuthenticated",
+                          "value": true
+                        },
+                        {
+                          "property": "virtualagent.UserAuthenticated_Phone",
+                          "value": "=virtualagent.UserPhoneNumber"
+                        },
+                        {
+                          "property": "dialog.result.Composer_Phone_AddressName",
+                          "value": "=turn.activity.value.nonemptyitem.address"
+                        },
+                        {
+                          "property": "user.Composer_Phone_CustID",
+                          "value": "=turn.activity.value.nonemptyitem.customerNumber"
+                        }
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "h4Bj1V"
+                      },
+                      "activity": "${SendActivity_h4Bj1V()}"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "0R7mVn"
+                      },
+                      "assignments": [
+                        {
+                          "property": "dialog.result.CustomerNumberOutput",
+                          "value": "=turn.results.content.search_partyResponse.search_partyReturn.partyListlOut.partyList[0].customerNumber"
+                        },
+                        {
+                          "property": "dialog.result.IsCustPhoneAuth",
+                          "value": true
+                        },
+                        {
+                          "property": "virtualagent.IsUserAuthenticated",
+                          "value": true
+                        },
+                        {
+                          "property": "virtualagent.UserAuthenticated_Phone",
+                          "value": "=virtualagent.UserPhoneNumber"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "I7oPO0"
+                  },
+                  "activity": "${SendActivity_I7oPO0()}"
+                },
+                {
+                  "$kind": "Microsoft.DeleteProperties",
+                  "$designer": {
+                    "id": "QEX2zA"
+                  },
+                  "properties": [
+                    "user.SMSRNGInput",
+                    "dialog.result.CustomerNumberOutput",
+                    "user.SMSVerificationCode"
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "Splcxc"
+                  },
+                  "assignments": [
+                    {
+                      "property": "dialog.result.IsCustPhoneAuth",
+                      "value": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "IlOoNF"
+              },
+              "activity": "${SendActivity_IlOoNF()}"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "OsVUUt"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.result.IsCustPhoneAuth",
+                  "value": true
+                },
+                {
+                  "property": "virtualagent.IsUserAuthenticated",
+                  "value": true
+                }
+              ],
+              "disabled": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "AuthenticatePhoneNumber_Composer.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "AuthenticatePhoneNumber_Composer"
+}

@@ -1,0 +1,38 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "h5QmzN",
+    "name": "callskill",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "Dialog started",
+        "description": "",
+        "id": "vl0yex"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginSkill",
+          "$designer": {
+            "id": "6BX4Bn"
+          },
+          "activityProcessed": true,
+          "botId": "=settings.MicrosoftAppId",
+          "skillHostEndpoint": "=settings.skillHostEndpoint",
+          "connectionName": "=settings.connectionName",
+          "allowInterruptions": true,
+          "skillEndpoint": "=settings.skill['todoSample0Manifest'].endpointUrl",
+          "skillAppId": "=settings.skill['todoSample0Manifest'].msAppId"
+        }
+      ]
+    }
+  ],
+  "generator": "CallSkill.lg",
+  "recognizer": "CallSkill.lu.qna",
+  "id": "CallSkill"
+}

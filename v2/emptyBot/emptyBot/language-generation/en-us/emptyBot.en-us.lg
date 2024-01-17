@@ -1,0 +1,44 @@
+[import](common.en-us.lg)
+
+# SendActivity_Welcome
+- ${WelcomeUser()}
+
+# SendActivity_FP1H2x()
+[Activity
+    Text = Text response here.
+]
+
+# ChoiceInput_Prompt_TCdcZG()
+[Activity
+    Text = ${ChoiceInput_Prompt_TCdcZG_text()}
+]
+
+# ChoiceInput_Prompt_TCdcZG_text()
+- - Open child dialog?
+# ChoiceInput_Prompt_Uybl9R()
+[Activity
+    Text = ${ChoiceInput_Prompt_Uybl9R_text()}
+]
+
+# ChoiceInput_Prompt_Uybl9R_text()
+- What color do you like?
+# ChoiceInput_UnrecognizedPrompt_Uybl9R()
+[Activity
+    Text = ${ChoiceInput_UnrecognizedPrompt_Uybl9R_text()}
+]
+
+# ChoiceInput_UnrecognizedPrompt_Uybl9R_text()
+- Please pick one of the available options
+# SendActivity_HhGQNc()
+[Activity
+    Text = ${SendActivity_HhGQNc_text()}
+]
+
+# SendActivity_HhGQNc_text()
+- Custom Event Received
+# SendActivity_WLsx8n_text()
+- Interrupted!
+# SendActivity_WLsx8n()
+[Activity
+    Text = ${SendActivity_WLsx8n_text()}
+]

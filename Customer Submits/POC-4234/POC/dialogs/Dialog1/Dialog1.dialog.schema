@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "Dialog1",
+  "type": "object",
+  "properties": {
+    "dialogToBeStarted": {
+      "description": "Dialog to be started",
+      "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+      "title": "Dialog To Be Started"
+    },
+    "dynamic": {
+      "description": "Whether to user DynamicDialogLoading custom action",
+      "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/booleanExpression",
+      "title": "Dynamic"
+    }
+  },
+  "$result": {
+    "type": "object",
+    "properties": {}
+  }
+}

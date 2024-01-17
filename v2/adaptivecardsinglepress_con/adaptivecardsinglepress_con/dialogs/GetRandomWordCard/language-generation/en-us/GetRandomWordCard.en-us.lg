@@ -1,0 +1,21 @@
+[import](common.lg)
+
+# SendActivity_J1QtJj()
+[Activity
+    Text = You've already got a random word
+]
+
+# SendActivity_oGb7LX()
+[Activity
+    Text = Getting random word, please wait 5 seconds...
+]
+
+# SendActivity_PzDWLZ()
+[Activity
+    Text = True: ${conversation.clickCount}
+]
+
+# SendActivity_FaqMel()
+[Activity
+    Text = False: ${conversation.clickCount}
+]

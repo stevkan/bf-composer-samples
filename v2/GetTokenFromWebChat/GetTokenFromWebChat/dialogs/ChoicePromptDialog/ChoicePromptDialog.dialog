@@ -1,0 +1,70 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "b3LLb8",
+    "name": "ChoicePromptDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "CKJ0Ze"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "tW9S4P"
+          },
+          "condition": "=not(empty(user.id))",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Um35VS"
+              },
+              "activity": "${SendActivity_Um35VS()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "EEvBuN"
+              },
+              "activityProcessed": true,
+              "dialog": "OauthDialog"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "51VNOG"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_51VNOG()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.choice"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "88fQqQ"
+          },
+          "activity": "${SendActivity_88fQqQ()}"
+        }
+      ]
+    }
+  ],
+  "generator": "ChoicePromptDialog.lg",
+  "recognizer": "ChoicePromptDialog.lu.qna",
+  "id": "ChoicePromptDialog"
+}

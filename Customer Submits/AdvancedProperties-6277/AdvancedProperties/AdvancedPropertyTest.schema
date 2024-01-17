@@ -1,0 +1,46 @@
+﻿{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "AdvancePropertyTest",
+  "description": "Test advanced properties in for custom actions.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "skillSelectors": {
+      "$ref": "schema:#/definitions/arrayExpression",
+      "title": "SkillSelector Items",
+      "description": "SkillSelector Items.",
+      "items": {
+        "title": "SkillSelector Item",
+        "description": "SkillSelector Item.",
+        "type": "object",
+        "properties": {
+          "key": {
+            "title": "Key",
+            "description": "The skill key to query against.",
+            "type": "string"
+          },
+          "operator": {
+            "title": "Operator",
+            "description": "Describes how the value of the label is compared to the value defined on the label selector.",
+            "type": "string",
+            "enum": [
+              "Equal",
+              "NotEqual",
+              "LessThan",
+              "LessThanEqual",
+              "GreaterThan",
+              "GreaterThanEqual"
+            ],
+            "default": "Equal"
+          },
+          "value": {
+            "title": "Value",
+            "description": "The value to compare against the actual label value with the given operator.",
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

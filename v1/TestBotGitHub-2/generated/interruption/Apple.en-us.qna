@@ -1,0 +1,20 @@
+# ? How big is an apple?
+
+**Filters:**
+- dialogName=Apple
+
+```
+The biggest!
+```
+
+> Source: cross training. Please do not edit these directly!
+> !# @qna.pair.source = crosstrained
+
+# ? \#Stop
+
+**Filters:**
+- dialogName=Apple
+
+```
+intent=DeferToRecognizer_LUIS_Apple
+```

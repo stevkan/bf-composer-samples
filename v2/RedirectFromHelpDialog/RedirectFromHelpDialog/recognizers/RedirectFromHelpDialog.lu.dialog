@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_RedirectFromHelpDialog",
+  "recognizers": {
+    "en-us": "RedirectFromHelpDialog.en-us.lu",
+    "": "RedirectFromHelpDialog.en-us.lu"
+  }
+}

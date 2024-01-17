@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_Eqal54()
+[Activity
+    Text = ${SendActivity_Eqal54_text()}
+]
+
+# SendActivity_Eqal54_text()
+- dialog25

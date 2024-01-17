@@ -1,0 +1,6 @@
+{
+    "qna": {
+        "TodoSample_0_en_us_qna": "de311c0c-8e22-4bae-bd9a-96520e930fb8",
+        "hostname": "https://common-qna-svc.azurewebsites.net/qnamaker"
+    }
+}

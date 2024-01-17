@@ -1,0 +1,13 @@
+{
+  "Base64Bot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "Base64Trigger": [
+        "Base64Dialog.en-us"
+      ],
+      "GetBase64DataTrigger": [
+        "GetBase64DataDialog.en-us"
+      ]
+    }
+  }
+}

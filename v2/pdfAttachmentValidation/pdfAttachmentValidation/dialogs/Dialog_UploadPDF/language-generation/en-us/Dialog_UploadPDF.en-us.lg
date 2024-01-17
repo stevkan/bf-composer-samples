@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# SendActivity_4gG1W4()
+[Activity
+    Text = ${SendActivity_4gG1W4_text()}
+]
+
+# SendActivity_4gG1W4_text()
+- In dialog...
+# AttachmentInput_Prompt_rTEBbh()
+[Activity
+    Text = ${AttachmentInput_Prompt_rTEBbh_text()}
+]
+
+# AttachmentInput_Prompt_rTEBbh_text()
+- Attach a File
+# AttachmentInput_InvalidPrompt_rTEBbh()
+[Activity
+    Text = ${AttachmentInput_InvalidPrompt_rTEBbh_text()}
+]
+
+# AttachmentInput_InvalidPrompt_rTEBbh_text()
+- Only PDFs are allowed. Please resubmit.
+# SendActivity_s4XrLs()
+[Activity
+    Text = ${SendActivity_s4XrLs_text()}
+]
+
+# SendActivity_s4XrLs_text()
+- PDF received!

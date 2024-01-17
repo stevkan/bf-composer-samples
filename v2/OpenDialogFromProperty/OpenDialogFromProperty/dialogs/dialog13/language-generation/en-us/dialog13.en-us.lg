@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_f7oZnm()
+[Activity
+    Text = ${SendActivity_f7oZnm_text()}
+]
+
+# SendActivity_f7oZnm_text()
+- dialog13

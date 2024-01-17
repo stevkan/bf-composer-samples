@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/skills/v2.1/skill-manifest.json",
+  "$id": "Skill_Skill_Bot-6d24a1c0-8915-4975-b236-0dc5d9e91a1c",
+  "endpoints": [
+    {}
+  ],
+  "name": "Skill_Skill_Bot",
+  "version": "1.0",
+  "publisherName": "Steven Kanberg",
+  "activities": {
+    "Skill_Skill_Bot": {
+      "type": "event",
+      "name": "Skill_Skill_Bot"
+    },
+    "conversationUpdate": {
+      "type": "conversationUpdate"
+    }
+  }
+}

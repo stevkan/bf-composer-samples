@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_WCqxXG()
+[Activity
+    Text = ${SendActivity_WCqxXG_text()}
+]
+
+# SendActivity_WCqxXG_text()
+- dialog20

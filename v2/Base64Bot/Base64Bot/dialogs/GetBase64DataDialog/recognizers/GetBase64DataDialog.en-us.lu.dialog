@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_GetBase64DataDialog",
+  "applicationId": "=settings.luis.GetBase64DataDialog_en_us_lu.appId",
+  "version": "=settings.luis.GetBase64DataDialog_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

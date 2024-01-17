@@ -1,0 +1,38 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "D2F42R",
+    "name": "OAuthDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "yq9rff"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.OAuthInput",
+          "$designer": {
+            "id": "O5NQ63"
+          },
+          "timeout": 900000,
+          "property": "turn.token",
+          "maxTurnCount": 3,
+          "allowInterruptions": true,
+          "connectionName": "gooconn",
+          "text": "Please sign in",
+          "title": "Login"
+        }
+      ]
+    }
+  ],
+  "generator": "OAuthDialog.lg",
+  "recognizer": "OAuthDialog.lu.qna",
+  "id": "OAuthDialog"
+}

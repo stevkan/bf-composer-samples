@@ -1,0 +1,68 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "hiKGk3",
+    "name": "event_received",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnEventActivity",
+      "$designer": {
+        "id": "u3LbF8"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "ZS9mdq"
+          },
+          "property": "User.EventName",
+          "value": "turn.activity.name"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "wyIXK2"
+          },
+          "condition": "User.EventName == 'ProactiveMsg'",
+          "actions": [
+            {
+              "$kind": "Microsoft.EmitEvent",
+              "$designer": {
+                "id": "DswUgl"
+              }
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "aJCCOw"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "id": "hCalr7"
+      }
+    },
+    {
+      "$kind": "Microsoft.OnDialogEvent",
+      "$designer": {
+        "id": "oMpk2Y",
+        "name": "ProactiveMessage"
+      },
+      "event": "ProactiveMessage"
+    }
+  ],
+  "generator": "event_received.lg",
+  "recognizer": "event_received.lu.qna",
+  "id": "event_received"
+}

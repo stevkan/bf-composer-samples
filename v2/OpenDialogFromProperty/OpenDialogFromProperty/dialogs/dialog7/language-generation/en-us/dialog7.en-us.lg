@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_DXK2PT()
+[Activity
+    Text = ${SendActivity_DXK2PT_text()}
+]
+
+# SendActivity_DXK2PT_text()
+- dialog7

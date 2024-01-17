@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_y19aTd()
+[Activity
+    Text = ${SendActivity_y19aTd_text()}
+]
+
+# SendActivity_y19aTd_text()
+- It sounds like you would like a ${turn.recognized.entities.CoffeeType[0].text}. Let's get you one!

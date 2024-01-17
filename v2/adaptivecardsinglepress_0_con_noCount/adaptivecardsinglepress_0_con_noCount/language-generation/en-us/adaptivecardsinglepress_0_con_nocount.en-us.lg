@@ -1,0 +1,26 @@
+[import](common.lg)
+
+# TextInput_Prompt_PTq2UH()
+- ${GetUserName()}
+# SendActivity_ZFNf9R()
+- Sure. I have ${user.name}
+
+# SendActivity_Kbh2UV()
+- ${WelcomeUser()}
+
+
+# SendActivity_OdVloc()
+[Activity
+    Text = You've already got a random word
+]
+
+# SendActivity_6K8QXv()
+[Activity
+    Text = Selection made: ${conversation.selectionMade}
+]
+
+# SendActivity_K7bO68()
+[Activity
+    Text = Getting random word, please wait 5 seconds...
+]
+

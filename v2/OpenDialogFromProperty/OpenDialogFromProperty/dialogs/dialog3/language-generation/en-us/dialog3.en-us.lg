@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_F806iI()
+[Activity
+    Text = ${SendActivity_F806iI_text()}
+]
+
+# SendActivity_F806iI_text()
+- dialog3

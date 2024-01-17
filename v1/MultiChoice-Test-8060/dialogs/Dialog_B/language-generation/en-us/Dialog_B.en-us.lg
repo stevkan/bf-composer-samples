@@ -1,0 +1,21 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_MFSGZF()
+[Activity
+    Text = Do you want to move ahead?
+]
+
+# SendActivity_7kMNb8()
+[Activity
+    Text = Testing In Yes branch
+]
+
+# SendActivity_OhMRO7()
+[Activity
+    Text = Inside No branch
+]
+
+# SendActivity_SVavoG()
+[Activity
+    Text = After Turn
+]

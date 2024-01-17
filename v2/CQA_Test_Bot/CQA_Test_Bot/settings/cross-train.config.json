@@ -1,0 +1,8 @@
+{
+  "CQA_Test_Bot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "SayHello1": ""
+    }
+  }
+}

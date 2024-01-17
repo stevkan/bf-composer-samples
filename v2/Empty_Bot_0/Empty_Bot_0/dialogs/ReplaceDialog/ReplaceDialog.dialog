@@ -1,0 +1,57 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ZWaPbn",
+    "name": "ReplaceDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "nWzmaq"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "dv4mGE"
+          },
+          "activity": "${SendActivity_dv4mGE()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "YjIsr3"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_YjIsr3()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "conversation.userWord"
+        },
+        {
+          "$kind": "Microsoft.ReplaceDialog",
+          "$designer": {
+            "id": "joLH1u"
+          },
+          "activityProcessed": true,
+          "options": {
+            "userWord": "conversation.userWord"
+          },
+          "dialog": "NewDialog"
+        }
+      ]
+    }
+  ],
+  "generator": "ReplaceDialog.lg",
+  "recognizer": "ReplaceDialog.lu.qna",
+  "id": "ReplaceDialog"
+}

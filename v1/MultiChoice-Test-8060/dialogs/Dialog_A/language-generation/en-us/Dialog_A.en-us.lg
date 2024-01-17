@@ -1,0 +1,11 @@
+[import](common.lg)
+
+# SendActivity_JSjZsy()
+[Activity
+    Text = Calling Dialog B here
+]
+
+# SendActivity_fwRvbq()
+[Activity
+    Text = After Dialog B - Inside A
+]

@@ -1,0 +1,14 @@
+{
+  "GaiaV2.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "": [
+        "WelcomeDialog.en-us"
+      ],
+      "ClusterInformation": [
+        "ParentDialog.en-us"
+      ],
+      "logout": ""
+    }
+  }
+}

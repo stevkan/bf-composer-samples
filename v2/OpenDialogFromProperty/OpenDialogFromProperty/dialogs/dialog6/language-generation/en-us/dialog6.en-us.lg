@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_4u60PL()
+[Activity
+    Text = ${SendActivity_4u60PL_text()}
+]
+
+# SendActivity_4u60PL_text()
+- dialog6

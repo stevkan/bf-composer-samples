@@ -1,0 +1,53 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ICwnhR",
+    "name": "SuggestedActionDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "KtYeWF"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "U5Xup4"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_U5Xup4()}",
+          "unrecognizedPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.likesPizza",
+          "style": "suggestedAction",
+          "confirmChoices": [
+            "Yes",
+            "No"
+          ],
+          "defaultValueResponse": "${ConfirmInput_DefaultValueResponse_U5Xup4()}",
+          "defaultValue": true,
+          "validations": []
+        }
+      ]
+    }
+  ],
+  "generator": "SuggestedActionDialog.lg",
+  "recognizer": "SuggestedActionDialog.lu.qna",
+  "id": "SuggestedActionDialog"
+}

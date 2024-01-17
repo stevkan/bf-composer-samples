@@ -1,0 +1,72 @@
+[import](common.lg)
+
+# TextInput_Prompt_fD5Lwj()
+[Activity
+    Attachments = ${json(TextInput_Prompt_fD5Lwj_attachment_pnQ2k9())}
+]
+
+# TextInput_Prompt_fD5Lwj_attachment_pnQ2k9()
+- ```
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+   {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Authentication"
+        },
+        {
+            "type": "TextBlock",
+            "size": "Small",
+            "text": "The phone number you entered ${virtualagent.UserPhoneNumber} could not be validated. Please check to make sure you entered your phone number correctly and try again.",
+            "wrap": true
+        }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Try Another Phone",
+      "data": 
+      {"btn"  : "Try Another Phone"}
+     
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Visit Website",
+      "data" :
+      { "btn" : "Visit Website"}
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Chat with a Representative",
+      "data" :
+      { "btn" : "Chat with a Representative"}
+    }
+  ]
+}
+
+```
+# SendActivity_o40qGC()
+[Activity
+    Attachments = ${json(SendActivity_o40qGC_attachment_oliF64())}
+]
+
+# SendActivity_o40qGC_attachment_oliF64()
+> TruGreen.com link
+
+- ```{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Here's a link: [Click Here](https://www.trugreen.com/) ",
+      
+      "isSubtle": false
+    }
+  ]
+}```

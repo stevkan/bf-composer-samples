@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_rPLtRu()
+[Activity
+    Text = ${SendActivity_rPLtRu_text()}
+]
+
+# SendActivity_rPLtRu_text()
+- Binary Data: ${dialog.myBinaryData}

@@ -1,0 +1,33 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ud4d2B",
+    "name": "EchoDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "OFCGDb"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "8wKYzz",
+            "comment": ""
+          },
+          "activity": "${SendActivity_8wKYzz()}"
+        }
+      ]
+    }
+  ],
+  "generator": "EchoDialog.lg",
+  "recognizer": "EchoDialog.lu.qna",
+  "id": "EchoDialog"
+}

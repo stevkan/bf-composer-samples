@@ -1,0 +1,57 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_GW852i_text()
+- Worum geht es?
+# ChoiceInput_Prompt_GW852i()
+[Activity
+    Text = ${ChoiceInput_Prompt_GW852i_text()}
+]
+
+# ChoiceInput_InvalidPrompt_GW852i_text()
+- Validation failed
+# ChoiceInput_InvalidPrompt_GW852i()
+[Activity
+    Text = ${ChoiceInput_InvalidPrompt_GW852i_text()}
+]
+
+# SendActivity_2f77W6_text()
+- Reached default
+# SendActivity_2f77W6()
+[Activity
+    Text = ${SendActivity_2f77W6_text()}
+]
+
+# SendActivity_YqCNY0_text()
+- Zulassung beantragen
+# SendActivity_YqCNY0()
+[Activity
+    Text = ${SendActivity_YqCNY0_text()}
+]
+
+# SendActivity_MT3Dbh_text()
+- KFZ abmelden
+# SendActivity_MT3Dbh()
+[Activity
+    Text = ${SendActivity_MT3Dbh_text()}
+]
+
+# SendActivity_dHqtAS_text()
+- Kurzzeitkennzeichen beantragen
+# SendActivity_dHqtAS()
+[Activity
+    Text = ${SendActivity_dHqtAS_text()}
+]
+
+# SendActivity_ibDkkD_text()
+- Wunschkennzeichen reservieren
+# SendActivity_ibDkkD()
+[Activity
+    Text = ${SendActivity_ibDkkD_text()}
+]
+
+# SendActivity_6ib2l3_text()
+- Reached after loop
+# SendActivity_6ib2l3()
+[Activity
+    Text = ${SendActivity_6ib2l3_text()}
+]

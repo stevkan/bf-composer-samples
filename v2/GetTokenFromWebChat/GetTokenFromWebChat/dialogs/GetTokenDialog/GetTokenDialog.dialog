@@ -1,0 +1,78 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "SFpTNM",
+    "name": "GetTokenDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "turn.token",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "XF3vFI"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "zL3xav"
+          },
+          "condition": "=not(empty(turn.activity.channelData.oauthAccessToken))",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "ypHp8Q"
+              },
+              "property": "conversation.ref",
+              "value": "=turn.activity.channelData.oauthAccessToken",
+              "disabled": true
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "eogj6E"
+              },
+              "activity": "${SendActivity_eogj6E()}",
+              "disabled": true
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "j7VX19"
+              },
+              "activity": "${SendActivity_j7VX19()}",
+              "disabled": true
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "fZZTLM"
+              },
+              "value": "conversation.ref",
+              "disabled": true
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "6v2dg6"
+              },
+              "activity": "${SendActivity_6v2dg6()}",
+              "disabled": true
+            }
+          ],
+          "disabled": true
+        }
+      ]
+    }
+  ],
+  "generator": "GetTokenDialog.lg",
+  "recognizer": "GetTokenDialog.lu.qna",
+  "id": "GetTokenDialog"
+}

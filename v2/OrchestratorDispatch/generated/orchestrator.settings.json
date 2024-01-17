@@ -1,0 +1,10 @@
+{
+  "orchestrator": {
+    "models": {
+      "en": "C:/Users/Steven Kanberg/AppData/Roaming/BotFrameworkComposer/models/pretrained.20200924.microsoft.dte.00.06.en"
+    },
+    "snapshots": {
+      "OrchestratorDispatch_en_us": "C:/Users/Steven Kanberg/source/Composer/Converts/OrchestratorDispatch/generated/OrchestratorDispatch.en-us.blu"
+    }
+  }
+}

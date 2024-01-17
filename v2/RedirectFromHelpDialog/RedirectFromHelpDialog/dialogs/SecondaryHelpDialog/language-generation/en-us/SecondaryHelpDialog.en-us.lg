@@ -1,0 +1,10 @@
+[import](common.lg)
+
+# SendActivity_HelpOverview_text()
+- (Secondary Help Dialog): I'm here to help with simple asks. I'm just a basic bot for now.
+
+> Imported: 95949fcc5eb2077f9cffd10817a11340
+# SendActivity_1n9fVJ()
+[Activity
+    Text = ${SendActivity_HelpOverview_text()}
+]

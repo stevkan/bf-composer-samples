@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "49nTfV",
+    "name": "dialog11",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "lesXEA"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "X7SoOs"
+          },
+          "activity": "${SendActivity_X7SoOs()}"
+        }
+      ]
+    }
+  ],
+  "generator": "dialog11.lg",
+  "recognizer": "dialog11.lu.qna",
+  "id": "dialog11"
+}

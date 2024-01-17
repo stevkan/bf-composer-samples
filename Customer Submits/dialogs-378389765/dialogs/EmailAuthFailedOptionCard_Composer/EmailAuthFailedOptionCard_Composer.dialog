@@ -1,0 +1,106 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "JLYcWD",
+    "name": "EmailAuthFailedOptionCard_Composer",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "SNgi7W"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "fsQSKg"
+          },
+          "disabled": false,
+          "maxTurnCount": 4,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_fsQSKg()}",
+          "property": "user.EmailAlternateOption",
+          "value": "=turn.activity.value.btn"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "HxktVM"
+          },
+          "condition": "user.EmailAlternateOption",
+          "default": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "NoVlB9"
+              }
+            }
+          ],
+          "cases": [
+            {
+              "value": "Try Another Email",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "keZrlK"
+                  },
+                  "assignments": [
+                    {
+                      "property": "dialog.result.IsCustEmailAuth",
+                      "value": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "Visit Website",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "K6lVhc"
+                  },
+                  "activity": "${SendActivity_K6lVhc()}"
+                },
+                {
+                  "$kind": "Microsoft.EndTurn",
+                  "$designer": {
+                    "id": "XIKnfp"
+                  }
+                }
+              ]
+            },
+            {
+              "value": "Chat with a Representative",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "4fDdw1"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "new_topic_8dae3ba327fc480e8bc097ce6e53525b_954135cafcd647eaae5999ad91fc08cf_talktoagent"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "EmailAuthFailedOptionCard_Composer.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "EmailAuthFailedOptionCard_Composer"
+}

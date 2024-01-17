@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_nbBNgE()
+[Activity
+    Text = ${SendActivity_nbBNgE_text()}
+]
+
+# SendActivity_nbBNgE_text()
+- Dialog 3

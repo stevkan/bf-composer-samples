@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "8CKQTW",
+    "name": "QuitDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "bzrFQu"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "BotOptions"
+          },
+          "activity": "${SendActivity_BotOptions()}"
+        }
+      ]
+    }
+  ],
+  "generator": "QuitDialog.lg",
+  "recognizer": "QuitDialog.lu.qna",
+  "id": "QuitDialog"
+}

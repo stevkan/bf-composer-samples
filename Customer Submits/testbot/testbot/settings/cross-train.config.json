@@ -1,0 +1,13 @@
+{
+  "testbot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "AddToArrayTrigger": [
+        "AddToArrayDialog.en-us"
+      ],
+      "exceptionTrigger": [
+        "ExceptionDialog.en-us"
+      ]
+    }
+  }
+}

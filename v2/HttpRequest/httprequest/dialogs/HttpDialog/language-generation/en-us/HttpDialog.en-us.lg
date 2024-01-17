@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# SendActivity_nUZYeP()
+[Activity
+    Text = ${SendActivity_nUZYeP_text()}
+]
+
+# SendActivity_nUZYeP_text()
+- **StatusCode:** ${turn.results.statusCode}, **Content:** "${turn.results.content.args.text}"
+# TextInput_Prompt_WUdWfy_text()
+- Enter some text.
+# TextInput_Prompt_WUdWfy()
+[Activity
+    Text = ${TextInput_Prompt_WUdWfy_text()}
+]

@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_Base64Bot",
+  "recognizers": {
+    "en-us": "Base64Bot.en-us.lu",
+    "": "Base64Bot.en-us.lu"
+  }
+}

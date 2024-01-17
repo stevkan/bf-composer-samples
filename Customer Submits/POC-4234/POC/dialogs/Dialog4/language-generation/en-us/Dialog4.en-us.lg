@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_2pRtRU_text()
+- Dialog 4
+# SendActivity_2pRtRU()
+[Activity
+    Text = ${SendActivity_2pRtRU_text()}
+]

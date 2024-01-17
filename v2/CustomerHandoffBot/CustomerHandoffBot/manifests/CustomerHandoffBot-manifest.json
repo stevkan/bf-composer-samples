@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/skills/v2.2/skill-manifest.json",
+  "$id": "CustomerHandoffBot-28f5e6d6-fedc-4d8b-8aaf-770f4f92e905",
+  "endpoints": [],
+  "name": "CustomerHandoffBot",
+  "version": "1",
+  "publisherName": "CustomHandoffBot",
+  "activities": {
+    "CustomerHandoffBot": {
+      "type": "event",
+      "name": "CustomerHandoffBot"
+    }
+  }
+}

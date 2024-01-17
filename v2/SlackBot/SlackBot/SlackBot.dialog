@@ -1,0 +1,70 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "SlackBot",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u",
+        "comment": "This trigger fires when an incoming activity is not handled by any other trigger."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kMjqz1",
+            "comment": "It is recommended to show a message to the user when the bot does not know how to handle an incoming activity and provide follow up options or a help message."
+          },
+          "activity": "${SendActivity_DidNotUnderstand()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "JSXIF4",
+        "name": "Slack Home (ConversationUpdate)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "j7r4El"
+          },
+          "activityProcessed": true,
+          "dialog": "SlackDialogDefault"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "5EqQuH"
+          },
+          "condition": "=and(equals(turn.activity.channelData.SlackMessage.event.type, 'app_home_opened'), equals(turn.activity.channelData.SlackMessage.event.tab, 'home'))",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "ECJTLw"
+              },
+              "activityProcessed": true,
+              "dialog": "SlackDialogDefault",
+              "disabled": true
+            }
+          ],
+          "elseActions": [],
+          "disabled": true
+        }
+      ],
+      "condition": "=and(equals(turn.activity.channelData.SlackMessage.event.type, 'app_home_opened'), equals(turn.activity.channelData.SlackMessage.event.tab, 'home'))"
+    }
+  ],
+  "generator": "SlackBot.lg",
+  "id": "SlackBot",
+  "recognizer": "SlackBot.lu.qna"
+}

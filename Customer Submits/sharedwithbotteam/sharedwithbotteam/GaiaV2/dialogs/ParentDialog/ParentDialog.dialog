@@ -1,0 +1,48 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "TCTrii",
+    "name": "ParentDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "BEfG3i"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "tHIrLB"
+          },
+          "activityProcessed": true,
+          "dialog": "ClusterCheck"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "OyrhTQ"
+          },
+          "activity": "${SendActivity_OyrhTQ()}"
+        },
+        {
+          "$kind": "CheckClusterExistance",
+          "$designer": {
+            "id": "gaD91W"
+          },
+          "clusterName": "${dialog.clusterName}",
+          "resultProperty": "dialog.Result"
+        }
+      ]
+    }
+  ],
+  "generator": "ParentDialog.lg",
+  "recognizer": "ParentDialog.lu.qna",
+  "id": "ParentDialog"
+}

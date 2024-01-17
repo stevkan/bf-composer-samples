@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_TestEchoBot-1",
+  "recognizers": {
+    "en-us": "TestEchoBot-1.en-us.lu",
+    "": "TestEchoBot-1.en-us.lu"
+  }
+}

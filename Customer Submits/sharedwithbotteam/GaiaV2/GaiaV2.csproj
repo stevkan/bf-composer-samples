@@ -1,0 +1,31 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <UserSecretsId>eb8c176a-bfee-4f6e-9739-6d96834b4b99</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="**/*.blu;**/*.dialog;**/*.lg;**/*.lu;**/*.onnx;**/*.qna;**/*.txt" Exclude="$(BaseOutputPath)/**;$(BaseIntermediateOutputPath)/**;wwwroot/**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Bot.Builder.AI.Luis" Version="4.13.2" />
+    <PackageReference Include="Microsoft.Bot.Builder.AI.QnA" Version="4.13.2" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Adaptive.Runtime" Version="4.13.2" />
+    <!-- Disabling 'This package may not be fully compatible with your project' as Microsoft.Bot.Builder.Dialogs.Adaptive.Runtime using Microsoft.Azure.KeyVault.Core 1.0.0 which is restored using .Net framework -->
+    <!--https://github.com/NuGet/Home/issues/5740-->
+    <PackageReference Include="Microsoft.Azure.KeyVault.Core" Version="1.0.0" NoWarn="NU1701" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dialogs\emptyBot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GaiaV2CustomActions\GaiaV2CustomActions.csproj" />
+  </ItemGroup>
+</Project>

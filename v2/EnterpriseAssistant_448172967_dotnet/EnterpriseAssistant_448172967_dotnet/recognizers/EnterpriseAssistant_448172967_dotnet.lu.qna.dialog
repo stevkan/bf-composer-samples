@@ -1,0 +1,6 @@
+{
+  "$kind": "Microsoft.CrossTrainedRecognizerSet",
+  "recognizers": [
+    "EnterpriseAssistant_448172967_dotnet.lu"
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "POC",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "comment": "This trigger runs when a conversation update activity is sent to the bot. This indicates a user or bot being added or removed from a conversation."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item",
+            "comment": "For each member added to the conversation."
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else",
+                "comment": "Checks that that member added ID does not match the bot ID. This prevents the greeting message from being sent when the bot is added to a conversation."
+              },
+              "condition": "=string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Greeting()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "nkirFS"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "Dialog0",
+                  "disabled": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u",
+        "comment": "This trigger fires when an incoming activity is not handled by any other trigger."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kMjqz1",
+            "comment": "It is recommended to show a message to the user when the bot does not know how to handle an incoming activity and provide follow up options or a help message."
+          },
+          "activity": "${SendActivity_DidNotUnderstand()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "3OwjKL",
+        "name": "BeginDialogByVariable"
+      },
+      "condition": "=turn.activity.text == \"start\"",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "dx906v"
+          },
+          "activityProcessed": true,
+          "dialog": "Dialog1",
+          "options": {
+            "startDialog": "Dialog2",
+            "dialogToBeStarted": "Dialog2",
+            "dynamic": false
+          }
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "aDwbYe",
+        "name": "MultipleReplace",
+        "comment": "Works in 4.15.2\nDoesn't work in 4.14.1"
+      },
+      "condition": "=turn.activity.text == \"replace\"",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "XVpSeN"
+          },
+          "activity": "${SendActivity_XVpSeN()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Zhpw61"
+          },
+          "activityProcessed": true,
+          "dialog": "Dialog3"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "0a6hCt",
+        "name": "DynamicBeginDialogByVariable"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "xzCdRb"
+          },
+          "activityProcessed": true,
+          "dialog": "Dialog1",
+          "options": {
+            "dialogToBeStarted": "Dialog2",
+            "dynamic": true
+          }
+        }
+      ],
+      "condition": "=turn.activity.text == \"start dynamic\""
+    },
+    {
+      "$kind": "Microsoft.OnError",
+      "$designer": {
+        "id": "1rypYv",
+        "name": "Error occurred (Error event)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TraceActivity",
+          "$designer": {
+            "id": "OYt9Ex"
+          },
+          "name": "Trace Error",
+          "label": "Trace Error",
+          "value": "=turn"
+        }
+      ]
+    }
+  ],
+  "generator": "POC.lg",
+  "id": "POC",
+  "recognizer": "POC.lu.qna"
+}

@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_48gtKE()
+[Activity
+    Text = ${SendActivity_48gtKE_text()}
+]
+
+# SendActivity_48gtKE_text()
+- dialog4

@@ -1,0 +1,13 @@
+{
+  "quickstart_create_bot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "CancelTrigger": [
+        "CancelDialog.en-us"
+      ],
+      "HelpTrigger": [
+        "HelpDialog.en-us"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+[import](common.lg)
+
+# SendActivity_r6wf2s_text()
+- Test response
+# SendActivity_r6wf2s()
+[Activity
+    Text = ${SendActivity_r6wf2s_text()}
+]
+
+# SendActivity_xocFuK()
+[Activity
+    Text = ${SendActivity_xocFuK_text()}
+]
+
+# SendActivity_xocFuK_text()
+- Second test response.
+# SendActivity_xjQ6kY()
+[Activity
+    Text = ${SendActivity_xjQ6kY_text()}
+]
+# SendActivity_xjQ6kY_text()
+- Third test response.

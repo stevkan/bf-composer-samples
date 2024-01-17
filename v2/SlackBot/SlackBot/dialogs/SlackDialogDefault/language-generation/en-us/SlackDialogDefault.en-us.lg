@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_QlPMWK()
+[Activity
+    Text = ${SendActivity_QlPMWK_text()}
+]
+
+# SendActivity_QlPMWK_text()
+- Welcome to my bot! Thank you for clicking on the 'Home' tab.

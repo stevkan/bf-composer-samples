@@ -1,0 +1,47 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "NKYoZ7",
+    "name": "SendImageDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "0XEkYV"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.AttachmentInput",
+          "$designer": {
+            "id": "VJ4bUg"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${AttachmentInput_Prompt_VJ4bUg()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.attachments",
+          "outputFormat": "first"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "naqONe"
+          },
+          "activity": "${SendActivity_naqONe()}"
+        }
+      ]
+    }
+  ],
+  "generator": "SendImageDialog.lg",
+  "recognizer": "SendImageDialog.lu.qna",
+  "id": "SendImageDialog"
+}

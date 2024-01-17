@@ -1,0 +1,484 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "emptyBot",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Welcome()}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "ZL3gKq"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "FP1H2x"
+          },
+          "activity": "${SendActivity_FP1H2x()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "Uybl9R"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "${ChoiceInput_UnrecognizedPrompt_Uybl9R()}",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "prompt": "${ChoiceInput_Prompt_Uybl9R()}",
+          "property": "dialog.choiceResponse",
+          "choices": [
+            "Blue",
+            "Green",
+            "red"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          }
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "JjtuW6"
+          },
+          "activityProcessed": true,
+          "dialog": "SendImageDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Z9qTTd",
+        "name": "ChildTrigger"
+      },
+      "intent": "ChildTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "TCdcZG"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          },
+          "prompt": "${ChoiceInput_Prompt_TCdcZG()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "style": "suggestedAction",
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "validations": []
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Zmt4cY"
+          },
+          "activityProcessed": true,
+          "dialog": "ChildDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "N8Lw4j",
+        "name": "HelpTrigger"
+      },
+      "intent": "HelpTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "SM2O5q"
+          },
+          "activityProcessed": true,
+          "dialog": "HelpDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "cAauX0",
+        "name": "SendImageTrigger"
+      },
+      "intent": "SendImageTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "8ueU5B"
+          },
+          "activityProcessed": true,
+          "dialog": "SendImageDialog"
+        }
+      ],
+      "condition": "=#SendImageTrigger.Score >= 0.80"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "5ixrfK",
+        "name": "Spanish"
+      },
+      "intent": "Spanish",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "VbWgjN"
+          },
+          "activityProcessed": true,
+          "dialog": "SpanishDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "AHuCye",
+        "name": "EnglishDialog"
+      },
+      "intent": "EnglishDialog",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "7g5zsY"
+          },
+          "activityProcessed": true,
+          "dialog": "EnglishDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "u4NCQM",
+        "name": "TestCancelTrigger"
+      },
+      "intent": "TestCancelTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "OJ92Wb"
+          },
+          "activityProcessed": true,
+          "dialog": "TestEndDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "awRUBD",
+        "name": "Base64Trigger"
+      },
+      "intent": "Base64Trigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "tvagER"
+          },
+          "activityProcessed": true,
+          "dialog": "Base64Dialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "EkgCjJ",
+        "name": "TriggerTest1"
+      },
+      "intent": "TriggerTest1",
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "eBLjFB"
+          },
+          "actions": [
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "sEhlMc"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "0VEsiW",
+        "name": "GoToLabelTrigger"
+      },
+      "intent": "GoToLabelTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ROdpj5"
+          },
+          "activityProcessed": true,
+          "dialog": "GoToLabelDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "SxPrnC",
+        "name": "CallCustomEvent"
+      },
+      "intent": "CallCustomEvent",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "rcYOJK"
+          },
+          "activityProcessed": true,
+          "dialog": "CustomEventDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnDialogEvent",
+      "$designer": {
+        "id": "URDIJS",
+        "name": "ReceiveCustomEvent"
+      },
+      "event": "ReceiveCustomEvent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "HhGQNc"
+          },
+          "activity": "${SendActivity_HhGQNc()}"
+        },
+        {
+          "$kind": "Microsoft.EmitEvent",
+          "$designer": {
+            "id": "lXSpOQ"
+          },
+          "handledProperty": "turn.eventHandled",
+          "eventName": "=\"customEvent\"",
+          "eventValue": "=\"customValue\""
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnEventActivity",
+      "$designer": {
+        "id": "R7but9",
+        "name": "Event received (Event activity)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.EmitEvent",
+          "$designer": {
+            "id": "HiNmC8"
+          },
+          "handledProperty": "turn.eventHandled",
+          "eventName": "=\"eventActivity\"",
+          "eventValue": "=\"eventActivity\"",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.TraceActivity",
+          "$designer": {
+            "id": "FQScVr"
+          },
+          "name": "Trace1",
+          "label": "Trace1",
+          "value": "turn.interrupted",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "jDygiZ"
+          },
+          "condition": "=turn.interrupted",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "WLsx8n"
+              },
+              "activity": "${SendActivity_WLsx8n()}",
+              "disabled": true
+            }
+          ],
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "JwQxZa",
+        "name": "PowerBerg2"
+      },
+      "intent": "PowerBerg2",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginSkill",
+          "$designer": {
+            "id": "kxBtPX"
+          },
+          "activityProcessed": true,
+          "botId": "=settings.MicrosoftAppId",
+          "skillHostEndpoint": "=settings.skillHostEndpoint",
+          "connectionName": "=settings.connectionName",
+          "allowInterruptions": false,
+          "skillEndpoint": "=settings.skill['powerBerg2'].endpointUrl",
+          "skillAppId": "=settings.skill['powerBerg2'].msAppId"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "ZBP3Tm",
+        "name": "OAuthDialogTrigger"
+      },
+      "intent": "OAuthDialogTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Q9EVMW"
+          },
+          "activityProcessed": true,
+          "dialog": "OAuthDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "nKwPKg",
+        "name": "SuggestedActionTrigger"
+      },
+      "intent": "SuggestedActionTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "aj34Mt"
+          },
+          "activityProcessed": true,
+          "dialog": "SuggestedActionDialog"
+        }
+      ]
+    }
+  ],
+  "generator": "emptyBot.lg",
+  "id": "emptyBot",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "GoToLabelTrigger",
+        "pattern": "label"
+      },
+      {
+        "intent": "CallCustomEvent",
+        "pattern": "custom"
+      },
+      {
+        "intent": "ChildTrigger",
+        "pattern": "child"
+      },
+      {
+        "intent": "OAuthDialogTrigger",
+        "pattern": "login"
+      },
+      {
+        "intent": "SuggestedActionTrigger",
+        "pattern": "Suggest"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "naehGo",
+    "name": "HttpDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "5wYjqN"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "WUdWfy"
+          },
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_WUdWfy()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.userInput"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "GH1MbW"
+          },
+          "resultProperty": "turn.results",
+          "method": "GET",
+          "responseType": "json",
+          "contentType": "application/json",
+          "headers": {},
+          "url": "https://postman-echo.com/get?text=${dialog.userInput}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "nUZYeP"
+          },
+          "activity": "${SendActivity_nUZYeP()}"
+        }
+      ]
+    }
+  ],
+  "generator": "HttpDialog.lg",
+  "recognizer": "HttpDialog.lu.qna",
+  "id": "HttpDialog"
+}

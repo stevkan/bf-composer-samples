@@ -1,0 +1,31 @@
+# WelcomeNewUser()
+- Welcome! You’ve reached Gaia, the Azure Data Explorer support bot.
+# BotOptions()
+[HeroCard   
+title = Manage Cluster 
+image =  https://kustobotstorage.blob.core.windows.net/resources/management_icon.png
+buttons = ${cardActionTemplate('imBack', 'Cluster Information', 'Cluster Information')} | ${cardActionTemplate('imBack', 'Ask for Permissions', 'Ask for Permissions')} | ${cardActionTemplate('imBack', 'Add or Update Geneva Ingestion Source', 'Add or Update Geneva Ingestion Source')} | ${cardActionTemplate('imBack', 'Report Control Command Issue', 'Report Control Command Issue')} | ${cardActionTemplate('imBack', 'Other Issue', 'Other Issue')}
+]
+# cardActionTemplate(type, title, value)
+[CardAction
+    Type = ${if(type == null, 'imBack', type)}
+    Title = ${title}
+    Value = ${value}
+    Text = ${title}
+]
+# QuitMessage()
+-type **Quit** to return to the main menu.
+# FindClusterNameLink()
+-https://kusto.azurewebsites.net/docs/kusto/faq/general.html#what-is-my-accountclusterdatabasetable-name
+# ClusterInformation()
+-Please specify your Cluster URL (Ex: https://<cluster>.<region>.kusto.windows.net), here's how you can find [cluster name](https://kusto.azurewebsites.net/docs/kusto/faq/general.html#what-is-my-accountclusterdatabasetable-name)
+
+# WelcomeText()
+-```Please choose one of the following:
+* [Get support using Teams](https://teams.microsoft.com/l/app/188e3184\-fa0d\-4256\-92d3\-d1b52dc9c279?source=store\-copy\-link") (preferred)
+* Get support by continuing talking to me below
+* Get support by opening an [IcM ticket](https://aka.ms/kustoicm). (**only when I’m out of order**)
+* Read the [Kusto documentation](https://kusto.azurewebsites.net/docs/kusto/index.html)
+* Read the [Gaia documentation](https://kusto.azurewebsites.net/docs/kusto/ops/gaia.html)
+What can I do for you today?
+```

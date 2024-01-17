@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_Banana",
+  "recognizers": {
+    "en-us": "Banana.en-us.lu",
+    "": "Banana.en-us.lu"
+  }
+}

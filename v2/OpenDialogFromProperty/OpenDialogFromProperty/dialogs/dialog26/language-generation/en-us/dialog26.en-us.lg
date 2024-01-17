@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_9WHHzd()
+[Activity
+    Text = ${SendActivity_9WHHzd_text()}
+]
+
+# SendActivity_9WHHzd_text()
+- dialog26

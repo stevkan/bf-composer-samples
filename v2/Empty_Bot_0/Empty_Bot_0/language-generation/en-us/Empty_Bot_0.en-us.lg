@@ -1,0 +1,85 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Attachments = ${ThumbnailCard()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to your bot.
+
+# SendActivity_jzIuRy()
+[Activity
+    Text = ${SendActivity_jzIuRy_text()}
+]
+
+# SendActivity_jzIuRy_text()
+- Unknown intent reached!
+# SendActivity_Bj995M()
+[Activity
+    Text = ${SendActivity_Bj995M_text()}
+]
+
+# SendActivity_Bj995M_text()
+- Typee Typee
+# SendActivity_adlkiK()
+[Activity
+    Text = ${SendActivity_adlkiK_text()}
+]
+
+# SendActivity_adlkiK_text()
+- ${turn.activity.value}
+# ChoiceInput_Prompt_TaZNMT()
+[Activity
+    Text = ${ChoiceInput_Prompt_TaZNMT_text()}
+]
+
+# SendActivity_ibPc7S_text()
+- Zulassung beantragen
+# SendActivity_ibPc7S()
+[Activity
+    Text = ${SendActivity_ibPc7S_text()}
+]
+
+# SendActivity_FQqmI6_text()
+- KFZ abmelden
+# SendActivity_FQqmI6()
+[Activity
+    Text = ${SendActivity_FQqmI6_text()}
+]
+
+# SendActivity_jwsy5J_text()
+- Kurzzeitkennzeichen beantragen
+# SendActivity_jwsy5J()
+[Activity
+    Text = ${SendActivity_jwsy5J_text()}
+]
+
+# SendActivity_VWiG4N_text()
+- Wunchkennzeichen reservieren
+# SendActivity_VWiG4N()
+[Activity
+    Text = ${SendActivity_VWiG4N_text()}
+]
+
+# SendActivity_inWq4y()
+[Activity
+    Text = You chose ${dialog.choiceOption}...
+]
+
+# ChoiceInput_Prompt_TaZNMT_text()
+- Pick an option!
+# SendActivity_xpHyIb()
+[Activity
+    Text = ${SendActivity_xpHyIb_text()}
+]
+
+# SendActivity_xpHyIb_text()
+- Text: ${turn.activity.text}
+# SendActivity_viR7ca()
+[Activity
+    Text = ${SendActivity_viR7ca_text()}
+]
+
+# SendActivity_viR7ca_text()
+- "customEvent" hit

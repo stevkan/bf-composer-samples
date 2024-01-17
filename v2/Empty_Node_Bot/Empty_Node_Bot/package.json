@@ -1,0 +1,14 @@
+{
+  "name": "Empty_Node_Bot",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev node index.js"
+  },
+  "dependencies": {
+    "botbuilder-ai-luis": "4.16.0-preview",
+    "botbuilder-ai-orchestrator": "^4.16.0",
+    "botbuilder-ai-qna": "4.16.0-preview",
+    "botbuilder-dialogs-adaptive-runtime-integration-express": "4.16.0-preview",
+    "cross-env": "latest"
+  }
+}

@@ -1,0 +1,7 @@
+# WelcomeUser
+- Welcome to the EmptyBot sample
+
+# QuestionPrompt()
+[Activity
+    Text = Ask a question!
+]

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/skills/v2.2/skill-manifest.json",
+  "$id": "Actual_CQA_Test_Bot-f5f72913-e3cb-4a1d-8cfe-e684bf3f944b",
+  "endpoints": [],
+  "name": "Actual_CQA_Test_Bot",
+  "version": "1.0.0",
+  "publisherName": "SK",
+  "activities": {
+    "Actual_CQA_Test_Bot": {
+      "type": "event",
+      "name": "Actual_CQA_Test_Bot"
+    },
+    "conversationUpdate": {
+      "type": "conversationUpdate"
+    }
+  }
+}

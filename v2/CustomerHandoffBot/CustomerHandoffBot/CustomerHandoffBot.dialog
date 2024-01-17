@@ -1,0 +1,60 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "CustomerHandoffBot",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnEventActivity",
+      "$designer": {
+        "id": "UngQ8o",
+        "name": "Event received (Event activity)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.OAuthInput",
+          "$designer": {
+            "id": "1WYphb"
+          },
+          "timeout": 900000,
+          "maxTurnCount": 3,
+          "allowInterruptions": true,
+          "connectionName": "CustomOAuth",
+          "text": "Sign in, please",
+          "title": "Login",
+          "property": "turn.token"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "g7X0On"
+          },
+          "activity": "${SendActivity_g7X0On()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "eyQ8Qz",
+        "name": "Unknown intent"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "L0tfeG"
+          },
+          "activity": "${SendActivity_L0tfeG()}"
+        }
+      ]
+    }
+  ],
+  "generator": "CustomerHandoffBot.lg",
+  "id": "CustomerHandoffBot",
+  "recognizer": "CustomerHandoffBot.lu.qna"
+}

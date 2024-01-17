@@ -1,0 +1,79 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "KNlTGH",
+    "name": "GetRandomWordCard",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "du6JPS"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "9iFNzT"
+          },
+          "condition": "conversation.selectionMade",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "J1QtJj"
+              },
+              "activity": "${SendActivity_J1QtJj()}"
+            },
+            {
+              "$kind": "Microsoft.EndTurn",
+              "$designer": {
+                "id": "iiWADJ"
+              }
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "wyTR4D"
+              },
+              "property": "conversation.selectionMade",
+              "value": "true"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "IdhgVD"
+              },
+              "activity": "${SendActivity_IdhgVD()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "oGb7LX"
+              },
+              "activity": "${SendActivity_oGb7LX()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "bCeqXU"
+              },
+              "activityProcessed": true,
+              "dialog": "HttpRequest"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "GetRandomWordCard.lg",
+  "recognizer": "GetRandomWordCard.lu.qna",
+  "id": "GetRandomWordCard"
+}

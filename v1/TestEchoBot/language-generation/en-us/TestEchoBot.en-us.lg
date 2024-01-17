@@ -1,0 +1,7 @@
+[import](common.lg)
+
+# SendActivity_Welcome
+- ${WelcomeUser()}
+
+# SendActivity_u2ZMlR()
+- Thank you for calling. You've reached an intent that is no longer in service. Please try again, later.

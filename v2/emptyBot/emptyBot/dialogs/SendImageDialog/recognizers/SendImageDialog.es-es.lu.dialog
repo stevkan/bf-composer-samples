@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_SendImageDialog",
+  "applicationId": "=settings.luis.SendImageDialog_es_es_lu.appId",
+  "version": "=settings.luis.SendImageDialog_es_es_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

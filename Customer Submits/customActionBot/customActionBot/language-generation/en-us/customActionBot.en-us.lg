@@ -1,0 +1,67 @@
+[import](common.en-us.lg)
+
+# SendActivity_7mRibg()
+[Activity
+    Text = ${SendActivity_7mRibg_text()}
+]
+
+# SendActivity_7mRibg_text()
+- Activity processed?: 
+# SendActivity_G3MRv6_text()
+- Activity processed?: ${dialog.lastEvent}
+# SendActivity_G3MRv6()
+[Activity
+    Text = ${SendActivity_G3MRv6_text()}
+]
+
+# TextInput_Prompt_V86FiL()
+[Activity
+    Text = ${TextInput_Prompt_V86FiL_text()}
+]
+
+# TextInput_Prompt_V86FiL_text()
+- What would you like to ask?
+# SendActivity_7W3mP4()
+[Activity
+    Text = ${SendActivity_7W3mP4_text()}
+]
+
+# SendActivity_7W3mP4_text()
+- Customer: ${@customer}
+# TextInput_Prompt_Wwuq7N_text()
+- Search by display name.
+# TextInput_Prompt_Wwuq7N()
+[Activity
+    Text = ${TextInput_Prompt_Wwuq7N_text()}
+]
+
+# SendActivity_IRG0EY()
+[Activity
+    Text = ${SendActivity_IRG0EY_text()}
+]
+
+# SendActivity_IRG0EY_text()
+- Value passed out: ${this.value}
+# SendActivity_qqo3gE()
+[Activity
+    Text = ${SendActivity_qqo3gE_text()}
+]
+
+# SendActivity_qqo3gE_text()
+- Welcome to the customActionBot! Type "start" to begin.
+# SendActivity_hEHCxo()
+[Activity
+    Text = ${SendActivity_hEHCxo_text()}
+]
+
+# SendActivity_hEHCxo_text()
+- You have reached The Void. What do you do?
+# Ask_Activity_0EJdqG()
+- ${SigninCard()}
+# SigninCard()
+[SigninCard
+	title = Signin Card
+    subtitle = This will not redirect!
+    text = Click the button to sign in
+    buttons = ${cardActionTemplate('signin', 'Sign-in', 'https://token.botframework.com/api/oauth/signin?signin=b570419d82254c95859eac654dbd13b9')}
+]

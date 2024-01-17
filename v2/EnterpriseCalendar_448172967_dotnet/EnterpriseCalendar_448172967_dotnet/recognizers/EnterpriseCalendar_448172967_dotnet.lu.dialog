@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_EnterpriseCalendar_448172967_dotnet",
+  "recognizers": {
+    "en-us": "EnterpriseCalendar_448172967_dotnet.en-us.lu",
+    "": "EnterpriseCalendar_448172967_dotnet.en-us.lu"
+  }
+}

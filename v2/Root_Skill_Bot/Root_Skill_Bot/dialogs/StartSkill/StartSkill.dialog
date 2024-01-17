@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "XY2fw0",
+    "name": "StartSkill",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "rid9lN"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "cI24bY"
+          },
+          "activity": "${SendActivity_cI24bY()}"
+        },
+        {
+          "$kind": "Microsoft.BeginSkill",
+          "$designer": {
+            "id": "ld8lis"
+          },
+          "activityProcessed": true,
+          "botId": "=settings.MicrosoftAppId",
+          "skillHostEndpoint": "=settings.skillHostEndpoint",
+          "connectionName": "=settings.connectionName",
+          "allowInterruptions": true,
+          "skillEndpoint": "=settings.skill['skillSkillBot'].endpointUrl",
+          "skillAppId": "=settings.skill['skillSkillBot'].msAppId",
+          "activity": "${BeginSkill_Activity_ld8lis()}"
+        }
+      ]
+    }
+  ],
+  "generator": "StartSkill.lg",
+  "recognizer": "StartSkill.lu.qna",
+  "id": "StartSkill"
+}

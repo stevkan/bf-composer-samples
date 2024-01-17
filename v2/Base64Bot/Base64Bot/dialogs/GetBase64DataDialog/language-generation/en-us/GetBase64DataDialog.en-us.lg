@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_g9lAdF_text()
+- Binary Data: ${conversation.myBinaryData}
+# SendActivity_g9lAdF()
+[Activity
+    Text = ${SendActivity_g9lAdF_text()}
+]

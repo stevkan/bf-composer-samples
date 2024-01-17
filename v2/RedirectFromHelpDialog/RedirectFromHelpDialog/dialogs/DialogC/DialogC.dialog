@@ -1,0 +1,59 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "FqZ87N",
+    "name": "DialogC",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "0EgGlV"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "MxaVt3"
+          },
+          "activity": "${SendActivity_MxaVt3()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "f8o5YW"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "prompt": "${TextInput_Prompt_f8o5YW()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": ""
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "Io4mnZ"
+          }
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "105Qab"
+          },
+          "activityProcessed": true,
+          "disabled": true
+        }
+      ]
+    }
+  ],
+  "generator": "DialogC.lg",
+  "recognizer": "DialogC.lu.qna",
+  "id": "DialogC"
+}

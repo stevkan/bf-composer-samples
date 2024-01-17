@@ -1,0 +1,10 @@
+{
+  "customActionBot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "ParentTrigger": [
+        "ParentDialog.en-us"
+      ]
+    }
+  }
+}

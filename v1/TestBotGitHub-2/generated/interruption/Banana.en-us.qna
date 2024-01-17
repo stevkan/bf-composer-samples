@@ -1,0 +1,12 @@
+
+> Source: cross training. Please do not edit these directly!
+> !# @qna.pair.source = crosstrained
+
+# ? \#Stop
+
+**Filters:**
+- dialogName=Banana
+
+```
+intent=DeferToRecognizer_LUIS_Banana
+```

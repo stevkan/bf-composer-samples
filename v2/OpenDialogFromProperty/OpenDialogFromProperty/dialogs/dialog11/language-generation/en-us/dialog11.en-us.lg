@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_X7SoOs()
+[Activity
+    Text = ${SendActivity_X7SoOs_text()}
+]
+
+# SendActivity_X7SoOs_text()
+- dialog11

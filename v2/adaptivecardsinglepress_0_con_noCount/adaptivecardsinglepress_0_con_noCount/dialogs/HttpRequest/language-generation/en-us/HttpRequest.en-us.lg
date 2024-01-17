@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# SendActivity_KHzUFm()
+[Activity
+    Text = Your word that does not exist is '${conversation.randomword.content.word.word}' which means ${conversation.randomword.content.word.definition}
+]

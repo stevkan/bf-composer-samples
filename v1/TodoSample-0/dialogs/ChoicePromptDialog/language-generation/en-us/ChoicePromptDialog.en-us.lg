@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_nAdvmg()
+[Activity
+    Text = Pick an option
+]

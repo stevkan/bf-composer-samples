@@ -1,0 +1,107 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "4Cvn5j",
+    "name": "HairColorDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.hairColor",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "dN1Qia"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "tpzxnZ"
+          },
+          "disabled": false,
+          "maxTurnCount": 0,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_tpzxnZ()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.hairColor",
+          "defaultValue": "=null",
+          "validations": [
+            "=isMatch(this.value, '^[a-zA-Z ]+$')"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "S1r8Ee"
+          },
+          "condition": "=not(equals(dialog.hairColor,null))",
+          "actions": [
+            {
+              "$kind": "Microsoft.ConfirmInput",
+              "$designer": {
+                "id": "UxU4Kp"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 0,
+              "alwaysPrompt": true,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "prompt": "${ConfirmInput_Prompt_UxU4Kp()}",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "property": "dialog.response",
+              "style": "heroCard",
+              "confirmChoices": [
+                "Yes",
+                "No"
+              ],
+              "defaultValue": false
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "5r9WSg"
+              },
+              "condition": "=dialog.response == true",
+              "actions": [],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "qlRK2s"
+                  },
+                  "activityProcessed": true,
+                  "allowLoop": true
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "D0ae0m"
+              },
+              "activityProcessed": true,
+              "allowLoop": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "HairColorDialog.lg",
+  "recognizer": "HairColorDialog.lu.qna",
+  "id": "HairColorDialog"
+}

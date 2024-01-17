@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_wFT0x6()
+[Activity
+    Text = ${SendActivity_wFT0x6_text()}
+]
+
+# SendActivity_wFT0x6_text()
+- Signing ${user.displayName} out...
+# SendActivity_IdpGAK()
+[Activity
+    Text = ${SendActivity_IdpGAK_text()}
+]
+
+# SendActivity_IdpGAK_text()
+- User succesfully signed out.

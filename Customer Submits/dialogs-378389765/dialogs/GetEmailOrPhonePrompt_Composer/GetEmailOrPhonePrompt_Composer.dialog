@@ -1,0 +1,150 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ihPouW",
+    "name": "GetEmailOrPhonePrompt_Composer",
+    "comment": "Ask the user which method to use for logging in: Phone or Email."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "zflEIA"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.DeleteProperties",
+          "$designer": {
+            "id": "fhoFVR"
+          },
+          "properties": [
+            "dialog.result.IsCustPhoneAuth",
+            "dialog.result.CustomerNumberOutput",
+            "dialog.result.Address"
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "dSDBsB"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "property": "dialog.result.PhoneOrEmail",
+          "value": "=turn.activity.value.poe",
+          "prompt": "${TextInput_Prompt_dSDBsB()}"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "SFf3ib"
+          },
+          "condition": "dialog.result.PhoneOrEmail",
+          "cases": [
+            {
+              "value": "Phone",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "Ks720k"
+                  },
+                  "assignments": [
+                    {
+                      "property": "dialog.result.PhoneOrEmail",
+                      "value": "Phone"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "Email",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "Ebt9nc"
+                  },
+                  "assignments": [
+                    {
+                      "property": "dialog.result.PhoneOrEmail",
+                      "value": "Email"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "MYc90B"
+              },
+              "activity": "${SendActivity_MYc90B()}"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperties",
+              "$designer": {
+                "id": "k3sSZV"
+              },
+              "properties": [
+                "dialog.result.PhoneOrEmail"
+              ]
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "Idsfuw"
+              },
+              "activityProcessed": true,
+              "allowLoop": true
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "GeYOrW"
+          },
+          "condition": "=turn.activity.value.poe == \"Phone\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "WbIrvN"
+              },
+              "property": "dialog.result.PhoneOrEmail",
+              "value": "=\"Phone\"",
+              "disabled": true
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "Nxllo2"
+              },
+              "property": "dialog.result.PhoneOrEmail",
+              "value": "=\"Email\"",
+              "disabled": true
+            }
+          ],
+          "disabled": true
+        }
+      ]
+    }
+  ],
+  "generator": "GetEmailOrPhonePrompt_Composer.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "GetEmailOrPhonePrompt_Composer"
+}

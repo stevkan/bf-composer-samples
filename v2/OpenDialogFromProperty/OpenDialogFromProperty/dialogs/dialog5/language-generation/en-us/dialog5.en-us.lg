@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_Xm55yO()
+[Activity
+    Text = ${SendActivity_Xm55yO_text()}
+]
+
+# SendActivity_Xm55yO_text()
+- dialog5

@@ -1,0 +1,27 @@
+[import](common.lg)
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+
+# ClusterName()
+- What is your cluster name
+# SendActivity_E8LQ4A_text()
+- - Event received
+# SendActivity_ka7JGI()
+[Activity
+    Text = ${SendActivity_ka7JGI_text()}
+]
+
+# SendActivity_ka7JGI_text()
+- - Good Bye!
+# SendActivity_yBbInQ_text()
+- - Good Bye!
+# SendActivity_yBbInQ()
+[Activity
+    Text = ${SendActivity_yBbInQ_text()}
+]

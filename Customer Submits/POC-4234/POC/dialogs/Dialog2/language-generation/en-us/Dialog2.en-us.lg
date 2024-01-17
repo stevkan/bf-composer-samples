@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_lyV90W()
+[Activity
+    Text = ${SendActivity_lyV90W_text()}
+]
+
+# SendActivity_lyV90W_text()
+- Dialog 2
+# TextInput_Prompt_D2ceVi()
+[Activity
+    Text = ${TextInput_Prompt_D2ceVi_text()}
+]
+
+# TextInput_Prompt_D2ceVi_text()
+- How are you?

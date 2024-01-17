@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_eusC8W()
+[Activity
+    Text = ${SendActivity_eusC8W_text()}
+]
+
+# SendActivity_eusC8W_text()
+- In CustomEventDialog

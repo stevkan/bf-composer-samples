@@ -1,0 +1,19 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to your bot.
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = - You're in the skill!
+]
+
+# SendActivity_IgBtnC()
+[Activity
+    Text = Event activity received: ${ turn.activity }
+]

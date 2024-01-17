@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/main/Composer/packages/server/schemas/botproject.schema",
+  "name": "Root_Skill_Bot",
+  "skills": {
+    "skillSkillBot": {
+      "workspace": "../../Skill_Skill_Bot/Skill_Skill_Bot",
+      "remote": false,
+      "manifest": "Skill_Skill_Bot-2-1-manifest"
+    }
+  }
+}

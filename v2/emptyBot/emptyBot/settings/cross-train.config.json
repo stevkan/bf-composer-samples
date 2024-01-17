@@ -1,0 +1,29 @@
+{
+  "emptyBot.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "": [
+        "SendImageDialog.en-us"
+      ],
+      "ChildTrigger": [
+        "ChildDialog.en-us"
+      ],
+      "HelpTrigger": [
+        "HelpDialog.en-us"
+      ],
+      "SendImageTrigger": [
+        "SendImageDialog.en-us"
+      ],
+      "EnglishDialog": [
+        "EnglishDialog.en-us"
+      ],
+      "TestCancelTrigger": [
+        "TestEndDialog.en-us"
+      ],
+      "TriggerTest1": "",
+      "GoToLabelTrigger": [
+        "GoToLabelDialog.en-us"
+      ]
+    }
+  }
+}

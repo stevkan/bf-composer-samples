@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiplyDialog", "MultiplyDialog\MultiplyDialog.csproj", "{31148B1A-AEDD-401B-8065-A5BF7B47B36A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testbot", "testbot\testbot.csproj", "{55A2563B-4872-4E9A-9851-677463AACF89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31148B1A-AEDD-401B-8065-A5BF7B47B36A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31148B1A-AEDD-401B-8065-A5BF7B47B36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31148B1A-AEDD-401B-8065-A5BF7B47B36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31148B1A-AEDD-401B-8065-A5BF7B47B36A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A2563B-4872-4E9A-9851-677463AACF89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A2563B-4872-4E9A-9851-677463AACF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A2563B-4872-4E9A-9851-677463AACF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A2563B-4872-4E9A-9851-677463AACF89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {627E19EE-FB11-4E31-A2B6-E0B361CEAEA4}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+[import](common.lg)
+
+# SendActivity_Dl4fgb()
+[Activity
+    Text = ${SendActivity_Dl4fgb_text()}
+]
+
+# SendActivity_Dl4fgb_text()
+- ```Dialog6
+${dialog.feeling}```
+# TextInput_Prompt_Uoweu6()
+[Activity
+    Text = ${TextInput_Prompt_Uoweu6_text()}
+]
+
+# TextInput_Prompt_Uoweu6_text()
+- How old are you?
+# SendActivity_WVxu6B()
+[Activity
+    Text = ${SendActivity_WVxu6B_text()}
+]
+
+# SendActivity_WVxu6B_text()
+- Age: ${turn.age}

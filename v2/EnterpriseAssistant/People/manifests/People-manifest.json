@@ -1,0 +1,157 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/skills/v2.2/skill-manifest.json",
+  "$id": "People-94c5a9d2-5adb-4e7b-912c-852757e6bf46",
+  "endpoints": [
+    {
+      "protocol": "BotFrameworkV3",
+      "name": "EnterprisePeopleSkill",
+      "endpointUrl": "https://EnterprisePeopleSkill.azurewebsites.net/api/messages",
+      "description": "<description>",
+      "msAppId": "4d85014d-e6a2-4916-b466-1c8ac81a2a16"
+    }
+  ],
+  "name": "PeopleSkill",
+  "version": "1.0.0",
+  "publisherName": "Steven Kanberg",
+  "activities": {
+    "People": {
+      "type": "event",
+      "name": "People"
+    },
+    "AuthenticationDialog": {
+      "type": "event",
+      "name": "AuthenticationDialog",
+      "description": "Dialog for getting OAuth token to make calls to rest of the services APIs"
+    },
+    "GetCollaboratorsDialog": {
+      "type": "event",
+      "name": "GetCollaboratorsDialog"
+    },
+    "GetDirectReportsDialog": {
+      "type": "event",
+      "name": "GetDirectReportsDialog"
+    },
+    "GetManagerDialog": {
+      "type": "event",
+      "name": "GetManagerDialog"
+    },
+    "GetPeersDialog": {
+      "type": "event",
+      "name": "GetPeersDialog"
+    },
+    "GetProfileDialog": {
+      "type": "event",
+      "name": "GetProfileDialog"
+    },
+    "GetUserDialog": {
+      "type": "event",
+      "name": "GetUserDialog"
+    },
+    "ListDialog": {
+      "type": "event",
+      "name": "ListDialog",
+      "value": {
+        "properties": {
+          "templates.icon": {
+            "description": "LG template ID for list card icon",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Templates Icon"
+          },
+          "templates.title": {
+            "description": "LG template ID for list card title",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Templates Title"
+          },
+          "templates.item": {
+            "description": "LG template ID for list item",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Templates Item"
+          },
+          "templates.initialPrompt": {
+            "description": "LG template ID for the initial prompt to show with the list card",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Templates Initial Prompt"
+          },
+          "templates.showMorePrompt": {
+            "description": "LG template ID for the prompt to show when user navigates to see more results",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Templates Show More Prompt"
+          },
+          "templates.skipResponse": {
+            "description": "LG template ID for the response when a user skips selecting an option",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Templates Skip Response"
+          },
+          "templates.defaultValueResponse": {
+            "description": "LG template ID for the response when the default choice is selected",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Templates Default Value Response"
+          },
+          "templates.noItemsResponse": {
+            "description": "LG template ID for response when no items are found for the list card",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Templates No Items Response"
+          },
+          "actionTitleProperty": {
+            "description": "Property of the list item object to use for the action title of the choice objects.",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Action Title Property"
+          },
+          "getItemsEvent": {
+            "description": "ID for dialog event on calling dialog to populate list items",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Get Items Event"
+          },
+          "itemsProperty": {
+            "description": "Named state property where list items are stored.",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/stringExpression",
+            "title": "Items Property"
+          },
+          "doSelection": {
+            "description": "Boolean property indicating whether the list will require the user to select a choice",
+            "title": "Do Selection",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/booleanExpression"
+          },
+          "additionalOptions": {
+            "description": "Object property with custom properties used for LG responses",
+            "title": "Additional Options",
+            "$ref": "https://schemas.botframework.com/schemas/component/v1.0/component.schema#/definitions/objectExpression"
+          }
+        },
+        "type": "object"
+      }
+    },
+    "conversationUpdate": {
+      "type": "conversationUpdate"
+    },
+    "message": {
+      "type": "message"
+    }
+  },
+  "dispatchModels": {
+    "languages": {
+      "en-us": [
+        {
+          "name": "People",
+          "contentType": "application/lu",
+          "url": "https://EnterprisePeopleSkill.azurewebsites.net/manifests/skill-People.en-us.lu",
+          "description": "<description>"
+        }
+      ]
+    },
+    "intents": [
+      "GetCollaborators",
+      "GetDepartment",
+      "GetDirectReports",
+      "GetEmailAddress",
+      "GetJobTitle",
+      "GetLocation",
+      "GetManager",
+      "GetPeers",
+      "GetPhoneNumber",
+      "GetProfile",
+      "LaunchChat",
+      "Logout"
+    ]
+  }
+}

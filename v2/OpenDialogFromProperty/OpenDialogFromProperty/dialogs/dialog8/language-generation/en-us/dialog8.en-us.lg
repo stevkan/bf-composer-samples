@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_pIJbKN()
+[Activity
+    Text = ${SendActivity_pIJbKN_text()}
+]
+
+# SendActivity_pIJbKN_text()
+- dialog8

@@ -1,0 +1,103 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "lcxHgN",
+    "name": "ExceptionDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "UDTzDo"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "yjR3SS"
+          },
+          "property": "dialog.array",
+          "value": [
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "1J26xL"
+          },
+          "activity": "${SendActivity_1J26xL()}"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "tvBJU0"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.array",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "eDgsjV"
+              },
+              "activity": "${SendActivity_eDgsjV()}"
+            },
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "V1uWHI"
+              },
+              "changeType": "push",
+              "itemsProperty": "dialog.array[dialog.foreach.index]",
+              "resultProperty": "dialog.array[dialog.foreach.index].date",
+              "value": "=setProperty(dialog.array[dialog.foreach.index], 'date', utcNow('yyyy-MM-dd'))"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "N9Aeu2"
+              },
+              "activity": "${SendActivity_N9Aeu2()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ttuEZO"
+          },
+          "activity": "${SendActivity_ttuEZO()}"
+        }
+      ]
+    }
+  ],
+  "generator": "ExceptionDialog.lg",
+  "recognizer": "ExceptionDialog.lu.qna",
+  "id": "ExceptionDialog"
+}

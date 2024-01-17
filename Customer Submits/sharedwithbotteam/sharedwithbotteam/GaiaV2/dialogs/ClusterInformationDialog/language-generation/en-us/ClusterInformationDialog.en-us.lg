@@ -1,0 +1,12 @@
+[import](common.lg)
+
+# TextInput_Prompt_ClusterInformation()
+- ${ClusterInformation()}
+# SendActivity_ClusterInformation_Fail()
+- I'm sorry I could not find your cluster settings. Please report this issue to KustoOps@microsoft.com
+# SendActivity_ClusterInformation_Success()
+- I hope this information was useful.\n\n You can write another cluster name or ${QuitMessage()}
+
+# SendActivity_Farewell()
+- It was great talking to you!
+

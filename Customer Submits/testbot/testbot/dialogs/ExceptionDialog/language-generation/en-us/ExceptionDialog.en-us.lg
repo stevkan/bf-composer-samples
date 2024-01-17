@@ -1,0 +1,21 @@
+[import](common.lg)
+
+# SendActivity_1J26xL()
+[Activity
+    Text = Array: ${dialog.array}
+]
+
+# SendActivity_eDgsjV()
+[Activity
+    Text = Array Item Before: ${dialog.foreach.value}
+]
+
+# SendActivity_N9Aeu2()
+[Activity
+    Text = Array Item After: ${dialog.foreach.value}
+]
+
+# SendActivity_ttuEZO()
+[Activity
+    Text = Updated Array: ${dialog.array}
+]

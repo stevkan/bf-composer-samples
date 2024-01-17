@@ -1,0 +1,24 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "GAyQ2K",
+    "name": "TokenValidityResponseDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "dukHeU"
+      },
+      "actions": []
+    }
+  ],
+  "generator": "TokenValidityResponseDialog.lg",
+  "recognizer": "TokenValidityResponseDialog.lu.qna",
+  "id": "TokenValidityResponseDialog"
+}

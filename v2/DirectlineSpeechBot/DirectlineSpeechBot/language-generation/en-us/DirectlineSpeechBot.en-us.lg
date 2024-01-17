@@ -1,0 +1,25 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+    Speak = ${SendActivity_Greeting_speak()}
+    InputHint = expectingInput
+]
+
+# SendActivity_Greeting_text()
+- Welcome to your bot.
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+    Speak = ${SendActivity_DidNotUnderstand_speak()}
+    InputHint = expectingInput
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# SendActivity_Greeting_speak()
+- Welcome to my bot, friend!
+# SendActivity_DidNotUnderstand_speak()
+- Sorry, I didn't get that, friend!

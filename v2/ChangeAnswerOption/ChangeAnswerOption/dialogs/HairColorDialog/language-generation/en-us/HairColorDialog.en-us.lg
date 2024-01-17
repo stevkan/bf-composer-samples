@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# TextInput_Prompt_tpzxnZ_text()
+- What is your hair color?
+# TextInput_Prompt_tpzxnZ()
+[Activity
+    Text = ${TextInput_Prompt_tpzxnZ_text()}
+]
+
+# ConfirmInput_Prompt_UxU4Kp_text()
+- Your age is ${dialog.hairColor}, correct?
+# ConfirmInput_Prompt_UxU4Kp()
+[Activity
+    Text = ${ConfirmInput_Prompt_UxU4Kp_text()}
+]

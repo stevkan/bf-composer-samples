@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_SecondaryHelpDialog",
+  "applicationId": "=settings.luis.SecondaryHelpDialog_en_us_lu.appId",
+  "version": "=settings.luis.SecondaryHelpDialog_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

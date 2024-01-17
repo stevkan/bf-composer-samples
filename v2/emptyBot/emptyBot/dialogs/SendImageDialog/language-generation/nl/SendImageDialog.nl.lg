@@ -1,0 +1,11 @@
+[import](common.lg)
+
+# AttachmentInput_Prompt_VJ4bUg()
+[Activity
+    Text = Send a pic!
+]
+
+# SendActivity_naqONe()
+[Activity
+    Text = -${ShowImageSteve(dialog.attachments[0].contentUrl, dialog.attachments[0].contentType)}
+]

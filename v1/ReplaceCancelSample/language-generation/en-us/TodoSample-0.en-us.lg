@@ -1,0 +1,20 @@
+[import](common.lg)
+
+# SendActivity_696707
+-${WelcomeUser()}
+
+# SendActivity_157674()
+- ${Greeting()}
+# foo
+- You are so smart!
+
+# ChoiceInput_Prompt_jZKKgy()
+- Choose an option!
+# SendActivity_L5blVy()
+- No choice made.
+# SendActivity_kU6f9s()
+- Catch Cancel Dialog reached!!!
+# SendActivity_3GICNP()
+- ${cancelText()}
+# SendActivity_VwPAaQ()
+- You are in the parent dialog.

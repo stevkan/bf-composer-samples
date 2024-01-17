@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/skills/v2.2/skill-manifest.json",
+  "$id": "Empty_Bot_0-c91756de-618e-4ffa-9a6b-59c804878d2c",
+  "endpoints": [
+    {
+      "protocol": "BotFrameworkV3",
+      "name": "v-stkan-empty-bot",
+      "endpointUrl": "https://v-stkan-empty-bot.azurewebsites.net/api/messages",
+      "description": "<description>",
+      "msAppId": "11c16026-da83-4803-9f1d-32e7fbd1e33d"
+    }
+  ],
+  "name": "Empty_Bot_0",
+  "version": "41.9",
+  "publisherName": "Steven Kanberg",
+  "activities": {
+    "Empty_Bot_0": {
+      "type": "event",
+      "name": "Empty_Bot_0"
+    },
+    "AttachmentDialog": {
+      "type": "event",
+      "name": "AttachmentDialog"
+    },
+    "Switch_Dialog": {
+      "type": "event",
+      "name": "Switch_Dialog"
+    },
+    "conversationUpdate": {
+      "type": "conversationUpdate"
+    },
+    "message": {
+      "type": "message"
+    },
+    "typing": {
+      "type": "typing"
+    }
+  },
+  "dispatchModels": {
+    "languages": {
+      "en-us": [
+        {
+          "name": "Empty_Bot_0",
+          "contentType": "application/lu",
+          "url": "https://v-stkan-empty-bot.azurewebsites.net/manifests/skill-Empty_Bot_0.en-us.lu",
+          "description": "<description>"
+        }
+      ]
+    },
+    "intents": [
+      "AskForAttachment",
+      "Switch_trigger"
+    ]
+  }
+}

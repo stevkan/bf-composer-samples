@@ -1,0 +1,63 @@
+[import](common.lg)
+
+# SendActivity_ghOAuw()
+[Activity
+    Text = ${SendActivity_ghOAuw_text()}
+]
+
+# SendActivity_ghOAuw_text()
+- Another test.
+# SendActivity_QnTuWS()
+[Activity
+    Attachments = ${json(SendActivity_QnTuWS_attachment_mDZPOx())}
+]
+
+# SendActivity_QnTuWS_attachment_mDZPOx()
+- ```{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "default text",
+      "weight": "bolder",
+      "isSubtle": false
+    }
+  ]
+}```
+# SendActivity_WNznOd()
+-
+# SendActivity_r6wf2s()
+[Activity
+    Text = ${SendActivity_r6wf2s_text()}
+]
+
+# SendActivity_r6wf2s_text()
+- test response
+# SendActivity_xocFuK()
+[Activity
+    Text = ${SendActivity_xocFuK_text()}
+]
+
+# SendActivity_xocFuK_text()
+- another test response
+# SendActivity_xjQ6kY()
+[Activity
+    Attachments = ${json(SendActivity_xjQ6kY_attachment_zg6nDC())}
+]
+
+# SendActivity_xjQ6kY_attachment_zg6nDC()
+- ```{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "default text",
+      "weight": "bolder",
+      "isSubtle": false
+    }
+  ]
+}```

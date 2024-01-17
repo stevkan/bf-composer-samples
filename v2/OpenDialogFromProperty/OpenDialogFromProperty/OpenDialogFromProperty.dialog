@@ -1,0 +1,143 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "OpenDialogFromProperty",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "dialogs": [
+    "GetUserNameDialog",
+    "dialog1",
+    "dialog2",
+    "dialog3",
+    "dialog4",
+    "dialog5",
+    "dialog6",
+    "dialog7",
+    "dialog8",
+    "dialog9",
+    "dialog10",
+    "dialog11",
+    "dialog12",
+    "dialog13",
+    "dialog14",
+    "dialog15",
+    "dialog16",
+    "dialog17",
+    "dialog18",
+    "dialog19",
+    "dialog20",
+    "dialog21",
+    "dialog22",
+    "dialog23",
+    "dialog24",
+    "dialog25",
+    "dialog26",
+    "dialog27",
+    "dialog28",
+    "dialog29",
+    "dialog30"
+  ],
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "comment": "This trigger runs when a conversation update activity is sent to the bot. This indicates a user or bot being added or removed from a conversation."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "K7ipkb"
+          },
+          "assignments": [
+            {
+              "property": "conversation.dialogToStart",
+              "value": "=string(\"GetUserNameDialog\")"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item",
+            "comment": "For each member added to the conversation."
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else",
+                "comment": "Checks that that member added ID does not match the bot ID. This prevents the greeting message from being sent when the bot is added to a conversation."
+              },
+              "condition": "=string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Greeting()}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u",
+        "comment": "This trigger fires when an incoming activity is not handled by any other trigger."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kMjqz1",
+            "comment": "It is recommended to show a message to the user when the bot does not know how to handle an incoming activity and provide follow up options or a help message."
+          },
+          "activity": "${SendActivity_DidNotUnderstand()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "EXMAAo",
+        "name": "GetUserNameTrigger"
+      },
+      "intent": "GetUserNameTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "KxfMDP"
+          },
+          "activity": "${SendActivity_KxfMDP()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "lPYytE"
+          },
+          "activityProcessed": true,
+          "dialog": "=conversation.dialogToStart",
+          "options": {}
+        }
+      ],
+      "entities": []
+    }
+  ],
+  "generator": "OpenDialogFromProperty.lg",
+  "id": "OpenDialogFromProperty",
+  "recognizer": "OpenDialogFromProperty.lu.qna"
+}

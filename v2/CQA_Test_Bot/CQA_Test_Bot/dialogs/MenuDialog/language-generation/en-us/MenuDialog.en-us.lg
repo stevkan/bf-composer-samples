@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_usI7EC_text()
+- We have espressos and mochas as coffee options. For juice, we have apple, orange, and mango.
+# SendActivity_usI7EC()
+[Activity
+    Text = ${SendActivity_usI7EC_text()}
+]

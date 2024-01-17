@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_b9cpzd_text()
+- It sounds like you would like a ${turn.recognized.entities.JuiceType[0].text}. Let's get you one!
+# SendActivity_b9cpzd()
+[Activity
+    Text = ${SendActivity_b9cpzd_text()}
+]

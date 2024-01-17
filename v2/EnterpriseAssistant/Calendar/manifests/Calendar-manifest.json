@@ -1,0 +1,108 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/skills/v2.2/skill-manifest.json",
+  "$id": "Calendar-1cde87cb-b69c-4049-8b89-c72cb4b2ff0c",
+  "endpoints": [
+    {
+      "protocol": "BotFrameworkV3",
+      "name": "CalendarSkill",
+      "endpointUrl": "https://EnterpriseCalendarSkill.azurewebsites.net/api/messages",
+      "description": "<description>",
+      "msAppId": "f928450a-6ead-4377-8954-432bf0a29032"
+    }
+  ],
+  "name": "CalendarSkill",
+  "version": "1.0.0",
+  "publisherName": "Steven Kanberg",
+  "activities": {
+    "Calendar": {
+      "type": "event",
+      "name": "Calendar"
+    },
+    "AuthenticationDialog": {
+      "type": "event",
+      "name": "AuthenticationDialog"
+    },
+    "CancelEventDialog": {
+      "type": "event",
+      "name": "CancelEventDialog"
+    },
+    "CreateEventDialog": {
+      "type": "event",
+      "name": "CreateEventDialog"
+    },
+    "GetContactsDialog": {
+      "type": "event",
+      "name": "GetContactsDialog"
+    },
+    "GetEventsDialog": {
+      "type": "event",
+      "name": "GetEventsDialog"
+    },
+    "ListDialog": {
+      "type": "event",
+      "name": "ListDialog"
+    },
+    "ResolveDateTimeDialog": {
+      "type": "event",
+      "name": "ResolveDateTimeDialog"
+    },
+    "RespondToEventDialog": {
+      "type": "event",
+      "name": "RespondToEventDialog"
+    },
+    "ShowEventsDialog": {
+      "type": "event",
+      "name": "ShowEventsDialog"
+    },
+    "UpdateEventDialog": {
+      "type": "event",
+      "name": "UpdateEventDialog"
+    },
+    "conversationUpdate": {
+      "type": "conversationUpdate"
+    },
+    "message": {
+      "type": "message"
+    }
+  },
+  "dispatchModels": {
+    "languages": {
+      "en-us": [
+        {
+          "name": "Calendar",
+          "contentType": "application/lu",
+          "url": "https://EnterpriseCalendarSkill.azurewebsites.net/manifests/skill-Calendar.en-us.lu",
+          "description": "<description>"
+        }
+      ]
+    },
+    "intents": [
+      "Cancel",
+      "CancelEvent",
+      "CreateEvent",
+      "GetAvailabilityBreaks",
+      "GetAvailabilityFirst",
+      "GetAvailabilityLast",
+      "GetEventAttendees",
+      "GetEventDateTime",
+      "GetEventLocation",
+      "GetEvents",
+      "Help",
+      "LaunchChat",
+      "Logout",
+      "RespondAccept",
+      "RespondDecline",
+      "RespondTentativelyAccept",
+      "SetAttendeesAdd",
+      "SetAttendeesRemove",
+      "SetDateTime",
+      "SetDescription",
+      "SetDuration",
+      "SetLocation",
+      "SetOnlineMeetingAdd",
+      "SetOnlineMeetingRemove",
+      "SetTitle",
+      "UpdateEvent"
+    ]
+  }
+}

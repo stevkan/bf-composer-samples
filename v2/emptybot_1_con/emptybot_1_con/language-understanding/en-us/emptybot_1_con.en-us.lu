@@ -1,0 +1,14 @@
+
+# TextInput_Response_76Z0Ik
+- my name is {@userName = vishwac}
+- I'm {@userName = tom}
+- you can call me {@userName = chris}
+- I'm {@userName = scott} and I'm {@userAge = 36} years old
+> add few patterns
+- my name is {@userName}
+
+> add entities
+@ prebuilt personName hasRoles userName
+
+# Help_intent
+- help

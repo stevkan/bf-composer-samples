@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_pdfAttachmentValidation",
+  "recognizers": {
+    "en-us": "pdfAttachmentValidation.en-us.lu",
+    "": "pdfAttachmentValidation.en-us.lu"
+  }
+}

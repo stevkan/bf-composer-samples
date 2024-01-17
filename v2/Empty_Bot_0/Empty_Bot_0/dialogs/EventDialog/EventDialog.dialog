@@ -1,0 +1,33 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "CWkGJx",
+    "name": "EventDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "9odGQ8"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.EmitEvent",
+          "$designer": {
+            "id": "qC0K2x"
+          },
+          "eventName": "=\"customEvent\"",
+          "eventValue": "customValue"
+        }
+      ]
+    }
+  ],
+  "generator": "EventDialog.lg",
+  "recognizer": "EventDialog.lu.qna",
+  "id": "EventDialog"
+}

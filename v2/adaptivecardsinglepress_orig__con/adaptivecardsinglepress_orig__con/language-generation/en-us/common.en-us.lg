@@ -1,0 +1,81 @@
+# WelcomeUser
+[Activity
+    Attachments = ${json(WelcomeCard())}
+]
+
+# WelcomeCard
+- ```
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Fill in the form"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "choices": [
+                {
+                    "title": "Get Random Word",
+                    "value": "GetRandomWord"
+                },
+                {
+                    "title": "Input demo",
+                    "value": "InputDemo"
+                }
+            ],
+            "placeholder": "How can I help you today?",
+            "id": "triggerIntent"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit"
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2"
+}
+```
+
+# GetUserName
+[Activity
+    Attachments = ${json(GetUserNameCard())}
+]
+
+# GetUserNameCard
+- ```
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Fill in the form"
+        },
+        {
+            "type": "Input.Text",
+            "placeholder": "Enter your name",
+            "id": "userName"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit"
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2"
+}
+```

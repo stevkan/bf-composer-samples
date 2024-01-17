@@ -1,0 +1,220 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "adaptiveCardHandling",
+      "id": "OymggX"
+    },
+    "name": "AdaptiveCardButtonSinglePress"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "vgtQyi"
+          },
+          "property": "conversation.clickCount",
+          "value": 0
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "s78SyM"
+                  },
+                  "assignments": [
+                    {
+                      "property": "conversation.selectionMade",
+                      "value": false
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Welcome()}"
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "KSZKUh"
+                  },
+                  "property": "conversation.clickCount",
+                  "value": "=add(conversation.clickCount, 1)",
+                  "disabled": true
+                }
+              ],
+              "elseActions": []
+            }
+          ],
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "fVphYp"
+          },
+          "activity": "${SendActivity_fVphYp()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "VdfvxM"
+          },
+          "condition": "=greater(conversation.clickCount, 1)",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "7sAUAy"
+              },
+              "activity": "${SendActivity_7sAUAy()}"
+            },
+            {
+              "$kind": "Microsoft.EndTurn",
+              "$designer": {
+                "id": "zIKrDf"
+              }
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "11lcM8"
+              },
+              "activity": "${SendActivity_11lcM8()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "RXhPt4"
+          },
+          "activityProcessed": true,
+          "dialog": "GetRandomWordCard"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "aF8NMx",
+        "name": "GetRandomWord card"
+      },
+      "condition": "turn.activity.value.triggerIntent == \"foo\"",
+      "actions": [
+        {
+          "$kind": "Microsoft.TraceActivity",
+          "$designer": {
+            "id": "0u5xkL"
+          },
+          "name": "In Messaged Received Activity"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "4oC6Di"
+          },
+          "condition": "=equals(turn.activity.value.triggerIntent, 'GetRandomWord')",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "6cdYV5"
+              },
+              "property": "conversation.clickCount",
+              "value": "= add(conversation.clickCount, 1)"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Dywvx2"
+              },
+              "activity": "${SendActivity_Dywvx2()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Ao79mh"
+              },
+              "activity": "${SendActivity_Ao79mh()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "73Gimn"
+          },
+          "activityProcessed": true,
+          "dialog": "GetRandomWordCard"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "ATljg9",
+        "name": "InputDemo"
+      },
+      "condition": "turn.activity.value.triggerIntent == \"InputDemo\"",
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "PTq2UH"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_PTq2UH()}",
+          "property": "user.name",
+          "value": "=turn.activity.value.userName"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ZFNf9R"
+          },
+          "activity": "${SendActivity_ZFNf9R()}"
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "adaptivecardhandling.lg",
+  "id": "adaptivecardhandling",
+  "recognizer": "adaptivecardhandling.lu.qna"
+}

@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# SendActivity_zLGyf6()
+[Activity
+    Text = Hello from the dialog!
+]

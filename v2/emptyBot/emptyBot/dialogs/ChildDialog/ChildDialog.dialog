@@ -1,0 +1,60 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "FgjDWr",
+    "name": "ChildDialog",
+    "comment": ""
+  },
+  "autoEndDialog": false,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "xS60EY"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "dNoz9V"
+          },
+          "activity": "${SendActivity_dNoz9V()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "210iD5"
+          },
+          "disabled": false,
+          "maxTurnCount": 1,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_210iD5()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.userName"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Tu2Ksk"
+          },
+          "activity": "${SendActivity_Tu2Ksk()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "vLjsG3"
+          },
+          "activity": "${SendActivity_vLjsG3()}"
+        }
+      ]
+    }
+  ],
+  "generator": "ChildDialog.lg",
+  "recognizer": "ChildDialog.lu.qna",
+  "id": "ChildDialog"
+}

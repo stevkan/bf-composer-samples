@@ -1,0 +1,17 @@
+{
+  "GetTokenFromWebChat.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "": [
+        "OauthDialog.en-us"
+      ],
+      "OauthTrigger": [
+        "OauthDialog.en-us"
+      ],
+      "LogoutTrigger": "",
+      "FavoriteColorTrigger": [
+        "FavoriteColorDialog.en-us"
+      ]
+    }
+  }
+}

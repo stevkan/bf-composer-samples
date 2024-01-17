@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# SendActivity_dNoz9V()
+[Activity
+    Text = ${SendActivity_dNoz9V_text()}
+]
+
+# SendActivity_dNoz9V_text()
+- - I'm a child!!
+# TextInput_Prompt_210iD5()
+[Activity
+    Text = ${TextInput_Prompt_210iD5_text()}
+]
+
+# TextInput_Prompt_210iD5_text()
+- What is your name?
+# SendActivity_Tu2Ksk()
+[Activity
+    Text = ${SendActivity_Tu2Ksk_text()}
+]
+
+# SendActivity_Tu2Ksk_text()
+- Hello, ${dialog.userName}!
+# SendActivity_vLjsG3()
+[Activity
+    Text = ${SendActivity_vLjsG3_text()}
+]
+
+# SendActivity_vLjsG3_text()
+- Thanks for the feedback, have a nice day, bye!

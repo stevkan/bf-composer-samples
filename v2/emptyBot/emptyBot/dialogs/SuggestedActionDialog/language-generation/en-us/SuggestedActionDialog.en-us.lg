@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# ConfirmInput_Prompt_U5Xup4()
+[Activity
+    Text = ${ConfirmInput_Prompt_U5Xup4_text()}
+]
+
+# ConfirmInput_Prompt_U5Xup4_text()
+- Do you like pizza?
+# ConfirmInput_DefaultValueResponse_U5Xup4()
+[Activity
+    Text = ${ConfirmInput_DefaultValueResponse_U5Xup4_text()}
+]
+
+# ConfirmInput_DefaultValueResponse_U5Xup4_text()
+- Max turn count exceeded. Using default value.

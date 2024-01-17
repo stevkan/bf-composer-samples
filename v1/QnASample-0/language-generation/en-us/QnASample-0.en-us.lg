@@ -1,0 +1,13 @@
+[import](common.lg)
+# TextInput_Prompt_i7pAY3()
+[Activity
+    Text = ${expandText(@answer)}
+    SuggestedActions = ${foreach(turn.recognized.answers[0].context.prompts, x, x.displayText)}
+]
+
+# SendActivity_xorJMB()
+[Activity
+  Attachments=${json(@answer)}
+]
+# SendActivity_kbNaew()
+- Unknown intent! So sad...

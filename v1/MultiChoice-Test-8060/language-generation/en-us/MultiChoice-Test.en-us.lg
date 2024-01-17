@@ -1,0 +1,19 @@
+[import](common.lg)
+
+# SendActivity_Welcome
+- ${WelcomeUser()}
+
+# SendActivity_m0LlEo()
+[Activity
+    Text = Ended unknown
+]
+
+# SendActivity_lkNaXK()
+[Activity
+    Text = Ended Detect: ${conversation.turnEnded}
+]
+
+# SendActivity_tXlpun()
+[Activity
+    Text = Restarting!
+]

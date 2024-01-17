@@ -1,0 +1,47 @@
+[import](common.lg)
+
+# NumberInput_Prompt_Gqu9wm()
+[Activity
+    Attachments = ${json(NumberInput_Prompt_Gqu9wm_attachment_mK9uHh())}
+]
+
+# NumberInput_Prompt_Gqu9wm_attachment_mK9uHh()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```{
+  "type": "AdaptiveCard",
+"body": [
+{
+"type": "TextBlock",
+"text": "Q4.What is the number of PLANNED FTEs for your process today?(Please enter only the production FTE numbers including those FTEs who are WFH)",
+"wrap": true
+},
+{
+"type": "Input.Number",
+"placeholder": "1234",
+"id": "dq4"
+}
+],
+"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+"version": "1.2",
+"actions": [
+{
+"type": "Action.Submit",
+"title": "Next"
+}
+]
+}```
+# SendActivity_8gOucD()
+[Activity
+    Text = ${SendActivity_8gOucD_text()}
+]
+
+# SendActivity_8gOucD_text()
+- You entered: ${user.q4d}
+# SendActivity_khupNC()
+[Activity
+    Text = ${SendActivity_khupNC_text()}
+]
+
+# SendActivity_khupNC_text()
+- Turn.Context: ${turn.context}

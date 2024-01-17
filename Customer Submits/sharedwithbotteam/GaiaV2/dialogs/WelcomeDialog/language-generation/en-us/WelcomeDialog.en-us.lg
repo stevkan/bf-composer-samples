@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_YH51mf()
+-${WelcomeNewUser()}
+# SendActivity_X1OOva()
+- ${WelcomeText()}
+# SendActivity_rBieJA()
+- ${BotOptions()}

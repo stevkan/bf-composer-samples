@@ -1,0 +1,57 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "eljUMl",
+    "name": "AdaptiveCardErrorDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "aqTwVN"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "khupNC",
+            "comment": ""
+          },
+          "activity": "${SendActivity_khupNC()}"
+        },
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "Gqu9wm"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${NumberInput_Prompt_Gqu9wm()}",
+          "property": "user.q4d",
+          "outputFormat": "int(this.value)",
+          "value": "=this.value"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "8gOucD"
+          },
+          "activity": "${SendActivity_8gOucD()}"
+        }
+      ]
+    }
+  ],
+  "generator": "AdaptiveCardErrorDialog.lg",
+  "recognizer": "AdaptiveCardErrorDialog.lu.qna",
+  "id": "AdaptiveCardErrorDialog"
+}

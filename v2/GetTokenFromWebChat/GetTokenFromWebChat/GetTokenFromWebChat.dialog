@@ -1,0 +1,303 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "GetTokenFromWebChat",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "comment": "This trigger runs when a conversation update activity is sent to the bot. This indicates a user or bot being added or removed from a conversation."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item",
+            "comment": "For each member added to the conversation."
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else",
+                "comment": "Checks that that member added ID does not match the bot ID. This prevents the greeting message from being sent when the bot is added to a conversation."
+              },
+              "condition": "=string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Greeting()}"
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u",
+        "comment": "This trigger fires when an incoming activity is not handled by any other trigger."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kMjqz1",
+            "comment": "It is recommended to show a message to the user when the bot does not know how to handle an incoming activity and provide follow up options or a help message."
+          },
+          "activity": "${SendActivity_DidNotUnderstand()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "g9d0HG"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_g9d0HG()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnEventActivity",
+      "$designer": {
+        "id": "NaaQtI",
+        "name": "Event received (Event activity)",
+        "comment": "When Web Chat dispatches the 'WEB_CHAT/SEND_EVENT' activity with name 'getToken', this event activity trigger assigns the received 'oauthAccessToken' to 'user.token'."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "V7W6Za"
+          },
+          "assignments": [
+            {
+              "value": "=turn.activity.value.oauthAccessToken",
+              "property": "user.token"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "CEhRZk",
+            "comment": "If enabled, this automatically starts the OauthDialog to immediately verify the user's token (sent in Web Chat)."
+          },
+          "activityProcessed": true,
+          "dialog": "OauthDialog"
+        }
+      ],
+      "condition": "=equals(turn.activity.name, 'getToken')"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "oulVLp",
+        "name": "OauthTrigger"
+      },
+      "intent": "OauthTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "fs7SAy"
+          },
+          "activityProcessed": true,
+          "dialog": "OauthDialog",
+          "options": {}
+        }
+      ],
+      "entities": []
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "7HN3Kb",
+        "name": "LogoutTrigger",
+        "comment": "Signs the user out and clears the user properties used during signing in"
+      },
+      "intent": "LogoutTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Pg49Hh"
+          },
+          "activity": "${SendActivity_Pg49Hh()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "Ri5il8"
+          },
+          "assignments": [
+            {
+              "property": "dialog.runCount",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "CheckCount",
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "8zBzzw",
+            "comment": "It appears there may be a bug where the 'Sign out user' process is possibly not awaited. The result is calling this action once doesn't capture the necessary response and, subsequently, doesn't clear the stored token. Consequently, attempting to login again will automatically succeed.\n\nBy calling it twice, this gives Composer the opportunity to get the response, clear the token, and allow an expected login process to occur when called again."
+          },
+          "condition": "=equals(dialog.runCount, 2)",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SignOutUser",
+              "$designer": {
+                "id": "UvxTxl"
+              },
+              "userId": "=user.id",
+              "connectionName": "KanOAuth"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "LtFHb7",
+                "comment": "Clears the 'user' state bucket to force a new OAuth login process."
+              },
+              "assignments": [
+                {
+                  "property": "user.token"
+                },
+                {
+                  "property": "user.id"
+                },
+                {
+                  "property": "user.displayName"
+                },
+                {
+                  "property": "user.token",
+                  "value": "=removeProperty(user.token, 'token')"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "vNgqBF"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.runCount",
+                  "value": "=add(dialog.runCount, 1)"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.GotoAction",
+              "$designer": {
+                "id": "2BaDqX",
+                "comment": "Returns the flow to the previous 'If/else' action. The Action Id \"CheckCount\" is assigned to that action as \"id\": \"CheckCount\". This can be located by clicking Show code and searching for the value."
+              },
+              "actionId": "CheckCount"
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "K2M0o4"
+              },
+              "activity": "${SendActivity_K2M0o4()}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Vawvws",
+        "name": "FavoriteColorTrigger"
+      },
+      "intent": "FavoriteColorTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "6v67Ve"
+          },
+          "activityProcessed": true,
+          "dialog": "FavoriteColorDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnError",
+      "$designer": {
+        "id": "wg5rPi",
+        "name": "Error occurred (Error event)",
+        "comment": "Catches dialog event errors. This implementation is purposefully not specific and will catch any generated error. You will want to tailor the error triggers to match the different error types."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "60dVjf"
+          },
+          "activity": "${SendActivity_60dVjf()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "d8hdUR",
+            "comment": "Clears the 'user' state bucket to force a new OAuth login process."
+          },
+          "assignments": [
+            {
+              "property": "user.token"
+            },
+            {
+              "property": "user.id"
+            },
+            {
+              "property": "user.displayName"
+            },
+            {
+              "property": "user.token",
+              "value": "=removeProperty(user.token, 'token')"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "qYry4g"
+          },
+          "activityProcessed": true,
+          "dialog": "OauthDialog"
+        }
+      ]
+    }
+  ],
+  "generator": "GetTokenFromWebChat.lg",
+  "id": "GetTokenFromWebChat",
+  "recognizer": "GetTokenFromWebChat.lu.qna"
+}

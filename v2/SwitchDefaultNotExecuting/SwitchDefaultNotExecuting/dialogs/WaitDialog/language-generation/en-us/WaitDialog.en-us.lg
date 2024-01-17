@@ -1,0 +1,44 @@
+[import](common.lg)
+
+# SendActivity_9S9lb5_text()
+- Waiting ${conversation.count}
+# SendActivity_9S9lb5()
+[Activity
+    Text = ${SendActivity_9S9lb5_text()}
+]
+
+# LogAction_Text_yKZpsb()
+[Activity
+    Text = ${LogAction_Text_yKZpsb_text()}
+]
+
+# LogAction_Text_yKZpsb_text()
+- test
+# SendActivity_aIq1pA_text()
+- Processing...
+# SendActivity_aIq1pA()
+[Activity
+    Text = ${SendActivity_aIq1pA_text()}
+]
+
+# SendActivity_sANcrH_text()
+- Done waiting
+# SendActivity_sANcrH()
+[Activity
+    Text = ${SendActivity_sANcrH_text()}
+]
+
+# SendActivity_emObB2()
+[Activity
+    Text = ${SendActivity_emObB2_text()}
+]
+
+# SendActivity_emObB2_text()
+- Wait period: ${conversation.waitPeriod}
+# SendActivity_BzW3HQ_text()
+- Time of day: ${conversation.utcTime}
+# SendActivity_BzW3HQ()
+[Activity
+    Text = ${SendActivity_BzW3HQ_text()}
+]
+

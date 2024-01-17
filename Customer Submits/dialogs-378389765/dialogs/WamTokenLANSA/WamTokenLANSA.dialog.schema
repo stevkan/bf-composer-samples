@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "WamTokenLANSA",
+  "type": "object",
+  "properties": {},
+  "$result": {
+    "type": "object",
+    "properties": {
+      "TokenOutput": {
+        "type": "string",
+        "title": "Token Output"
+      }
+    }
+  }
+}

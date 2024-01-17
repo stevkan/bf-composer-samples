@@ -1,0 +1,84 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "h4lztf",
+    "name": "CheckTokenValidityDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Z1VIR0"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "1Muess"
+          },
+          "activity": "${SendActivity_1Muess()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "sjptN4"
+          },
+          "activity": "${SendActivity_sjptN4()}"
+        },
+        {
+          "$kind": "Microsoft.Graph.User.GetProfile",
+          "$designer": {
+            "id": "TdVsI7"
+          },
+          "token": "=dialog.token",
+          "resultProperty": "turn.result"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "mKVDCm"
+          }
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnError",
+      "$designer": {
+        "id": "PkOPqR",
+        "name": "Error occurred (Error event)"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "JZ8GmN"
+          },
+          "activity": "${SendActivity_JZ8GmN()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "My0Kyl"
+          },
+          "activity": "${SendActivity_My0Kyl()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "6CkVVi"
+          },
+          "activityProcessed": true,
+          "dialog": "TokenValidityResponseDialog"
+        }
+      ]
+    }
+  ],
+  "generator": "CheckTokenValidityDialog.lg",
+  "recognizer": "CheckTokenValidityDialog.lu.qna",
+  "id": "CheckTokenValidityDialog"
+}

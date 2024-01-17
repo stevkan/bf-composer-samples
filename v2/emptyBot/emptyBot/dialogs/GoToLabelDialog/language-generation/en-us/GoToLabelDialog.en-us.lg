@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_fpN3cS()
+[Activity
+    Text = ${ChoiceInput_Prompt_fpN3cS_text()}
+]
+
+# ChoiceInput_Prompt_fpN3cS_text()
+- Parent Question
+# ChoiceInput_Prompt_bs3G8s()
+[Activity
+    Text = ${ChoiceInput_Prompt_bs3G8s_text()}
+]
+
+# ChoiceInput_Prompt_bs3G8s_text()
+- Child Question
+# SendActivity_3cq8ta()
+[Activity
+    Text = ${SendActivity_3cq8ta_text()}
+]
+
+# SendActivity_3cq8ta_text()
+- Returning to parent question

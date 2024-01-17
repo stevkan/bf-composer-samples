@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_14fQKI()
+[Activity
+    Text = ${SendActivity_14fQKI_text()}
+]
+
+# SendActivity_14fQKI_text()
+- Dialog 5

@@ -1,0 +1,65 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ZzujAQ",
+    "name": "AskQuestionsDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "user.name",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "cfZKfy"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "YXjlsF"
+          },
+          "activityProcessed": true,
+          "dialog": "NameDialog",
+          "resultProperty": "user.response.name"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "NwQlsF"
+          },
+          "activityProcessed": true,
+          "dialog": "AgeDialog",
+          "resultProperty": "user.response.age"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "8OpGIU"
+          },
+          "activityProcessed": true,
+          "dialog": "HairColorDialog",
+          "resultProperty": "user.response.hairColor"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "o3kimt"
+          },
+          "activity": "${SendActivity_o3kimt()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "3dFYDy"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "AskQuestionsDialog.lg",
+  "recognizer": "AskQuestionsDialog.lu.qna",
+  "id": "AskQuestionsDialog"
+}

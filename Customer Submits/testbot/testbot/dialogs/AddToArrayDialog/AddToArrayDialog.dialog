@@ -1,0 +1,1235 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "PW62YC",
+    "name": "AddToArrayDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "K4epK2"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "e5VGlm"
+          },
+          "property": "dialog.array",
+          "value": [
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "USD",
+              "user": "john"
+            },
+            {
+              "amount": "1500",
+              "crncyCode": "USD",
+              "user": "Monica"
+            },
+            {
+              "amount": "1000",
+              "crncyCode": "GBP",
+              "user": "Sam"
+            },
+            {
+              "amount": "5000",
+              "crncyCode": "EUR",
+              "user": "michael"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "nCHmq3"
+          },
+          "assignments": [
+            {
+              "property": "dialog.pageItemCount",
+              "value": 0
+            },
+            {
+              "property": "dialog.arrayItemCount",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kDi5ct"
+          },
+          "activity": "${SendActivity_kDi5ct()}",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.ForeachPage",
+          "$designer": {
+            "id": "pRSOIO"
+          },
+          "pageIndex": "dialog.foreach.pageindex",
+          "page": "dialog.foreach.page",
+          "pageSize": 25,
+          "itemsProperty": "dialog.array",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "jBwpIT"
+              },
+              "activity": "${SendActivity_jBwpIT()}",
+              "disabled": true
+            },
+            {
+              "$kind": "Microsoft.Foreach",
+              "$designer": {
+                "id": "CqLJLX"
+              },
+              "index": "dialog.foreach.index",
+              "value": "dialog.foreach.value",
+              "itemsProperty": "dialog.foreach.page",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "ASDUq3"
+                  },
+                  "property": "dialog.arrayItemCount",
+                  "value": "=dialog.arrayItemCount+1"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "rXz8oa"
+                  },
+                  "activity": "${SendActivity_rXz8oa()}",
+                  "disabled": true
+                },
+                {
+                  "$kind": "Microsoft.EditArray",
+                  "$designer": {
+                    "id": "BZAYU0",
+                    "comment": "dialog.array[dialog.arrayItemCount-1]\ndialog.array[dialog.arrayItemCount-1].date\n=setProperty(dialog.array[dialog.arrayItemCount-1], 'date', utcNow('yyyy-MM-dd'))"
+                  },
+                  "itemsProperty": "dialog.array[dialog.foreach.index-1]",
+                  "resultProperty": "dialog.array[dialog.foreach.index-1].date",
+                  "changeType": "push",
+                  "value": "=setProperty(dialog.array[dialog.foreach.index-1], 'date', utcNow('yyyy-MM-dd'))"
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "FAwKxg"
+                  },
+                  "property": "dialog.foreach.page",
+                  "value": "=flatten(dialog.foreach.page, 1)",
+                  "disabled": true
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "UYkQ33"
+                  },
+                  "activity": "${SendActivity_UYkQ33()}",
+                  "disabled": true
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "CMiEFP"
+                  },
+                  "condition": "=equals(add(dialog.foreach.index, 1), count(dialog.foreach.page))",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.BreakLoop",
+                      "$designer": {
+                        "id": "kINsQx"
+                      }
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.ContinueLoop",
+                      "$designer": {
+                        "id": "LW7hQj"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "IbaVIm"
+              },
+              "property": "dialog.pageItemCount",
+              "value": "=dialog.pageItemCount+1"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ikrIan",
+                "comment": "Equals? ${dialog.pageItemCount}, ${count(dialog.array)}, ${equals(dialog.pageItemCount, count(dialog.array))}\n\n[Activity\n    Text = ${SendActivity_ikrIan_text()}\n]\n"
+              },
+              "activity": "${SendActivity_ikrIan()}"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "dzvjnG"
+              },
+              "condition": "=equals(dialog.pageItemCount, count(dialog.array))",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BreakLoop",
+                  "$designer": {
+                    "id": "0xMOqB"
+                  }
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.ContinueLoop",
+                  "$designer": {
+                    "id": "hBZn1n"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ti65ay"
+          },
+          "activity": "${SendActivity_ti65ay()}",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.TraceActivity",
+          "$designer": {
+            "id": "yPWw4m"
+          },
+          "name": "Updated Array Trace",
+          "label": "Updated Array Trace",
+          "value": "=dialog.array"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "PTLixg"
+          },
+          "condition": "=if(equals(div(add(dialog.foreach.index, 1), 20), 1), true, false)",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "IdCyob"
+              },
+              "activity": "${SendActivity_IdCyob()}",
+              "disabled": true
+            }
+          ],
+          "disabled": true
+        }
+      ]
+    }
+  ],
+  "generator": "AddToArrayDialog.lg",
+  "recognizer": "AddToArrayDialog.lu.qna",
+  "id": "AddToArrayDialog"
+}

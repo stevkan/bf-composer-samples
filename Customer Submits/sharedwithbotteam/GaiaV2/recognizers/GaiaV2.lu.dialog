@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_GaiaV2",
+  "recognizers": {
+    "en-us": "GaiaV2.en-us.lu",
+    "": "GaiaV2.en-us.lu"
+  }
+}

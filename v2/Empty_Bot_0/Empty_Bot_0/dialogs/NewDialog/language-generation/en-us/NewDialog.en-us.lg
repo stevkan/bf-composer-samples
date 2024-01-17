@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_iUirHo_text()
+- Conversation userNumber property: ${conversation.userWord}
+# SendActivity_iUirHo()
+[Activity
+    Text = ${SendActivity_iUirHo_text()}
+]

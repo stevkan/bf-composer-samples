@@ -1,0 +1,8 @@
+{
+  "TestEchoBot-1.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "TriggerStart": ""
+    }
+  }
+}

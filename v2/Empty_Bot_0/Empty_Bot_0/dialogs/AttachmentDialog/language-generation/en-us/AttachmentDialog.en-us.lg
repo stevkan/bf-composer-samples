@@ -1,0 +1,37 @@
+[import](common.lg)
+
+# AttachmentInput_Prompt_9Qesbx()
+[Activity
+    Text = ${AttachmentInput_Prompt_9Qesbx_text()}
+]
+
+# AttachmentInput_Prompt_9Qesbx_text()
+- Please send an image.
+# SendActivity_eOimjJ()
+[Activity
+    Text = ${SendActivity_eOimjJ_text()}
+]
+
+# SendActivity_eOimjJ_text()
+- -${base64ToBinary({contentUrl: dialog.attachments[0].contentUrl,contentType: dialog.attachments[0].contentType})}
+# AttachmentInput_InvalidPrompt_9Qesbx()
+[Activity
+    Text = ${AttachmentInput_InvalidPrompt_9Qesbx_text()}
+]
+
+# AttachmentInput_InvalidPrompt_9Qesbx_text()
+- - Invalid response.
+# AttachmentInput_UnrecognizedPrompt_9Qesbx()
+[Activity
+    Text = ${AttachmentInput_UnrecognizedPrompt_9Qesbx_text()}
+]
+
+# AttachmentInput_UnrecognizedPrompt_9Qesbx_text()
+- - Unrecognized response.
+# AttachmentInput_DefaultValueResponse_9Qesbx()
+[Activity
+    Text = ${AttachmentInput_DefaultValueResponse_9Qesbx_text()}
+]
+
+# AttachmentInput_DefaultValueResponse_9Qesbx_text()
+- - Default response.

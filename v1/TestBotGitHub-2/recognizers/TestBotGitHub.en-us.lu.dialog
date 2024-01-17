@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_TestBotGitHub",
+  "applicationId": "=settings.luis.TestBotGitHub_en_us_lu.appId",
+  "version": "=settings.luis.TestBotGitHub_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

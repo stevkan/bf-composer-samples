@@ -1,0 +1,16 @@
+# WelcomeUser
+- Welcome to the EmptyBot sample
+
+# ShowImageSteve(contentUrl, contentType)
+[HeroCard
+    title = Here is the attachment
+    image = ${contentUrl}
+]
+
+# cardActionTemplate(type, title, value)
+[CardAction
+  Type = ${if(type == null, 'imBack', type)}
+  Title = ${title}
+  Value = ${value}
+  Text = ${title}
+]

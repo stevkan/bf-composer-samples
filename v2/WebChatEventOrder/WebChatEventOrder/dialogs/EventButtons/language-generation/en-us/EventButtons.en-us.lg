@@ -1,0 +1,14 @@
+[import](common.lg)
+
+# SendActivity_6SY0Gg()
+[Activity
+    Text = ${SendActivity_6SY0Gg_text()}
+]
+
+# SendActivity_6SY0Gg_text()
+- Sending events
+# SendActivity_Rykj9Q()
+[Activity
+type= event
+name = WEB_CHAT/SHOW_CLOSE_CHAT_BUTTON
+]

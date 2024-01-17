@@ -1,0 +1,74 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "dW2Tlk",
+    "name": "CheckUserAuthentication_Composer",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "sdLrmz"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "GzlrkY"
+          },
+          "assignments": [
+            {
+              "property": "virtualagent.IsUserAuthenticated",
+              "value": true
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "I9jb1h"
+          },
+          "condition": "=or(dialog.result.IsCustEmailAuth == true, dialog.result.IsCustPhoneAuth == true)",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "doe1DM"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.result.UserAuthenticated_Composer",
+                  "value": true
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "VjiKYc"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.result.UserAuthenticated_Composer",
+                  "value": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "CheckUserAuthentication_Composer.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "CheckUserAuthentication_Composer"
+}

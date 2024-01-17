@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_0JL6nr()
+[Activity
+    Text = ${SendActivity_0JL6nr_text()}
+]
+
+# SendActivity_0JL6nr_text()
+- dialog27

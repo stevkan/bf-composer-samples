@@ -1,0 +1,21 @@
+[import](common.lg)
+
+# SendActivity_8Fc1fu()
+[Activity
+    Text = ${turn.activity.type}
+]
+
+# SendActivity_t97SRl()
+[Activity
+    Text = TRACE!!!
+]
+
+# SendActivity_MFlAg4()
+[Activity
+    Text = NO TRACE!!!
+]
+
+# SendActivity_ywKBOg()
+[Activity
+    Text = Ended activity
+]

@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_OyrhTQ()
+[Activity
+    Text = ${SendActivity_OyrhTQ_text()}
+]
+
+# SendActivity_OyrhTQ_text()
+- I got a ClusterCheck response!

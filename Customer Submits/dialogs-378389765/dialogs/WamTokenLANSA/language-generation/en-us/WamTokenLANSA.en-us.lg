@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_sn9oEI()
+[Activity
+    Text = ${SendActivity_sn9oEI_text()}
+]
+
+# SendActivity_sn9oEI_text()
+- test

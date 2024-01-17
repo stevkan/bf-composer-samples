@@ -1,0 +1,71 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "OTQjde",
+    "name": "FavoriteColorDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "CbWoIm"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "hOvo2E",
+            "comment": "Tests if the user is signed in. If user.id is populated, then it proceeds with the conversation. If it is empty, then it starts the sign in process in the OauthDialog. Once succesfully signed in, the conversation resumes where it left off."
+          },
+          "condition": "=not(empty(user.id))",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "wYuVAt"
+              },
+              "activity": "${SendActivity_wYuVAt()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "DxKARm"
+              },
+              "activityProcessed": true,
+              "dialog": "OauthDialog"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "oj9yMz"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_oj9yMz()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.choice"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Z10OpN"
+          },
+          "activity": "${SendActivity_Z10OpN()}"
+        }
+      ]
+    }
+  ],
+  "generator": "FavoriteColorDialog.lg",
+  "recognizer": "FavoriteColorDialog.lu.qna",
+  "id": "FavoriteColorDialog"
+}

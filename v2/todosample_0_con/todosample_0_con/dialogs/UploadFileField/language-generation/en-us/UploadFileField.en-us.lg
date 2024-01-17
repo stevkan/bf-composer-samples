@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# AttachmentInput_Prompt_5GHPpj()
+- Select File
+# SendActivity_mhfinP()
+- ${dialog.attachments[0].contentUrl}, ${dialog.attachments[0].contentType}

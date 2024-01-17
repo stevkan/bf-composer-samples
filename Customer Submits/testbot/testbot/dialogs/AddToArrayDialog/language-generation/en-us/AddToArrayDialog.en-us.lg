@@ -1,0 +1,58 @@
+[import](common.lg)
+
+# SendActivity_kDi5ct()
+[Activity
+    Text = ${SendActivity_kDi5ct_text()}
+]
+
+# SendActivity_kDi5ct_text()
+- Array: ${dialog.array}
+# SendActivity_ti65ay()
+[Activity
+    Text = ${SendActivity_ti65ay_text()}
+]
+
+# SendActivity_ti65ay_text()
+- Updated Array: ${dialog.array}
+# SendActivity_UYkQ33_text()
+-  Equals? ${equals(add(dialog.foreach.index, 1), count(dialog.foreach.page))}
+# SendActivity_UYkQ33()
+[Activity
+    Text = ${SendActivity_UYkQ33_text()}
+]
+
+# SendActivity_IdCyob_text()
+- Processing...
+# SendActivity_IdCyob()
+[Activity
+    Text = ${SendActivity_IdCyob_text()}
+]
+
+# SendActivity_ikrIan_text()
+- Equals? ${dialog.pageItemCount}, ${count(dialog.array)}, ${equals(dialog.pageItemCount, count(dialog.array))}
+# SendActivity_ikrIan()
+[Activity
+    Type = Event
+]
+
+# SendActivity_jBwpIT()
+[Activity
+    Text = ${SendActivity_jBwpIT_text()}
+]
+
+# SendActivity_jBwpIT_text()
+- Page: ${dialog.foreach.page}, ${dialog.foreach.pageindex}
+# SendActivity_rXz8oa()
+[Activity
+    Text = ${SendActivity_rXz8oa_text()}
+]
+
+# SendActivity_rXz8oa_text()
+- Count: ${dialog.arrayItemCount}
+# LogAction_Text_STriJR()
+[Activity
+    Text = ${LogAction_Text_STriJR_text()}
+]
+
+# LogAction_Text_STriJR_text()
+- ${dialog.foreach.page}

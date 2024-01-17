@@ -1,0 +1,57 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ewpEWl",
+    "name": "Dialog_UploadPDF",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "drvs1f"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "4gG1W4"
+          },
+          "activity": "${SendActivity_4gG1W4()}"
+        },
+        {
+          "$kind": "Microsoft.AttachmentInput",
+          "$designer": {
+            "id": "rTEBbh"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${AttachmentInput_Prompt_rTEBbh()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${AttachmentInput_InvalidPrompt_rTEBbh()}",
+          "outputFormat": "all",
+          "validations": [
+            "=equals(last(this.value).contentType, 'application/pdf')"
+          ],
+          "property": "dialog.attachements"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "s4XrLs"
+          },
+          "activity": "${SendActivity_s4XrLs()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Dialog_UploadPDF.lg",
+  "recognizer": "Dialog_UploadPDF.lu.qna",
+  "id": "Dialog_UploadPDF"
+}

@@ -1,0 +1,24 @@
+[import](common.lg)
+
+# TextInput_Prompt_51VNOG()
+[Activity
+    Text = ${TextInput_Prompt_51VNOG_text()}
+]
+
+# TextInput_Prompt_51VNOG_text()
+- What is your favorite color?
+
+# SendActivity_88fQqQ()
+[Activity
+    Text = ${SendActivity_88fQqQ_text()}
+]
+
+# SendActivity_88fQqQ_text()
+- I love ${dialog.choice}, too!
+# SendActivity_Um35VS()
+[Activity
+    Text = ${SendActivity_Um35VS_text()}
+]
+
+# SendActivity_Um35VS_text()
+- User not signed in. Accessing this resource is denied.

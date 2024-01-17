@@ -1,0 +1,6 @@
+{
+  "$kind": "Microsoft.CrossTrainedRecognizerSet",
+  "recognizers": [
+    "EnterpriseCalendar_448172967_dotnet.lu"
+  ]
+}

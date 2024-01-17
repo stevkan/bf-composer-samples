@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_TodoSample-0",
+  "applicationId": "=settings.luis.TodoSample_0_en_us_lu.appId",
+  "version": "=settings.luis.TodoSample_0_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

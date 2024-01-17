@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "cSaZgw",
+    "name": "CoffeeDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "SlOzvs"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "y19aTd"
+          },
+          "activity": "${SendActivity_y19aTd()}"
+        }
+      ]
+    }
+  ],
+  "generator": "CoffeeDialog.lg",
+  "recognizer": "CoffeeDialog.lu.qna",
+  "id": "CoffeeDialog"
+}

@@ -1,0 +1,199 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "GaiaV2",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "1EwTNj"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "WelcomeDialog"
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kMjqz1"
+          },
+          "activity": "${SendActivity_DidNotUnderstand()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "kAscZM",
+        "name": "ClusterInformation",
+        "comment": ""
+      },
+      "intent": "ClusterInformation",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "im1x33"
+          },
+          "activityProcessed": true,
+          "dialog": "ParentDialog",
+          "resultProperty": "dialog.Result"
+        }
+      ],
+      "condition": "=#ClusterInformation.Score >= 0.8"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "jOVL0g",
+        "name": "Quit"
+      },
+      "intent": "Quit",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "mxJKqs"
+          },
+          "activityProcessed": true,
+          "dialog": "QuitDialog",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.SignOutUser",
+          "$designer": {
+            "id": "5JQw3M"
+          },
+          "userId": "=user.id",
+          "connectionName": "KanOAuth"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "zGPSS8"
+          },
+          "activity": "${SendActivity_zGPSS8()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "6IdSDq"
+          },
+          "activityProcessed": true
+        }
+      ],
+      "condition": "=#Quit.Score >= 0.8"
+    },
+    {
+      "$kind": "Microsoft.OnEventActivity",
+      "$designer": {
+        "id": "UhhP5w",
+        "name": "Event received (Event activity)"
+      },
+      "condition": "=turn.activity.name == 'FORCE_SIGNIN'",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "NBCdwv"
+          },
+          "activityProcessed": true,
+          "dialog": "WelcomeDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "TbLBvP",
+        "name": "logout"
+      },
+      "intent": "logout",
+      "actions": [
+        {
+          "$kind": "Microsoft.SignOutUser",
+          "$designer": {
+            "id": "YhQMR1"
+          },
+          "userId": "=user.id",
+          "connectionName": "KanOAuth"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ka7JGI"
+          },
+          "activity": "${SendActivity_ka7JGI()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "9cMq68"
+          },
+          "activityProcessed": true
+        }
+      ],
+      "condition": "=#logout.Score >= 0.8"
+    },
+    {
+      "$kind": "Microsoft.OnMessageActivity",
+      "$designer": {
+        "id": "ACbObY",
+        "name": "Message received (Message received activity)"
+      },
+      "condition": "=turn.activity.text == 'FORCESIGNIN'",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "mXeMHO"
+          },
+          "activityProcessed": true,
+          "dialog": "WelcomeDialog"
+        }
+      ]
+    }
+  ],
+  "generator": "GaiaV2.lg",
+  "id": "GaiaV2",
+  "recognizer": "GaiaV2.lu.qna"
+}

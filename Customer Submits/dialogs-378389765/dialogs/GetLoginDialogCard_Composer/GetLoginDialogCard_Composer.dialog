@@ -1,0 +1,140 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "WfegLa",
+    "name": "GetLoginDialogCard_Composer",
+    "comment": "Creates an adaptive card that asks for the user to login."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "YAi5hX"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "7mKjdk"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_7mKjdk()}",
+          "property": "dialog.result.LoginPrompt",
+          "value": "=turn.activity.value.btn",
+          "validations": []
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "iiH6i8"
+          },
+          "condition": "dialog.result.LoginPrompt",
+          "cases": [
+            {
+              "value": "1",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "fftKDc"
+                  },
+                  "assignments": [
+                    {
+                      "property": "dialog.result.LoginPrompt",
+                      "value": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "2",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "ro8kcx"
+                  },
+                  "assignments": [
+                    {
+                      "property": "dialog.result.LoginPrompt",
+                      "value": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "sUVZH9"
+              },
+              "activity": "${SendActivity_sUVZH9()}"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperties",
+              "$designer": {
+                "id": "MMNJUR"
+              },
+              "properties": [
+                "dialog.result.LoginPrompt"
+              ]
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "m9YMjS"
+              },
+              "activityProcessed": true,
+              "allowLoop": true
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "QuCkJO"
+          },
+          "condition": "=turn.activity.value.btn == \"1\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "ptFQxX"
+              },
+              "property": "dialog.result.LoginPrompt",
+              "value": true,
+              "disabled": true
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "FXDtdd"
+              },
+              "property": "dialog.result.LoginPrompt",
+              "value": false,
+              "disabled": true
+            }
+          ],
+          "disabled": true
+        }
+      ]
+    }
+  ],
+  "generator": "GetLoginDialogCard_Composer.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "GetLoginDialogCard_Composer"
+}

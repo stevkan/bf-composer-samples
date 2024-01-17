@@ -1,0 +1,63 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ptLcMf",
+    "name": "Base64Dialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "kytLWm"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "3p5Obe"
+          },
+          "property": "conversation.myBinaryData",
+          "value": "=base64ToBinary('AwUBDA==')"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "vPvmOy"
+          },
+          "activity": "${SendActivity_vPvmOy()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "gjNMYJ"
+          },
+          "property": "conversation.binaryLength",
+          "value": "=conversation.myBinaryData.length"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "M1rM5x"
+          },
+          "property": "conversation.binaryArray",
+          "value": "=flatten(subArray(conversation.myBinaryData, 0, conversation.binaryLength - 1))"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "OhcOtR"
+          },
+          "activity": "${SendActivity_OhcOtR()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Base64Dialog.lg",
+  "recognizer": "Base64Dialog.lu.qna",
+  "id": "Base64Dialog"
+}

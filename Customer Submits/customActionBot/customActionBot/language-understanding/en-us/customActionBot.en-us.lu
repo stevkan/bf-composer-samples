@@ -1,0 +1,36 @@
+
+# CancelTrigger
+- cancel
+- end
+- stop
+- return
+- cancel all
+# LuisIntent
+- cust
+- customer
+- get customer info
+- customer info
+- send customer details
+- customer details
+# TextInput_Response_V86FiL
+- Show me the balance of the {@customer=dana}
+> - remind me to {itemTitle}
+> - add {itemTitle} to my todo list
+>
+> entity definitions:
+@ ml customer
+
+# Logout
+- log out
+- logout
+- signout
+- sign out
+
+
+# ParentTrigger
+- start
+- start dialog
+- startdialog
+- multiply
+- multiply dialog
+- multiplydialog

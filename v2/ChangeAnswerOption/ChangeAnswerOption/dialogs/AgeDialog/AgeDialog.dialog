@@ -1,0 +1,107 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "QBVvXY",
+    "name": "AgeDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.age",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "KuafGH"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "MPHVdp"
+          },
+          "disabled": false,
+          "maxTurnCount": 0,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_MPHVdp()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.age",
+          "defaultValue": "=null",
+          "validations": [
+            "=isMatch(this.value, '^([0-9])+$')"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "GPirSS"
+          },
+          "condition": "=not(equals(dialog.age,null))",
+          "actions": [
+            {
+              "$kind": "Microsoft.ConfirmInput",
+              "$designer": {
+                "id": "UqdQbp"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 0,
+              "alwaysPrompt": true,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "prompt": "${ConfirmInput_Prompt_UqdQbp()}",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "property": "dialog.response",
+              "style": "heroCard",
+              "confirmChoices": [
+                "Yes",
+                "No"
+              ],
+              "defaultValue": false
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "Q3Arp7"
+              },
+              "condition": "=dialog.response == true",
+              "actions": [],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "sun0k4"
+                  },
+                  "activityProcessed": true,
+                  "allowLoop": true
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "TxvO5F"
+              },
+              "activityProcessed": true,
+              "allowLoop": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "AgeDialog.lg",
+  "recognizer": "AgeDialog.lu.qna",
+  "id": "AgeDialog"
+}

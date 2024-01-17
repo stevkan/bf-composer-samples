@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ceqOSx",
+    "name": "JuiceDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "plamX9"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "b9cpzd"
+          },
+          "activity": "${SendActivity_b9cpzd()}"
+        }
+      ]
+    }
+  ],
+  "generator": "JuiceDialog.lg",
+  "recognizer": "JuiceDialog.lu.qna",
+  "id": "JuiceDialog"
+}

@@ -1,0 +1,10 @@
+{
+  "httprequest.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "HttpTrigger": [
+        "HttpDialog.en-us"
+      ]
+    }
+  }
+}

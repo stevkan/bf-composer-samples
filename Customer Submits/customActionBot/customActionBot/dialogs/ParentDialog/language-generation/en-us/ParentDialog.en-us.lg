@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# SendActivity_rgWeEY()
+[Activity
+    Text = ${SendActivity_rgWeEY_text()}
+]
+
+# SendActivity_rgWeEY_text()
+- One moment while I do some math...
+# SendActivity_MtYRuu()
+[Activity
+    Text = ${SendActivity_MtYRuu_text()}
+]
+
+# SendActivity_MtYRuu_text()
+- ${dialog.userDetails.name}, I multilplied your number, ${dialog.userDetails.number}, by 3 and got a result of ${dialog.multiplyResult}. Woot!!
+# SendActivity_r3vnyF()
+[Activity
+    Text = ${SendActivity_r3vnyF_text()}
+]
+
+# SendActivity_r3vnyF_text()
+- ${dialog.multiplyResult}

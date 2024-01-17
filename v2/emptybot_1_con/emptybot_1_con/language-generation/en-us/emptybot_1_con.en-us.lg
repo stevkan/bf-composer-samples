@@ -1,0 +1,21 @@
+[import](common.lg)
+
+# SendActivity_Welcome
+- ${WelcomeUser()}
+
+# PersonName()
+- @ prebuilt personName
+# SendActivity_J4mfRD()
+[Activity
+    Text = ${SendActivity_J4mfRD_text()}
+]
+
+# SendActivity_J4mfRD_text()
+- Hello, ${PersonName()}
+# TextInput_Prompt_76Z0Ik()
+[Activity
+    Text = ${TextInput_Prompt_76Z0Ik_text()}
+]
+
+# TextInput_Prompt_76Z0Ik_text()
+- What is your name?

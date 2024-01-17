@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# SendActivity_1Muess()
+[Activity
+    Text = ${SendActivity_1Muess_text()}
+]
+
+# SendActivity_1Muess_text()
+- Checking if token is valid...
+# SendActivity_JZ8GmN_text()
+- Invalid user token received. You will need to re-authenticate to continue.
+# SendActivity_JZ8GmN()
+[Activity
+    Text = ${SendActivity_JZ8GmN_text()}
+]
+
+# SendActivity_My0Kyl()
+[Activity
+    Text = ${SendActivity_My0Kyl_text()}
+]
+
+# SendActivity_My0Kyl_text()
+- ${json(dialog)}
+# SendActivity_sjptN4()
+[Activity
+    Text = ${SendActivity_sjptN4_text()}
+]
+
+# SendActivity_sjptN4_text()
+- Check Token: ${dialog.token}

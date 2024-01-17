@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "dq2POr",
+    "name": "SlackDialogDefault",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "vXBfR3"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "QlPMWK"
+          },
+          "activity": "${SendActivity_QlPMWK()}"
+        }
+      ]
+    }
+  ],
+  "generator": "SlackDialogDefault.lg",
+  "recognizer": "SlackDialogDefault.lu.qna",
+  "id": "SlackDialogDefault"
+}

@@ -1,0 +1,129 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "8xtmJO",
+    "name": "GoToLabelDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "piWXJC"
+      },
+      "actions": [
+        {
+          "id": "parentQuestionId",
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "fpN3cS"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_fpN3cS()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "property": "user.selectedoption",
+          "choices": [
+            "A",
+            "B",
+            "C"
+          ],
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "BKGIEO"
+          },
+          "condition": "user.selectedoption",
+          "cases": [
+            {
+              "value": "A"
+            },
+            {
+              "value": "B"
+            },
+            {
+              "value": "C",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "bs3G8s"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": true,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_bs3G8s()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or "
+                  },
+                  "property": "user.childquestion",
+                  "choices": [
+                    "A",
+                    "B",
+                    "Return to Parent Question"
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SwitchCondition",
+                  "$designer": {
+                    "id": "5GyXA0"
+                  },
+                  "condition": "user.childquestion",
+                  "cases": [
+                    {
+                      "value": "Return to Parent Question",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "3cq8ta"
+                          },
+                          "activity": "${SendActivity_3cq8ta()}"
+                        },
+                        {
+                          "$kind": "Microsoft.GotoAction",
+                          "$designer": {
+                            "id": "s8jSVJ"
+                          },
+                          "actionId": "parentQuestionId"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "GoToLabelDialog.lg",
+  "recognizer": "GoToLabelDialog.lu.qna",
+  "id": "GoToLabelDialog"
+}

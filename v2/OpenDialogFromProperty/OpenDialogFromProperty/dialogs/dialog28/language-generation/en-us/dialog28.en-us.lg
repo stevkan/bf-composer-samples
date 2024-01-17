@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_68RTjy()
+[Activity
+    Text = ${SendActivity_68RTjy_text()}
+]
+
+# SendActivity_68RTjy_text()
+- dialog28

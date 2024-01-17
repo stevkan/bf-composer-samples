@@ -1,0 +1,221 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "jLQRp1",
+    "name": "GetAddressComposer",
+    "comment": "Composer attempt to create GetAddress API"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "JgcrdT"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "S10CRV"
+          },
+          "activity": "${SendActivity_S10CRV()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "4NnvyV"
+          },
+          "method": "POST",
+          "url": "https://azpapi1dcbt.azure-api.net/wsw100u/getCustomerInvoices_Ver5",
+          "headers": {
+            "Ocp-Apim-Subscription-Key": "d2b2c2eba7f04260bf4a2b46466bcbb6"
+          },
+          "resultProperty": "turn.results",
+          "responseType": "json",
+          "contentType": "text/json",
+          "body": {
+            "type": "object",
+            "properties": {
+              "getCustomerInvoices_Ver5Response": {
+                "type": "object",
+                "properties": {
+                  "getCustomerInvoices_Ver5Return": {
+                    "type": "object",
+                    "properties": {
+                      "invoiceOut": {
+                        "type": "object",
+                        "properties": {
+                          "invoices": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "badDebt": {
+                                  "type": "string"
+                                },
+                                "debitMemoDesc": {
+                                  "type": "string"
+                                },
+                                "debitMemoFlag": {
+                                  "type": "string"
+                                },
+                                "invoiceAmount": {
+                                  "type": "number"
+                                },
+                                "invoiceBalance": {
+                                  "type": "number"
+                                },
+                                "invoiceDate": {
+                                  "type": "string"
+                                },
+                                "invoiceNum": {
+                                  "type": "string"
+                                },
+                                "invoiceOpen": {
+                                  "type": "string"
+                                },
+                                "invoiceStatus": {
+                                  "type": "string"
+                                },
+                                "jdeNumber": {
+                                  "type": "string"
+                                },
+                                "salesAgrNum": {
+                                  "type": "string"
+                                },
+                                "specialistName": {
+                                  "type": "string"
+                                },
+                                "svcDescription": {
+                                  "type": "string"
+                                },
+                                "svcLineItem": {
+                                  "type": "string"
+                                },
+                                "svcReserviceFlag": {
+                                  "type": "string"
+                                },
+                                "svcReserviceSts": {
+                                  "type": "string"
+                                },
+                                "svcServiceLine": {
+                                  "type": "string"
+                                },
+                                "svclinexref": {
+                                  "type": "string"
+                                },
+                                "territory": {
+                                  "type": "string"
+                                },
+                                "workOrderNum": {
+                                  "type": "string"
+                                },
+                                "workOrderRef": {
+                                  "type": "string"
+                                },
+                                "workOrderSvcDate": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "messages": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "message": {
+                                  "type": "string"
+                                },
+                                "messageCode": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "payments": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "amount": {
+                                  "type": "number"
+                                },
+                                "cashType": {
+                                  "type": "string"
+                                },
+                                "date": {
+                                  "type": "string"
+                                },
+                                "referenceNumber": {
+                                  "type": "string"
+                                },
+                                "subType": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "retCode": {
+                            "type": "string"
+                          },
+                          "services": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "itemCode": {
+                                  "type": "string"
+                                },
+                                "itemDesc": {
+                                  "type": "string"
+                                },
+                                "sahnum": {
+                                  "type": "string"
+                                },
+                                "salesamt": {
+                                  "type": "number"
+                                },
+                                "svcLine": {
+                                  "type": "string"
+                                },
+                                "svcLineDesc": {
+                                  "type": "string"
+                                },
+                                "swbdte": {
+                                  "type": "string"
+                                },
+                                "swedte": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "9n1j1w"
+          },
+          "activity": "${SendActivity_9n1j1w()}"
+        }
+      ]
+    }
+  ],
+  "generator": "GetAddressComposer.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "GetAddressComposer"
+}

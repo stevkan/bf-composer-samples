@@ -1,0 +1,64 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "w7OsxI",
+    "name": "ActivityReceived",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "1Yiy1R"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "8Fc1fu"
+          },
+          "activity": "${SendActivity_8Fc1fu()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "3Z54mv"
+          },
+          "condition": "= equals(activity.type, 'trace')",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "t97SRl"
+              },
+              "activity": "${SendActivity_t97SRl()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "MFlAg4"
+              },
+              "activity": "${SendActivity_MFlAg4()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ywKBOg"
+          },
+          "activity": "${SendActivity_ywKBOg()}"
+        }
+      ]
+    }
+  ],
+  "generator": "ActivityReceived.lg",
+  "recognizer": "ActivityReceived.lu.qna",
+  "id": "ActivityReceived"
+}

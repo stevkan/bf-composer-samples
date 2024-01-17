@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "httprequest", "masterbot\httprequest.csproj", "{74804FB8-80B0-42C3-A4E3-E7B243B86445}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74804FB8-80B0-42C3-A4E3-E7B243B86445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74804FB8-80B0-42C3-A4E3-E7B243B86445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74804FB8-80B0-42C3-A4E3-E7B243B86445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74804FB8-80B0-42C3-A4E3-E7B243B86445}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {627E19EE-FB11-4E31-A2B6-E0B361CEAEA4}
+	EndGlobalSection
+EndGlobal

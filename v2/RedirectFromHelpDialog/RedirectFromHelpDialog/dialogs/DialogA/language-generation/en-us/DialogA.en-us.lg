@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# SendActivity_uyk9kv()
+[Activity
+    Text = ${SendActivity_uyk9kv_text()}
+]
+
+# SendActivity_uyk9kv_text()
+- In Dialog A.
+# TextInput_Prompt_c4vGc7()
+[Activity
+    Text = ${TextInput_Prompt_c4vGc7_text()}
+]
+
+# TextInput_Prompt_c4vGc7_text()
+- What is your favorite color?
+# SendActivity_cSFqw9()
+[Activity
+    Text = ${SendActivity_cSFqw9_text()}
+]
+
+# SendActivity_cSFqw9_text()
+- In Secondary Help Trigger

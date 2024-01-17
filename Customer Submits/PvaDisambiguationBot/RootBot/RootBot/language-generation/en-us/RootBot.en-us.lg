@@ -1,0 +1,97 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to your bot.
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Enter **Create incident** or **Create incident for HR Functions** or **Create incident for IT functions**  to access the skills.
+# ChooseIntent_CWmoZs()
+[Activity
+    Attachments = ${json(ChooseIntent_CWmoZs_attachment_card(dialog.candidates))}
+]
+
+# ChooseIntent_CWmoZs_attachment_card(candidates)
+-```{
+      "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+      "version": "1.0",
+      "type": "AdaptiveCard",
+      "speak": "",
+      "body": [
+          {
+              "type": "TextBlock",
+              "text": "${ChooseIntent_CWmoZs_attachment_whichOneDidYouMean()}",
+              "weight": "Bolder"
+          },
+          {
+              "type": "TextBlock",
+              "text": "${ChooseIntent_CWmoZs_attachment_pickOne()}",
+              "separator": "true"
+          },
+          {
+              "type": "Input.ChoiceSet",
+              "placeholder": "Placeholder text",
+              "id": "userChosenIntent",
+              "choices": [
+                           ${ChooseIntent_CWmoZs_attachment_generateChoices()},
+                           {
+                               "title": "None of the above",
+                               "value": "none"
+                           }
+             ],
+             "style": "expanded",
+             "value": "luis"
+         },
+         {
+             "type": "ActionSet",
+             "actions": [
+                {
+                     "type": "Action.Submit",
+                     "title": "Submit",
+                     "data": {
+                   "intent": "chooseIntentCardResponse"
+                }
+         }
+       ]
+     }
+    ]
+}
+```
+
+# ChooseIntent_CWmoZs_attachment_whichOneDidYouMean()
+- I'm not sure which one you mean.
+- Hmmm, I find that to be ambiguous.
+
+# ChooseIntent_CWmoZs_attachment_pickOne()
+- Can you pick one ?
+- Can you help clarify by choosing one ?
+
+# ChooseIntent_CWmoZs_attachment_getAnswerReadBack()
+- See an answer from the Knowledge Base
+
+# ChooseIntent_CWmoZs_attachment_getIntentReadBack(intent)
+- SWITCH : ${intent}
+- CASE: ${'QnAMatch'}
+    - ${ChooseIntent_CWmoZs_attachment_getAnswerReadBack()}
+- CASE : ${'GetUserProfile'}
+  - Start filling in your profile(GetUserProfile intent)
+- DEFAULT :
+  - ${intent}
+
+# ChooseIntent_CWmoZs_attachment_generateChoices(candidates)
+- ${join(foreach(indicesAndValues(candidates), c, ChooseIntent_CWmoZs_attachment_choice(c.value.intent, c.index)), ',')}
+
+# ChooseIntent_CWmoZs_attachment_choice(title, value)
+- { "title": "${ChooseIntent_CWmoZs_attachment_getIntentReadBack(title)}", "value": "${value}" }
+
+# ChooseIntent_SendActivity_A8xQ7I()
+- Sure, no worries.

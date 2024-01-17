@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_rJ4FPw()
+[Activity
+    Text = ${SendActivity_rJ4FPw_text()}
+]
+
+# SendActivity_rJ4FPw_text()
+- dialog22

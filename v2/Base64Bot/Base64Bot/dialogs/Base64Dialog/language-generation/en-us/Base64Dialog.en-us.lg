@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_OhcOtR_text()
+- Binary Data: ${conversation.binaryArray}
+# SendActivity_OhcOtR()
+[Activity
+    Text = ${SendActivity_OhcOtR_text()}
+]
+
+# SendActivity_vPvmOy()
+[Activity
+    Text = ${SendActivity_vPvmOy_text()}
+]
+
+# SendActivity_vPvmOy_text()
+- My Binary Data: ${conversation.myBinaryData}

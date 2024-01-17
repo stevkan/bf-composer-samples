@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_TestBotGitHub",
+  "recognizers": {
+    "en-us": "TestBotGitHub.en-us.lu",
+    "": "TestBotGitHub.en-us.lu"
+  }
+}

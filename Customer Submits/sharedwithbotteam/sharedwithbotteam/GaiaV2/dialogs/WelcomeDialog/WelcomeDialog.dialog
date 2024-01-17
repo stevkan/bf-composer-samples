@@ -1,0 +1,60 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "p3xESt",
+    "name": "WelcomeDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "uijcNN"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.OAuthInput",
+          "$designer": {
+            "id": "MkIWGJ"
+          },
+          "timeout": 900000,
+          "property": "turn.token",
+          "maxTurnCount": 3,
+          "allowInterruptions": true,
+          "connectionName": "KanOAuth",
+          "text": "Please LogIn",
+          "title": "LogIn"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "YH51mf",
+            "name": "Send a response"
+          },
+          "activity": "${SendActivity_YH51mf()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "X1OOva"
+          },
+          "activity": "${SendActivity_X1OOva()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rBieJA"
+          },
+          "activity": "${SendActivity_rBieJA()}"
+        }
+      ]
+    }
+  ],
+  "generator": "WelcomeDialog.lg",
+  "recognizer": "WelcomeDialog.lu.qna",
+  "id": "WelcomeDialog"
+}

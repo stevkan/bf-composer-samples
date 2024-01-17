@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to the **CreateHRIncidentSkill**. I will repeat what you enter.
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- **CreateHRIncidentSkill here**: You said ${turn.activity.text}
+# SendActivity_veqs63()
+[Activity
+    Text = ${SendActivity_veqs63_text()}
+]
+
+# SendActivity_veqs63_text()
+- **CreateHRIncidentSkill here**: I will repeat what you enter, until you enter **stop**.
+# SendActivity_H8RfRa()
+[Activity
+    Text = ${SendActivity_H8RfRa_text()}
+]
+
+# SendActivity_H8RfRa_text()
+- Thanks for using **CreateHRIncidentSkill**. Bye

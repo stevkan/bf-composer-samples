@@ -1,0 +1,46 @@
+[import](common.lg)
+
+# SendActivity_hbPtiB()
+[Activity
+    Text = ${SendActivity_hbPtiB_text()}
+]
+
+# SendActivity_hbPtiB_text()
+- ${turn.results}
+# TextInput_Prompt_Cj8Ufi()
+[Activity
+    Attachments = ${json(TextInput_Prompt_Cj8Ufi_attachment_rTSnMG())}
+]
+
+# TextInput_Prompt_Cj8Ufi_attachment_rTSnMG()
+- ```
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+   {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Select Service(s)"
+        }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "PrePay Selected Service(s)",
+      "data": 
+      {"poa"  : "PrePay"}
+     
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Ask Another Question",
+      "data" :
+      { "poa" : "AskAnotherQuestion"}
+    }
+  ]
+}
+
+```

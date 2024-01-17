@@ -1,0 +1,38 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to your bot.
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# DateTimeInput_Prompt_MlcIhD()
+[Activity
+    Text = ${DateTimeInput_Prompt_MlcIhD_text()}
+]
+
+# DateTimeInput_Prompt_MlcIhD_text()
+- Enter a date!
+# SendActivity_tPcsnb()
+[Activity
+    Text = ${SendActivity_tPcsnb_text()}
+]
+
+# SendActivity_tPcsnb_text()
+- userDate: ${dialog.userDate}
+# DateTimeInput_DefaultValueResponse_MlcIhD()
+[Activity
+    Text = ${DateTimeInput_DefaultValueResponse_MlcIhD_text()}
+]
+
+# DateTimeInput_DefaultValueResponse_MlcIhD_text()
+- Using default value!

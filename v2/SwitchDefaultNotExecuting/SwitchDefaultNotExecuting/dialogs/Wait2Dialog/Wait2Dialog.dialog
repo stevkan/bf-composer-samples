@@ -1,0 +1,82 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Ttfhim",
+    "name": "Wait2Dialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "ah7pxU"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rXZu7N"
+          },
+          "activity": "${SendActivity_rXZu7N()}"
+        },
+        {
+          "id": "wait",
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "WcJrBh"
+          },
+          "cases": [
+            {
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "2Lkupu"
+                  },
+                  "activity": "${SendActivity_2Lkupu()}"
+                },
+                {
+                  "$kind": "Microsoft.GotoAction",
+                  "$designer": {
+                    "id": "BPe2xY"
+                  },
+                  "actionId": "wait"
+                }
+              ],
+              "value": "test"
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "MWx3dV"
+              },
+              "activity": "${SendActivity_MWx3dV()}"
+            },
+            {
+              "$kind": "Microsoft.BreakLoop",
+              "$designer": {
+                "id": "XdGnDV"
+              }
+            }
+          ],
+          "condition": "=conversation.customerdecision"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "rkyCJq"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "Wait2Dialog.lg",
+  "recognizer": "Wait2Dialog.lu.qna",
+  "id": "Wait2Dialog"
+}

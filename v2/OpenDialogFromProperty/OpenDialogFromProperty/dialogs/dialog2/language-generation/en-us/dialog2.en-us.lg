@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_vQTsSx()
+[Activity
+    Text = ${SendActivity_vQTsSx_text()}
+]
+
+# SendActivity_vQTsSx_text()
+- dialog2

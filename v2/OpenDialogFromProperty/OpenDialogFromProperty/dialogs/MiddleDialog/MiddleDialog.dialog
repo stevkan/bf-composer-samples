@@ -1,0 +1,34 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "vO8SZh",
+    "name": "MiddleDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "4KKMEP"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TraceActivity",
+          "$designer": {
+            "id": "IYtXQB"
+          },
+          "name": "MiddleTrace",
+          "label": "MiddleTraceLabel",
+          "value": "=conversation.dialogToStart"
+        }
+      ]
+    }
+  ],
+  "generator": "MiddleDialog.lg",
+  "recognizer": "MiddleDialog.lu.qna",
+  "id": "MiddleDialog"
+}

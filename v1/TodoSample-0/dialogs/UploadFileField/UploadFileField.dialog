@@ -1,0 +1,48 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "z7IvBw",
+    "name": "UploadFileField",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "Dialog started",
+        "description": "",
+        "id": "FaE9k4"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.AttachmentInput",
+          "$designer": {
+            "id": "5GHPpj"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${AttachmentInput_Prompt_5GHPpj()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "dialog.attachments",
+          "outputFormat": "all"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "mhfinP"
+          },
+          "activity": "${SendActivity_mhfinP()}"
+        }
+      ]
+    }
+  ],
+  "generator": "UploadFileField.lg",
+  "recognizer": "UploadFileField.lu.qna",
+  "id": "UploadFileField"
+}

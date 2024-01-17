@@ -1,0 +1,74 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to your bot.
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# SendActivity_i0Cpzq()
+[Activity
+    Text = ${SendActivity_i0Cpzq_text()}
+]
+
+# SendActivity_i0Cpzq_text()
+- ${turn.activity.name}
+# SendActivity_axiuHr()
+[Activity
+type= event
+name = WEB_CHAT/HIDE_CLOSE_CHAT_BUTTON
+]
+# SendActivity_FLEm9B()
+[Activity
+    Text = ${SendActivity_FLEm9B_text()}
+]
+
+# SendActivity_FLEm9B_text()
+- Event name mismatch: ${turn.activity.value}
+# SendActivity_y1oUjA_text()
+- Message name mismatch: SHOW_CLOSE_CHAT_BUTTON
+# SendActivity_y1oUjA()
+[Activity
+    Text = ${SendActivity_y1oUjA_text()}
+]
+
+# SendActivity_7uD3IX()
+[Activity
+type= event
+name = WEB_CHAT/SHOW_CLOSE_CHAT_BUTTON
+]
+# SendActivity_lkcF12()
+[Activity
+type= event
+name = WEB_CHAT/LIVE_CHAT_WEBFORM
+]
+# SendActivity_qqNJxu()
+[Activity
+    Text = ${SendActivity_qqNJxu_text()}
+]
+
+# SendActivity_qqNJxu_text()
+- Agent says: ${turn.activity.text}
+# SendActivity_AneaYb()
+[Activity
+    Text = ${SendActivity_AneaYb_text()}
+]
+
+# SendActivity_AneaYb_text()
+- I'm your agent! How can I help you?
+# SendActivity_t2w5Hy()
+[Activity
+    Text = ${SendActivity_t2w5Hy_text()}
+]
+
+# SendActivity_t2w5Hy_text()
+- Greetings from your agent!

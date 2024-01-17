@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_r1EFOR()
+[Activity
+    Text = ${SendActivity_r1EFOR_text()}
+]
+
+# SendActivity_r1EFOR_text()
+- Dialog0

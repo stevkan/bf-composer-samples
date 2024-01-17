@@ -1,0 +1,54 @@
+[import](common.lg)
+
+# SendActivity_696707
+-${WelcomeUser()}
+
+# SendActivity_157674()
+- ${Greeting()}
+# foo
+- You are so smart!
+
+# SendActivity_8jtIXa()
+- UNKNOWN RESULT PROPERTY ${dialog.result}, UNKNOWN DAIRY PROPERTY ${dialog.dairy}
+# SendActivity_kt4mAC()
+- ADD INTENT RESULT PROPERTY ${dialog.result}, ADD INTENT DAIRY PROPERTY ${dialog.dairy}
+# SendActivity_677448()
+- Unknown intent reached.
+# ChoiceInput_Prompt_jZKKgy()
+- Choose an option!
+# SendActivity_L5blVy()
+- No choice made.
+# SendActivity_kU6f9s()
+- Catch Cancel Dialog reached!!!
+# SendActivity_3GICNP()
+- ${cancelText()}
+# SendActivity_vMyB2B()
+[Activity
+    Text = ${conversation}
+]
+
+# SendActivity_VwPAaQ()
+- ${conversation.DialogState}
+# SendActivity_jekusv()
+[Activity
+    Text = Event Received!! ${turn.activity.value}
+]
+
+# DateTimeInput_Prompt_m20RiA()
+[Activity
+    Text = Enter a date!
+]
+
+# SendActivity_QlyyMT()
+[Activity
+    Text = Supplied: ${dialog.suppliedDate[0].Value}; Formatted: ${dialog.formattedDate}
+]
+
+# TextInput_Prompt_s8CfsE()
+[Activity
+    Text = ${expandText(@answer)}
+    SuggestedActions = ${foreach(turn.recognized.answers[0].context.prompts, x, x.displayText)}
+]
+
+# SendActivity_xzEdfV()
+- ${expandText(@answer)}

@@ -1,0 +1,44 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to your bot.
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# SendActivity_okkJzl()
+[Activity
+    Text = ${SendActivity_okkJzl_text()}
+]
+
+# SendActivity_okkJzl_text()
+- Hi in English!
+# SendActivity_2HkYiR()
+[Activity
+    Text = ${SendActivity_2HkYiR_text()}
+]
+
+# SendActivity_2HkYiR_text()
+- Hi in Hindi!
+# SendActivity_jhGCi0()
+[Activity
+    Text = ${SendActivity_jhGCi0_text()}
+]
+
+# SendActivity_jhGCi0_text()
+- Hi (other locale)
+# SendActivity_veQrht_text()
+- Locale: ${turn.activity.locale}
+# SendActivity_veQrht()
+[Activity
+    Text = ${SendActivity_veQrht_text()}
+]

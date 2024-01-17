@@ -1,0 +1,22 @@
+{
+  "RedirectFromHelpDialog.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "": [
+        "DialogA.en-us"
+      ],
+      "HelpTrigger": [
+        "DialogB.en-us"
+      ],
+      "CancelTrigger": [
+        "CancelDialog.en-us"
+      ]
+    }
+  },
+  "DialogA.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "SecondaryHelpTrigger": ""
+    }
+  }
+}

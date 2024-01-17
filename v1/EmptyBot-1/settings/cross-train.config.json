@@ -1,0 +1,10 @@
+{
+  "EmptyBot-1.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "AdaptiveCardErrorTrigger": [
+        "AdaptiveCardErrorDialog.en-us"
+      ]
+    }
+  }
+}

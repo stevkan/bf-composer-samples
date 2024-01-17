@@ -1,0 +1,42 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "8fpurF",
+    "name": "CustomEventDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "28AfIT"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "eusC8W"
+          },
+          "activity": "${SendActivity_eusC8W()}"
+        },
+        {
+          "$kind": "Microsoft.EmitEvent",
+          "$designer": {
+            "id": "M6bUGt"
+          },
+          "handledProperty": "turn.eventHandled",
+          "eventName": "ReceiveCustomEvent",
+          "eventValue": "ReceiveCustomEvent",
+          "bubbleEvent": true
+        }
+      ]
+    }
+  ],
+  "generator": "CustomEventDialog.lg",
+  "recognizer": "CustomEventDialog.lu.qna",
+  "id": "CustomEventDialog"
+}

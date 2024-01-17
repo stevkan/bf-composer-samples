@@ -1,0 +1,291 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "JtrAxv",
+    "name": "AuthenticateUserViaEmail_Composer",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "DPZyOO"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "aourPR"
+          },
+          "assignments": [
+            {
+              "property": "user.AuthToken",
+              "value": "=virtualagent.authToken"
+            },
+            {
+              "property": "dialog.result.UserEmail",
+              "value": "=virtualagent.UserEmailInput"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "YjRbFN"
+          },
+          "method": "POST",
+          "url": "https://azpapi1dcbt.azure-api.net/chatbot/GetAddressByEmail",
+          "body": "&AUTTKN=${user.AuthToken}&PAEEAD=${virtualagent.UserEmailInput}",
+          "headers": {
+            "Ocp-Apim-Subscription-Key": "d2b2c2eba7f04260bf4a2b46466bcbb6"
+          },
+          "resultProperty": "turn.results",
+          "contentType": "text/json",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "Lq0CnO"
+          },
+          "assignments": [
+            {
+              "property": "user.AddressList",
+              "value": "=turn.results.content.ADDRLIST"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "fzejqK"
+          },
+          "condition": "=empty(turn.results.content.ADDRLIST)",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "aSqZ1D"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.result.IsCustEmailAuth",
+                  "value": false
+                },
+                {
+                  "property": "virtualagent.IsUserAuthenticated",
+                  "value": false
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "VK8ZtE"
+              },
+              "activityProcessed": true,
+              "dialog": "EmailAuthFailedOptionCard_Composer"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "8KyMT6"
+              },
+              "assignments": [
+                {
+                  "property": "user.CustomerAddress",
+                  "value": "=turn.results.content.ADDRLIST[0].X_ADRSTA"
+                },
+                {
+                  "property": "dialog.result.Composer_Email_AddressFound",
+                  "value": true
+                },
+                {
+                  "property": "dialog.result.Composer_Email_City",
+                  "value": "=turn.results.content.ADDRLIST[0].X_ADRLCT"
+                },
+                {
+                  "property": "dialog.result.Composer_Email_State",
+                  "value": "=turn.results.content.ADDRLIST[0].X_ADRSTTC"
+                },
+                {
+                  "property": "dialog.result.Composer_Email_Zip",
+                  "value": "=turn.results.content.ADDRLIST[0].X_ADRPST"
+                },
+                {
+                  "property": "dialog.result.CustomerNumFromEmail",
+                  "value": "=turn.results.content.ADDRLIST[0].CUSNUM"
+                },
+                {
+                  "property": "user.AddressCount",
+                  "value": "=count(turn.results.content.ADDRLIST)"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "Ctr5qH"
+              },
+              "method": "POST",
+              "url": "https://prod-100.westus.logic.azure.com:443/workflows/b8d6ac45951e491d90b0e4dd8db54c94/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VCvrhfJk5bYOTQgkxMCBS2cjP1Z6G1ellokmohALQsI",
+              "responseType": "json",
+              "body": {
+                "email_address": "${virtualagent.UserEmailInput}"
+              },
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "contentType": "application/json",
+              "resultProperty": "turn.results"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "WEX5Op"
+              },
+              "property": "user.EmailVerificationCode",
+              "value": "=turn.results.content.SMScode"
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "eT5VQC"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_eT5VQC()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "property": "user.EmailRNGInput"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "IcKbqb"
+              },
+              "condition": "=user.EmailRNGInput == user.EmailVerificationCode",
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "dtsD3e"
+                  },
+                  "activity": "${SendActivity_dtsD3e()}"
+                },
+                {
+                  "$kind": "Microsoft.DeleteProperties",
+                  "$designer": {
+                    "id": "GAkrwP"
+                  },
+                  "properties": [
+                    "user.EmailRNGInput",
+                    "user.EmailVerificationCode",
+                    "turn.results"
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "eBuE1J"
+                  },
+                  "assignments": [
+                    {
+                      "property": "dialog.result.IsCustEmailAuth",
+                      "value": false
+                    },
+                    {
+                      "property": "virtualagent.IsUserAuthenticated",
+                      "value": false
+                    },
+                    {
+                      "property": "virtualagent.UserAuthenticated_Email",
+                      "value": "=virtualagent.UserEmailInput"
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "seG7m4"
+                  },
+                  "assignments": [
+                    {
+                      "property": "dialog.result.IsCustEmailAuth",
+                      "value": true
+                    },
+                    {
+                      "property": "virtualagent.IsUserAuthenticated",
+                      "value": true
+                    },
+                    {
+                      "property": "virtualagent.UserAuthenticated_Email",
+                      "value": "=virtualagent.UserEmailInput"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "lpT9AX"
+                  },
+                  "condition": "=user.AddressCount > 1",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.TextInput",
+                      "$designer": {
+                        "id": "NPDpd4"
+                      },
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": false,
+                      "allowInterruptions": false,
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "prompt": "${TextInput_Prompt_NPDpd4()}",
+                      "value": "=turn.activity.value.CUSNUM",
+                      "property": "dialog.result.CustomerNumFromEmail"
+                    },
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "67TFE3"
+                      },
+                      "activity": "${SendActivity_67TFE3()}"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "gkbarZ"
+                      },
+                      "property": "dialog.result.CustomerNumFromEmail",
+                      "value": "=turn.results.content.ADDRLIST[0].CUSNUM"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "AuthenticateUserViaEmail_Composer.lg",
+  "recognizer": {
+    "$kind": "Microsoft.VirtualAgents.Recognizer"
+  },
+  "id": "AuthenticateUserViaEmail_Composer"
+}

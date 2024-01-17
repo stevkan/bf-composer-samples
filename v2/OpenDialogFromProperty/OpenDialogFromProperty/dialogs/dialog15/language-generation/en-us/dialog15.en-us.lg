@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_6l4CAG()
+[Activity
+    Text = ${SendActivity_6l4CAG_text()}
+]
+
+# SendActivity_6l4CAG_text()
+- dialog15

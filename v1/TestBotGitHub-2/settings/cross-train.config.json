@@ -1,0 +1,23 @@
+{
+  "TestBotGitHub.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "": [
+        "Choice.en-us"
+      ],
+      "Finish": ""
+    }
+  },
+  "Apple.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "Stop": ""
+    }
+  },
+  "Banana.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "Stop": ""
+    }
+  }
+}

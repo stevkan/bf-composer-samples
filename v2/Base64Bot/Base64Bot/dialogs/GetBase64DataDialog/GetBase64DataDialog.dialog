@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "BHqZOD",
+    "name": "GetBase64DataDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "b9ekn2"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "g9lAdF"
+          },
+          "activity": "${SendActivity_g9lAdF()}"
+        }
+      ]
+    }
+  ],
+  "generator": "GetBase64DataDialog.lg",
+  "recognizer": "GetBase64DataDialog.lu.qna",
+  "id": "GetBase64DataDialog"
+}

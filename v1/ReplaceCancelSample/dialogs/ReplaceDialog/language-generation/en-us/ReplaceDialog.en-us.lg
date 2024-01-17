@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# replaceText()
+- Replacement dialog reached!
+# ConfirmInput_Prompt_2ZQQrQ()
+- ${replaceText()}

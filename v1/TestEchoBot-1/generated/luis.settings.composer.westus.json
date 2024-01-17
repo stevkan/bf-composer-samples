@@ -1,0 +1,8 @@
+{
+    "luis": {
+        "TestEchoBot_1_en_us_lu": {
+            "appId": "3c1724ac-5f5b-4a8a-9e8e-bbcabe5589dd",
+            "version": "0.1"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+[import](common.lg)
+
+# SendActivity_Welcome
+- ${WelcomeUser()}
+
+# UnknownMain()
+[Activity
+    Text = Unknown intent (main)
+]
+
+
+# SendActivity_P7hqe7()
+- ${UnknownMain()}
+# StopAllDialogs()
+[Activity
+    Text = Stopping all dialogs (main)
+]
+
+# SendActivity_e70P1S()
+- ${StopAllDialogs()}

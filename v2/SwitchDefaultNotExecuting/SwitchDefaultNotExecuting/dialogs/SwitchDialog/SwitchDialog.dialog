@@ -1,0 +1,106 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "CEDdRX",
+    "name": "SwitchDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "N31AJx"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "GPm6qy"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 1,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineSeparator": ",",
+            "inlineOr": " or "
+          },
+          "property": "conversation.customerdecision",
+          "choices": [
+            "1"
+          ],
+          "prompt": "${ChoiceInput_Prompt_GPm6qy()}",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          },
+          "outputFormat": "value",
+          "validations": [],
+          "defaultValue": "=turn.activity.text"
+        },
+        {
+          "id": "target",
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "yD7rEv",
+            "name": "Branch: Switch condition"
+          },
+          "cases": [
+            {
+              "value": "1",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "1ga1Ex"
+                  },
+                  "activity": "${SendActivity_1ga1Ex()}"
+                }
+              ]
+            }
+          ],
+          "condition": "conversation.customerdecision",
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "5kVcBs"
+              },
+              "activity": "${SendActivity_5kVcBs()}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "oR1NxJ",
+        "name": "TestTrigger"
+      },
+      "intent": "TestTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "5nomHb"
+          },
+          "activityProcessed": true,
+          "dialog": "WaitDialog"
+        }
+      ],
+      "entities": []
+    }
+  ],
+  "generator": "SwitchDialog.lg",
+  "recognizer": "SwitchDialog.lu.qna",
+  "id": "SwitchDialog"
+}

@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_Root_Skill_Bot",
+  "recognizers": {
+    "en-us": "Root_Skill_Bot.en-us.lu",
+    "": "Root_Skill_Bot.en-us.lu"
+  }
+}

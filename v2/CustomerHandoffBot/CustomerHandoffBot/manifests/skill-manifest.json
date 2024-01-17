@@ -1,0 +1,104 @@
+{
+  "$id": "https://schemas.botframework.com/schemas/skills/v2.2/skill-manifest.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$version": "2.2.0",
+  "title": "Skill Manifest Schema",
+  "description": "A schema for Bot Framework skill manifests",
+  "type": "object",
+  "required": ["$id", "$schema", "name", "version", "publisherName", "endpoints"],
+  "properties": {
+    "$schema": {},
+    "$id": {},
+    "name": {},
+    "version": {},
+    "description": {},
+    "publisherName": {},
+    "privacyUrl": {},
+    "copyright": {},
+    "license": {},
+    "iconUrl": {},
+    "tags": {},
+    "endpoints": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "title": "Skill endpoints",
+      "description": "List of endpoints supported by the skill",
+      "items": {
+        "$ref": "#/definitions/endpoint"
+      }
+    },
+    "dispatchModels": {},
+    "activities": {
+      "type": "object",
+      "title": "Activities",
+      "description": "Definition of activities to enable skill host tooling to programmatically interact with the skill.",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/eventActivity"
+          },
+          {
+            "$ref": "#/definitions/invokeActivity"
+          },
+          {
+            "$ref": "#/definitions/messageActivity"
+          },
+          {
+            "$ref": "#/definitions/otherActivities"
+          }
+        ]
+      }
+    },
+    "activitiesSent": {},
+    "definitions": {}
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "endpoint": {
+      "type": "object",
+      "title": "Skill endpoint",
+      "description": "Skill endpoint definition",
+      "required": ["name", "endpointUrl", "msAppId"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Endpoint name",
+          "description": "Unique name for the endpoint",
+          "default": "default"
+        },
+        "protocol": {
+          "type": "string",
+          "title": "Endpoint protocol",
+          "description": "Supported protocol",
+          "default": "BotFrameworkV3"
+        },
+        "description": {
+          "type": "string",
+          "title": "Endpoint description",
+          "description": "Description of the endpoint",
+          "examples": ["Production bot"]
+        },
+        "endpointUrl": {
+          "type": "string",
+          "format": "uri",
+          "title": "Endpoint URL",
+          "description": "Endpoint for the skill",
+          "examples": ["http://contoso.com/api/messaages"]
+        },
+        "msAppId": {
+          "type": "string",
+          "title": "Microsoft App Id",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$",
+          "description": "The Microsoft AppId for the skill. This app ID is used to authenticate requests"
+        }
+      },
+      "additionalProperties": false
+    },
+    "eventActivity": {},
+    "invokeActivity": {},
+    "messageActivity": {},
+    "otherActivities": {},
+    "languageModel": {}
+  }
+}

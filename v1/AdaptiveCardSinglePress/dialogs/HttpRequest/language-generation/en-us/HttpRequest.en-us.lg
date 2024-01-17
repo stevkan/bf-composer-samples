@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# SendActivity_fNogJO()
+[Activity
+    Text = Your word that does not exist is '${dialog.randomword.content.word.word}' which means ${dialog.randomword.content.word.definition}
+]

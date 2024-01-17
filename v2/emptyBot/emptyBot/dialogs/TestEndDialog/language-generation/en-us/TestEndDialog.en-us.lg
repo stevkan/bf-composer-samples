@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_PsGjFP()
+[Activity
+    Text = ${SendActivity_PsGjFP_text()}
+]
+
+# SendActivity_PsGjFP_text()
+- Test Cancel!
