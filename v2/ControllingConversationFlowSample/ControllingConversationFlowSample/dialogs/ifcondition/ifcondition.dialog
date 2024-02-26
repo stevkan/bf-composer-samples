@@ -13,6 +13,37 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "nPWbui"
+          },
+          "activity": "${SendActivity_nPWbui()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "5ZHBX1"
+          },
+          "condition": "=dialog.IsGoToAction",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "bXqiLx"
+              },
+              "value": "=dialog.age",
+              "property": "user.age"
+            },
+            {
+              "$kind": "Microsoft.GotoAction",
+              "actionId": "ageCondition",
+              "$designer": {
+                "id": "C8gBhG"
+              }
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.NumberInput",
           "$designer": {
             "id": "260985"
@@ -25,11 +56,12 @@
           "defaultLocale": "en-us"
         },
         {
+          "id": "ageCondition",
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "463418"
           },
-          "condition": "user.age >= 18",
+          "condition": "=int(user.age) >= 18",
           "actions": [
             {
               "$kind": "Microsoft.SendActivity",
@@ -54,5 +86,6 @@
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
   "generator": "ifcondition.lg",
-  "id": "ifcondition"
+  "id": "ifcondition",
+  "recognizer": "ifcondition.lu.qna"
 }

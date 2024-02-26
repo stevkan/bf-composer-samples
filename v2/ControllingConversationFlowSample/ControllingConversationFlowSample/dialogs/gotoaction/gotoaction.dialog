@@ -55,7 +55,20 @@
         },
         {
           "$kind": "Microsoft.GotoAction",
-          "actionId": "target"
+          "actionId": "target",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.ReplaceDialog",
+          "$designer": {
+            "id": "KLjtnp"
+          },
+          "activityProcessed": true,
+          "dialog": "ifcondition",
+          "options": {
+            "isGoToAction": true,
+            "age": "22"
+          }
         }
       ]
     }

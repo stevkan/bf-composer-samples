@@ -5,3 +5,11 @@
 
 # SendActivity_619321()
 -Your age is ${user.age} which did not satisfy the condition that we evaluated
+# SendActivity_nPWbui()
+[Activity
+    Text = ${SendActivity_nPWbui_text()}
+]
+
+# SendActivity_nPWbui_text()
+- ```IsGoToAction: ${dialog.isGoToAction}
+Age: ${dialog.age}```

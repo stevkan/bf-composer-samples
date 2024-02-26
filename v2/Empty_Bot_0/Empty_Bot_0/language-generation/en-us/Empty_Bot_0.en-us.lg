@@ -83,3 +83,7 @@
 
 # SendActivity_viR7ca_text()
 - "customEvent" hit
+# SendActivity_0Iz4sL()
+[Activity
+    type = typing
+]
